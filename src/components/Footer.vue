@@ -97,7 +97,7 @@ export default {
 .logo-block {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .footer-logo {
