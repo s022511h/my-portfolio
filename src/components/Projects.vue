@@ -40,7 +40,7 @@
         </ul>
         <div class="project-video" style="aspect-ratio: 16/9; width: 100%; max-width: 720px; margin: auto;">
           <lite-youtube
-            videoid="U9SeG8yyVjo"
+            videoid="g5rU04Ki0AY"
             style="width: 100%; height: auto;"
             playlabel="Play SneakTrack Demo"
           ></lite-youtube>
