@@ -54,7 +54,7 @@ export default {
           subject: 'N15 Labs'
         }
 
-        await axios.post('http://localhost:3000/contact', payload)
+        await axios.post(`${process.env.VUE_APP_API_URL}/contact`, payload)
 
         alert('Thanks for your message! I’ll get back to you shortly.')
         this.form = { name: '', email: '', message: '' }
