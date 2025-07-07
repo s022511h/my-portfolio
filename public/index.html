@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Andre Simpson's N15 Labs – Full stack developer, building modern tools like SneakTrack, automation dashboards, and SEO apps." />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="preload" as="image" href="/img/logo-n15labs-white-100w.webp" />
+    <link rel="preload" as="image" href="/img/code.b2fa773b.webp" type="image/webp" fetchpriority="high" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.1.4/src/lite-yt-embed.css" />
+    <link rel="preload" href="/css/app.css" as="style" />
+    <link rel="stylesheet" href="/css/app.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/css/app.css" /></noscript>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -12,6 +23,5 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

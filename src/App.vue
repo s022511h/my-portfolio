@@ -1,26 +1,96 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <AnimatedIntro v-if="showIntro" @enter="handleEnter" />
+
+    <div v-else>
+      <AppHeader />
+      <router-view style="flex: 1;" />
+      <AppFooter />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/Header.vue'
+import AppFooter from './components/Footer.vue'
+import AnimatedIntro from './components/AnimatedIntro.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppHeader,
+    AppFooter,
+    AnimatedIntro
+  },
+  data() {
+    return {
+      showIntro: !localStorage.getItem('n15labs-visited'),
+      mySocket: null
+    }
+  },
+  methods: {
+    handleEnter() {
+      localStorage.setItem('n15labs-visited', true)
+      this.showIntro = false
+    },
+    setupWebSocket() {
+      this.mySocket = new WebSocket('wss://your-websocket-url.com')
+
+      this.mySocket.onopen = () => {
+        console.log('WebSocket connected')
+      }
+
+      this.mySocket.onmessage = (event) => {
+        console.log('Message received:', event.data)
+      }
+
+      this.mySocket.onclose = () => {
+        console.log('WebSocket closed')
+        setTimeout(() => {
+          this.setupWebSocket()
+        }, 3000)
+      }
+
+      this.mySocket.onerror = (err) => {
+        console.error('WebSocket error:', err)
+        this.mySocket.close()
+      }
+    }
+  },
+  mounted() {
+    this.setupWebSocket()
+
+    window.addEventListener('pagehide', () => {
+      if (this.mySocket && this.mySocket.readyState === WebSocket.OPEN) {
+        console.log('Closing WebSocket on pagehide')
+        this.mySocket.close()
+      }
+    })
+
+    window.addEventListener('pageshow', event => {
+      if (event.persisted) {
+        console.log('Page restored from bfcache — optionally reconnecting WebSocket')
+      }
+    })
   }
 }
 </script>
 
 <style>
+html,
+body,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-view {
+  flex: 1;
 }
 </style>
