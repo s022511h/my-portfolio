@@ -197,10 +197,12 @@ export default {
 }
 
 .mobile-menu {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  width: 100%;
 }
 
 .mobile-menu a {
@@ -210,14 +212,17 @@ export default {
   font-weight: 600;
 }
 
+
 .close-menu {
-  align-self: flex-end;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
   background: none;
   border: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #fff;
-  padding: 1rem 2rem;
   cursor: pointer;
+  z-index: 10;
 }
 
 .fade-enter-active,

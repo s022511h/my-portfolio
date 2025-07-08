@@ -14,7 +14,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBeahviour() {
+    return { top: 0 }
+  }
 })
 
 export default router

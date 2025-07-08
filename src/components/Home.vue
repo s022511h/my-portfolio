@@ -343,10 +343,17 @@ h1 {
 
 .cta-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: center;    
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
+
+.cta-buttons .cta {
+  margin: 0; 
+}
+
 
 .video-placeholder {
   max-width: 100%;
@@ -563,6 +570,9 @@ h1 {
 @media (max-width: 600px) {
   .slideshow-image {
     height: 240px;
+  }
+  .cta.secondary {
+    margin-right: 0 !important; 
   }
 }
 </style>
