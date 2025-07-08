@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
+import { watch, onMounted } from 'vue'
 import AppHeader from './components/Header.vue'
 import AppFooter from './components/Footer.vue'
 import AnimatedIntro from './components/AnimatedIntro.vue'
@@ -72,6 +74,16 @@ export default {
         console.log('Page restored from bfcache — optionally reconnecting WebSocket')
       }
     })
+  },
+  setup() {
+    const route = useRoute()
+
+    watch(
+      () => route.fullPath,
+      () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    )
   }
 }
 </script>

@@ -27,10 +27,10 @@
       <div v-if="menuOpen" class="mobile-menu-overlay">
         <div class="mobile-menu">
           <button class="close-menu" @click="menuOpen = false" aria-label="Close Menu">✕</button>
-          <router-link @click="menuOpen = false" to="/">Home</router-link>
-          <router-link @click="menuOpen = false" to="/portfolio">Skills</router-link>
-          <router-link @click="menuOpen = false" to="/projects">Projects</router-link>
-          <router-link @click="menuOpen = false" to="/contact">Contact</router-link>
+          <router-link @click="handleNavClick" to="/">Home</router-link>
+          <router-link @click="handleNavClick" to="/portfolio">Skills</router-link>
+          <router-link @click="handleNavClick" to="/projects">Projects</router-link>
+          <router-link @click="handleNavClick" to="/contact">Contact</router-link>
         </div>
       </div>
     </transition>
@@ -44,10 +44,18 @@ export default {
     return {
       menuOpen: false
     }
+  },
+  methods: {
+    handleNavClick() {
+      this.menuOpen = false
+      // Wait until next tick to ensure nav change triggers
+      this.$nextTick(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    }
   }
 }
 </script>
-
 <style scoped>
 .app-header {
   position: sticky;
@@ -203,6 +211,7 @@ export default {
   gap: 2rem;
   align-items: center;
   width: 100%;
+  padding: 2rem 1rem;
 }
 
 .mobile-menu a {
@@ -212,18 +221,18 @@ export default {
   font-weight: 600;
 }
 
-
 .close-menu {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
+  position: static;
+  font-size: 3rem;
   background: none;
   border: none;
-  font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
-  z-index: 10;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-self: center;
 }
+
 
 .fade-enter-active,
 .fade-leave-active {
