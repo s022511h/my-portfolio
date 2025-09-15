@@ -14,9 +14,31 @@
 
     <nav class="nav-links desktop-only">
       <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
       <router-link to="/portfolio">Skills</router-link>
       <router-link to="/projects">Projects</router-link>
+      <router-link to="/services">Services</router-link>
+      <router-link to="/blog">Blog</router-link>
+      <router-link to="/cv">CV</router-link>
       <router-link to="/contact">Contact</router-link>
+      
+      <div v-if="!authStore.isAuthenticated" class="auth-links">
+        <router-link to="/login" class="auth-link">Sign In</router-link>
+        <router-link to="/register" class="auth-link register-btn">Sign Up</router-link>
+      </div>
+      <div v-else class="user-menu">
+        <router-link to="/profile" class="user-link">
+          {{ authStore.user?.firstName }} {{ authStore.user?.lastName }}
+        </router-link>
+        <router-link 
+          v-if="authStore.user?.id === 1" 
+          to="/admin" 
+          class="user-link admin-link"
+        >
+          Admin Dashboard
+        </router-link>
+        <button @click="handleLogout" class="logout-btn" aria-label="Sign out of account">Sign Out</button>
+      </div>
     </nav>
 
     <button class="hamburger" @click="menuOpen = !menuOpen" aria-label="Toggle Menu">
@@ -26,11 +48,38 @@
     <transition name="fade">
       <div v-if="menuOpen" class="mobile-menu-overlay">
         <div class="mobile-menu">
-          <button class="close-menu" @click="menuOpen = false" aria-label="Close Menu">✕</button>
+          <button class="close-menu" @click="menuOpen = false" aria-label="Close Menu">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
           <router-link @click="handleNavClick" to="/">Home</router-link>
+          <router-link @click="handleNavClick" to="/about">About</router-link>
           <router-link @click="handleNavClick" to="/portfolio">Skills</router-link>
           <router-link @click="handleNavClick" to="/projects">Projects</router-link>
+          <router-link @click="handleNavClick" to="/services">Services</router-link>
+          <router-link @click="handleNavClick" to="/blog">Blog</router-link>
+          <router-link @click="handleNavClick" to="/cv">CV</router-link>
           <router-link @click="handleNavClick" to="/contact">Contact</router-link>
+          
+          <div v-if="!authStore.isAuthenticated" class="mobile-auth-links">
+            <router-link @click="handleNavClick" to="/login" class="mobile-auth-link">Sign In</router-link>
+            <router-link @click="handleNavClick" to="/register" class="mobile-auth-link register">Sign Up</router-link>
+          </div>
+          <div v-else class="mobile-user-menu">
+            <router-link @click="handleNavClick" to="/profile" class="mobile-user-link">
+              My Profile
+            </router-link>
+            <router-link 
+              v-if="authStore.user?.id === 1"
+              @click="handleNavClick" 
+              to="/admin" 
+              class="mobile-user-link admin-link"
+            >
+              Admin Dashboard
+            </router-link>
+            <button @click="handleMobileLogout" class="mobile-logout-btn" aria-label="Sign out of account">Sign Out</button>
+          </div>
         </div>
       </div>
     </transition>
@@ -38,40 +87,56 @@
 </template>
 
 <script>
+import { authStore } from '../stores/firebaseAuth.js'
+
 export default {
   name: 'AppHeader',
   data() {
     return {
-      menuOpen: false
+      menuOpen: false,
+      authStore 
     }
   },
   methods: {
     handleNavClick() {
       this.menuOpen = false
-      // Wait until next tick to ensure nav change triggers
-      this.$nextTick(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      })
+    },
+    
+    async handleLogout() {
+      await authStore.logout();
+      this.$router.push('/');
+    },
+    
+    async handleMobileLogout() {
+      await authStore.logout();
+      this.menuOpen = false;
+      this.$router.push('/');
     }
   }
 }
 </script>
+
 <style scoped>
 .app-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background-color: #111;
-  color: #fff;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.2rem;
-  border-bottom: 2px solid #222;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  flex-wrap: wrap;
-  height: auto;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #374151;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
 }
+
 
 .logo-container {
   display: flex;
@@ -81,6 +146,11 @@ export default {
 
 .logo-link {
   display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
 }
 
 .logo {
@@ -90,37 +160,49 @@ export default {
   max-width: 100%;
   display: block;
   image-rendering: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .brand {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
   font-family: 'Orbitron', sans-serif;
-  color: #fff;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .nav-links a {
-  color: #eee;
+  color: #d4d4d8;
   font-weight: 500;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1rem;
   position: relative;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
-  color: #407ba7;
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.nav-links a.router-link-active {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
 }
 
 .nav-links a::after {
@@ -128,24 +210,96 @@ export default {
   position: absolute;
   width: 0%;
   height: 2px;
-  background: #407ba7;
-  left: 0;
-  bottom: -5px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover::after,
+.nav-links a.router-link-active::after {
+  width: 80%;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.auth-link {
+  color: #d4d4d8;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.auth-link:hover {
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.auth-link.register-btn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+}
+
+.auth-link.register-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  transform: translateY(-1px);
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.user-link {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.logout-btn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c53030;
 }
 
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .hamburger span,
@@ -155,13 +309,15 @@ export default {
   display: block;
   width: 24px;
   height: 3px;
-  background: #eee;
-  transition: 0.3s ease;
+  background: #ffffff;
+  transition: all 0.3s ease;
   position: relative;
+  border-radius: 2px;
 }
 
 .hamburger span.open {
   transform: rotate(45deg);
+  background: #3b82f6;
 }
 
 .hamburger span.open::before {
@@ -180,15 +336,16 @@ export default {
   left: 0;
   width: 24px;
   height: 3px;
-  background: #eee;
+  background: #ffffff;
+  border-radius: 2px;
 }
 
 .hamburger span::before {
-  top: -7px;
+  top: -8px;
 }
 
 .hamburger span::after {
-  top: 7px;
+  top: 8px;
 }
 
 .mobile-menu-overlay {
@@ -196,43 +353,144 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(17, 17, 17, 0.85);
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 200;
+  backdrop-filter: blur(10px);
+  touch-action: none;
+  overflow: hidden;
 }
 
 .mobile-menu {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
   align-items: center;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem 2rem 2rem;
+  max-width: 400px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 20px;
+  border: 1px solid #374151;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-menu a {
-  font-size: 2.5rem;
-  color: #fff;
+  font-size: 1.125rem;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+  padding: 0.625rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu a:hover {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.mobile-auth-links {
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.mobile-auth-link {
+  font-size: 1.125rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.625rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.mobile-auth-link:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.mobile-auth-link.register {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.mobile-user-menu {
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.mobile-user-link {
+  font-size: 1.125rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.625rem 2rem;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  text-align: center;
+}
+
+.mobile-logout-btn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.625rem 2rem;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mobile-logout-btn:hover {
+  background: #c53030;
 }
 
 .close-menu {
-  position: static;
-  font-size: 3rem;
-  background: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: #fff;
+  border-radius: 12px;
+  color: #ffffff;
   cursor: pointer;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
+.close-menu:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.close-menu svg {
+  width: 24px;
+  height: 24px;
+}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -244,29 +502,72 @@ export default {
   opacity: 0;
 }
 
+.hamburger:focus,
+.close-menu:focus,
+.nav-links a:focus,
+.logo-link:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.admin-link {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: white !important;
+}
+
+@media (max-width: 1400px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .auth-links {
+    gap: 0.5rem;
+  }
+  
+  .auth-link {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 0.75rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.375rem;
+  }
+  
+  .auth-link {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .app-header {
-    padding: 0.6rem 1rem;
-    flex-direction: row;
-    align-items: center;
+    padding: 1rem 1.5rem;
+    height: 90px;
   }
-
+  
+  
   .logo-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .logo {
-    width: 110px;
-    height: auto;
-    object-fit: contain;
+    width: 90px;
   }
 
   .brand {
-    display: none;
+    font-size: 1.5rem;
   }
 
   .nav-links.desktop-only {
@@ -275,8 +576,82 @@ export default {
 
   .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+    height: 80px; 
+  }
+  
+  .brand {
+    display: none;
+  }
+  
+  .logo {
+    width: 80px;
+  }
+
+  .mobile-menu {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .mobile-menu a {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .mobile-auth-link {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .mobile-logout-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.home-container {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@supports not (padding: env(safe-area-inset-top)) {
+  .app-header {
+    padding: 1rem 2rem;
+    min-height: 80px;
+  }
+  
+  @media (max-width: 768px) {
+    .app-header {
+      padding: 1rem 1.5rem;
+      min-height: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app-header {
+      padding: 0.75rem 1rem;
+      min-height: 60px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-link,
+  .hamburger,
+  .nav-links a,
+  .mobile-menu a,
+  .close-menu {
+    transition: none;
+  }
+  
+  .nav-links a::after {
+    transition: none;
   }
 }
 </style>

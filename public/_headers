@@ -1,3 +1,29 @@
+# Static assets caching
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root page
+/
+  Cache-Control: public, max-age=0, must-revalidate
 /*
   Cache-Control: public, max-age=31536000, immutable
 

@@ -1,4 +1,3 @@
-// generate-sitemap.js
 const { SitemapStream, streamToPromise } = require('sitemap')
 const { createWriteStream } = require('fs')
 

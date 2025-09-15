@@ -1,56 +1,67 @@
 const { defineConfig } = require('@vue/cli-service')
-const CompressionPlugin = require('compression-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = defineConfig({
-  css: {
-    extract: true
-  },
-  transpileDependencies: false,
-
+  transpileDependencies: true,
+  
   configureWebpack: {
     plugins: [
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.(js|css|html|svg|json|ttf|woff2?)$/,
-        threshold: 10240,
-        minRatio: 0.8
-      }),
       new webpack.DefinePlugin({
-        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+        __VUE_OPTIONS_API__: true,
+        __VUE_PROD_DEVTOOLS__: false
       })
     ],
+    resolve: {
+      fallback: {
+        "buffer": false,
+        "crypto": false,
+        "stream": false
+      }
+    },
     optimization: {
-      minimize: true,
       splitChunks: {
         chunks: 'all',
-        maxInitialRequests: 10,
-        maxAsyncRequests: 10,
+        maxSize: 200000,
         cacheGroups: {
-          vendors: {
+          vendor: {
             test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-              return `npm.${packageName.replace('@', '')}`
-            },
-            chunks: 'all'
+            chunks: 'all',
+            maxSize: 200000,
+            priority: 10
+          },
+          firebase: {
+            test: /[\\/]node_modules[\\/]firebase/,
+            chunks: 'all',
+            priority: 20,
+            maxSize: 150000
           }
         }
       }
-    },
-    target: ['web', 'es2020']
+    }
   },
-
+  
   chainWebpack: config => {
-    config.output.filename('js/[name].[contenthash].js')
-    config.output.chunkFilename('js/[name].[contenthash].js')
+    config.plugin('html').tap(args => {
+      if (process.env.NODE_ENV === 'development') {
+        args[0].templateParameters = {
+          ...args[0].templateParameters,
+          CSP_CONNECT_SRC: "connect-src 'self' https: ws: wss: http://localhost:3000 http://localhost:8080 http://localhost:8081 http://127.0.0.1:3000 http://127.0.0.1:8080 http://api.curator.io https://api.curator.io https://www.google-analytics.com https://analytics.google.com"
+        }
+      } else {
+        args[0].templateParameters = {
+          ...args[0].templateParameters,
+          CSP_CONNECT_SRC: "connect-src 'self' https: ws: wss: http://api.curator.io https://api.curator.io https://www.google-analytics.com https://analytics.google.com"
+        }
+      }
+      return args
+    })
   },
-
+  
   devServer: {
-    host: 'localhost',
     port: 8080,
     headers: {
-      'Cache-Control': 'public, max-age=31536000, immutable'
+      'X-Frame-Options': 'SAMEORIGIN'
     }
   }
 })

@@ -3,11 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
     
-    <meta name="description" content="Andre Simpson's N15 Labs – Full stack developer, building modern tools like SneakTrack, automation dashboards, and SEO apps." />
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://cdn.jsdelivr.net https://cdn.curator.io https://connect.facebook.net https://www.googletagmanager.com https://apis.google.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdn.curator.io;
+      img-src 'self' data: https: blob:;
+      media-src 'self' https://curator-assets.b-cdn.net;
+      font-src 'self' https://fonts.gstatic.com;
+      frame-src https://www.youtube.com https://n15labs.firebaseapp.com https://*.firebaseapp.com https://securetoken.googleapis.com;
+      <%= CSP_CONNECT_SRC %>;
+      object-src 'none';
+    ">
+    
+    <meta name="description" content="Andre Simpson - Full Stack Developer specializing in Vue.js and Node.js. Building performance-first websites for businesses in Stoke-on-Trent and beyond." />
     <meta name="robots" content="index, follow" />
-
     <meta name="keywords" content="website developer, website designer, freelance developer, Stoke-on-Trent, UK web developer, Vue developer, Node developer, N15 Labs">
     <meta name="author" content="Andre Simpson">
 
@@ -17,20 +28,41 @@
     <meta property="og:url" content="https://n15labs.co.uk">
     <meta property="og:image" content="https://n15labs.co.uk/img/logo-n15labs.webp">
 
-    <link rel="preload" as="image" href="/img/logo-n15labs-white-100w.webp" />
-    <link rel="preload" as="image" href="/img/code.b2fa773b.webp" type="image/webp" fetchpriority="high" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.1.4/src/lite-yt-embed.css" />
-    <link rel="preload" href="/css/app.css" as="style" />
-    <link rel="stylesheet" href="/css/app.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="/css/app.css" /></noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24LMEN7WRQ"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.1.4/src/lite-yt-embed.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-    <title>Website Developer Portfolio | N15 Labs</title>
+    <title>Andre Simpson - Full Stack Developer | N15 Labs</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andre Simpson",
+      "jobTitle": "Full Stack Developer",
+      "description": "Computer Science graduate specializing in Vue.js and Node.js development",
+      "url": "https://n15labs.co.uk",
+      "image": "https://n15labs.co.uk/img/me.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Stoke-on-Trent",
+        "addressCountry": "GB"
+      },
+      "sameAs": [
+        "https://github.com/s022511h",
+        "https://linkedin.com/in/andre-simpson-502365178"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "N15 Labs"
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but this website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
   </body>
