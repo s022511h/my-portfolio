@@ -34,8 +34,9 @@
           <h2 class="section-title">Agreement to Terms</h2>
           <div class="content-card">
             <p class="intro-text">
-              By accessing and using the N15 Labs website (n15labs.com) or engaging our web development services, 
+              By accessing and using the N15 Labs website (n15labs.co.uk) or engaging our web development services, 
               you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+              Please also review our Privacy Policy which explains how we handle your personal data.
             </p>
             
             <div class="key-points">
@@ -47,7 +48,7 @@
                 </div>
               </div>
               <div class="key-point">
-                <div class="point-icon">🔄</div>
+                <div class="point-icon">📄</div>
                 <div>
                   <strong>Regular Updates:</strong>
                   <span>Terms may be updated periodically with advance notice for significant changes</span>
@@ -149,7 +150,7 @@
             </div>
             
             <div class="responsibility-card">
-              <div class="responsibility-icon">🏛️</div>
+              <div class="responsibility-icon">🛡️</div>
               <h3>Legal Compliance</h3>
               <p>Ensure all provided content complies with applicable laws, regulations, and intellectual property rights.</p>
             </div>
@@ -190,6 +191,40 @@
                 <li>Cheque payments (UK clients only)</li>
                 <li>Credit/debit card payments for smaller amounts</li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="terms-section">
+          <h2 class="section-title">Data Protection and Privacy</h2>
+          
+          <div class="content-card">
+            <p class="intro-text">
+              N15 Labs is committed to protecting your privacy and personal data in accordance with UK GDPR. 
+              This section outlines how data protection relates to our service delivery.
+            </p>
+            
+            <div class="data-protection-points">
+              <div class="protection-point">
+                <h4>Data Processing for Services</h4>
+                <p>When providing web development services, we may process your business data, project information, 
+                and communication records as necessary to fulfill our contractual obligations. This processing 
+                is based on contract performance under Article 6(1)(b) of UK GDPR.</p>
+              </div>
+              
+              <div class="protection-point">
+                <h4>Client Data Responsibilities</h4>
+                <p>If your project involves processing personal data of your customers or users, you remain the 
+                data controller. We may act as a data processor, and appropriate data processing agreements 
+                will be established when required.</p>
+              </div>
+              
+              <div class="protection-point">
+                <h4>Privacy Policy Reference</h4>
+                <p>For complete details on how we collect, use, and protect personal information, please review 
+                our comprehensive Privacy Policy. This includes your rights under UK GDPR and how to contact 
+                us regarding data protection matters.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -553,7 +588,7 @@ export default {
   name: 'TermsOfService',
   data() {
     return {
-      lastUpdated: 'September 14, 2025'
+      lastUpdated: 'September 16, 2025'
     }
   },
   methods: {
@@ -759,6 +794,32 @@ export default {
 .key-point span {
   color: #6b7280;
   line-height: 1.5;
+}
+
+.data-protection-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.protection-point {
+  padding: 1.5rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.protection-point h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.protection-point p {
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .subsection-grid {

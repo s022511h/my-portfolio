@@ -3,14 +3,12 @@
     <div class="capture-panel" @click.stop>
       <button @click="$emit('close')" class="close-btn">✕</button>
       
-      <!-- Success Scenario -->
       <div v-if="isEligible" class="capture-content">
         <div class="capture-header">
           <h3>Get Your Complete Audit Report</h3>
           <p>Plus performance tips and early access to future tools</p>
         </div>
         
-        <!-- Logged In User -->
         <div v-if="authStore.isAuthenticated" class="logged-in-capture">
           <div class="user-info">
             <p>Hi {{ authStore.user.firstName }}! 👋</p>
@@ -46,7 +44,6 @@
           </p>
         </div>
         
-        <!-- Anonymous User -->
         <div v-else class="anonymous-capture">
           <div class="value-prop">
             <p>Get your complete audit report plus ongoing performance tips:</p>
@@ -137,7 +134,6 @@
         </div>
       </div>
       
-      <!-- Ineligible User Scenario -->
       <div v-else class="capture-content">
         <div class="capture-header">
           <h3>Get Personalized Website Advice</h3>
@@ -148,7 +144,6 @@
           <p>While we couldn't audit your specific site, we'd still love to help you improve your website performance!</p>
         </div>
         
-        <!-- Always show form for ineligible users -->
         <form @submit.prevent="handleIneligibleCapture" class="capture-form">
           <div class="benefits-list">
             <div class="benefit-item">
@@ -269,7 +264,6 @@ export default {
     }
   },
   mounted() {
-    // Track capture panel view
     this.trackCaptureView();
   },
   methods: {
@@ -281,7 +275,6 @@ export default {
       this.capturing = true;
       
       try {
-        // Call the auth store method to capture audit email for existing user
         const result = await authStore.captureAuditEmail(this.auditResults?.auditId);
         
         if (result.success) {
@@ -309,7 +302,6 @@ export default {
       this.errors = {};
       
       try {
-        // Validate form
         if (!this.validateForm()) {
           this.capturing = false;
           return;
@@ -435,7 +427,6 @@ export default {
         }
       } catch (error) {
         console.error('Email validation error:', error);
-        // Don't show error for validation failure
       } finally {
         this.emailChecking = false;
       }

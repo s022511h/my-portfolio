@@ -2,23 +2,28 @@
   <div v-if="showBanner" class="cookie-banner">
     <div class="cookie-content">
       <h3>Cookie Settings</h3>
-      <p>We use cookies to improve your experience and analyze website usage. Choose which cookies you allow:</p>
+      <p>We use cookies to improve your experience and analyze website usage. You can manage your preferences below. For more information, see our <router-link to="/privacy" class="privacy-link-inline">Privacy Policy</router-link>.</p>
       
       <div class="cookie-categories">
         <label class="cookie-option">
           <input type="checkbox" v-model="consents.necessary" disabled checked>
-          <span><strong>Necessary</strong> - Required for site functionality</span>
+          <span><strong>Necessary</strong> - Required for site functionality (cannot be disabled)</span>
         </label>
         
         <label class="cookie-option">
           <input type="checkbox" v-model="consents.analytics">
-          <span><strong>Analytics</strong> - Google Analytics to understand site usage</span>
+          <span><strong>Analytics</strong> - Google Analytics to understand site usage. Data is anonymized and transferred to Google's servers in the USA.</span>
         </label>
         
         <label class="cookie-option">
           <input type="checkbox" v-model="consents.marketing">
-          <span><strong>Marketing</strong> - Social media and content feeds</span>
+          <span><strong>Marketing</strong> - Social media content feeds and marketing cookies</span>
         </label>
+      </div>
+      
+      <div class="consent-notice">
+        <p><strong>Your Rights:</strong> You can withdraw consent at any time by clicking "Cookie Settings" in the footer. Withdrawing consent won't affect previous processing.</p>
+        <p><strong>International Transfers:</strong> Analytics data is processed by Google in the USA under Google's adequacy decision for GDPR compliance.</p>
       </div>
       
       <div class="cookie-actions">
@@ -29,6 +34,7 @@
       
       <div class="cookie-links">
         <router-link to="/privacy" class="privacy-link">Privacy Policy</router-link>
+        <router-link to="/terms" class="privacy-link">Terms of Service</router-link>
       </div>
     </div>
   </div>
@@ -57,6 +63,7 @@ export default {
       
       if (!saved || this.isConsentExpired(timestamp)) {
         this.showBanner = true
+        this.updateGoogleConsent()
       } else {
         this.consents = JSON.parse(saved)
         this.updateGoogleConsent()
@@ -69,7 +76,7 @@ export default {
       const consentDate = new Date(timestamp)
       const now = new Date()
       const daysDiff = (now - consentDate) / (1000 * 60 * 60 * 24)
-      return daysDiff > 365
+      return daysDiff > 365 
     },
     
     acceptAll() {
@@ -79,6 +86,7 @@ export default {
         marketing: true
       }
       this.saveConsents()
+      this.logConsentAction('accept_all')
     },
     
     declineAll() {
@@ -88,15 +96,25 @@ export default {
         marketing: false
       }
       this.saveConsents()
+      this.logConsentAction('decline_all')
     },
     
     savePreferences() {
       this.saveConsents()
+      this.logConsentAction('custom_preferences')
     },
     
     saveConsents() {
+      const consentData = {
+        ...this.consents,
+        timestamp: new Date().toISOString(),
+        version: '1.0'
+      }
+      
       localStorage.setItem('cookie-consents', JSON.stringify(this.consents))
       localStorage.setItem('cookie-consent-timestamp', new Date().toISOString())
+      localStorage.setItem('cookie-consent-details', JSON.stringify(consentData))
+      
       this.showBanner = false
       this.updateGoogleConsent()
       this.updateThirdPartyServices()
@@ -119,8 +137,10 @@ export default {
     updateThirdPartyServices() {
       if (!this.consents.marketing) {
         this.blockCurator()
+        this.blockSocialMedia()
       } else {
         this.enableCurator()
+        this.enableSocialMedia()
       }
     },
     
@@ -136,6 +156,28 @@ export default {
       curatorElements.forEach(el => {
         el.style.display = 'block'
       })
+    },
+    
+    blockSocialMedia() {
+      const socialScripts = document.querySelectorAll('script[src*="facebook"], script[src*="twitter"], script[src*="linkedin"]')
+      socialScripts.forEach(script => script.remove())
+    },
+    
+    enableSocialMedia() {
+    },
+    
+    logConsentAction(action) {
+      const logData = {
+        action: action,
+        timestamp: new Date().toISOString(),
+        consents: this.consents,
+        userAgent: navigator.userAgent,
+        url: window.location.href
+      }
+      
+      const existingLogs = JSON.parse(localStorage.getItem('consent-logs') || '[]')
+      existingLogs.push(logData)
+      localStorage.setItem('consent-logs', JSON.stringify(existingLogs))
     },
     
     show() {
@@ -157,6 +199,8 @@ export default {
   z-index: 10000;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
   border-top: 1px solid #374151;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .cookie-content {
@@ -171,9 +215,18 @@ export default {
 }
 
 .cookie-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #d1d5db;
   line-height: 1.6;
+}
+
+.privacy-link-inline {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.privacy-link-inline:hover {
+  color: #93c5fd;
 }
 
 .cookie-categories {
@@ -185,7 +238,7 @@ export default {
 
 .cookie-option {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   cursor: pointer;
   padding: 0.75rem;
@@ -201,11 +254,31 @@ export default {
 .cookie-option input {
   width: 18px;
   height: 18px;
+  margin-top: 2px;
 }
 
 .cookie-option span {
   color: #e5e7eb;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.consent-notice {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.consent-notice p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #bfdbfe;
+}
+
+.consent-notice p:last-child {
+  margin-bottom: 0;
 }
 
 .cookie-actions {
@@ -258,6 +331,8 @@ export default {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #374151;
+  display: flex;
+  gap: 2rem;
 }
 
 .privacy-link {
@@ -282,6 +357,11 @@ export default {
   .btn-accept, .btn-save, .btn-decline {
     width: 100%;
     padding: 1rem;
+  }
+  
+  .cookie-links {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 </style>

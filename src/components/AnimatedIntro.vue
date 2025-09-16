@@ -76,7 +76,7 @@
           Stoke-on-Trent, UK
         </div>
         <div class="tech-badge">
-          Vue.js & Node.js Specialist
+          Web Development Specialist
         </div>
       </div>
     </div>
@@ -102,8 +102,8 @@ export default {
         { icon: '🛠️', text: 'Custom Built' }
       ],
       stats: [
-        { value: '<2.5s', label: 'Load Time' },
-        { value: '50+', label: 'Projects' },
+        { value: '<4s', label: 'Load Time' },
+        { value : 'Full Stack', label: 'Expertise' },
         { value: '100%', label: 'Custom Code' }
       ]
     }
@@ -156,6 +156,8 @@ export default {
   color: white;
   overflow: hidden;
   animation: fadeIn 1s ease-out;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
 }
 
 @keyframes fadeIn {
@@ -260,9 +262,16 @@ export default {
   position: relative;
   z-index: 2;
   text-align: center;
+  max-width: 90vw;
+  width: 100%;
   max-width: 600px;
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   animation: slideUp 1.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3vh, 2rem);
 }
 
 @keyframes slideUp {
@@ -278,8 +287,8 @@ export default {
 
 .logo-container {
   position: relative;
-  margin-bottom: 2rem;
   animation: logoReveal 2s ease-out;
+  flex-shrink: 0;
 }
 
 @keyframes logoReveal {
@@ -299,7 +308,7 @@ export default {
 
 .logo-glow {
   position: absolute;
-  inset: -40px;
+  inset: -20px;
   background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
   border-radius: 50%;
   z-index: -1;
@@ -318,11 +327,9 @@ export default {
 }
 
 .intro-logo {
-  width: 320px;
-  height: 320px;
-  max-width: 80vw;
-  height: auto;
-  border-radius: 24px;
+  width: clamp(180px, 25vw, 280px);
+  height: clamp(180px, 25vw, 280px);
+  border-radius: clamp(16px, 2vw, 24px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   border: 3px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
@@ -334,14 +341,14 @@ export default {
 
 .logo-badge {
   position: absolute;
-  bottom: 15px;
+  bottom: clamp(8px, 2vw, 15px);
   left: 50%;
   transform: translateX(-50%);
   background: rgba(34, 197, 94, 0.9);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -349,6 +356,7 @@ export default {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: badgeSlide 1s ease-out 1.5s both;
+  white-space: nowrap;
 }
 
 @keyframes badgeSlide {
@@ -363,19 +371,19 @@ export default {
 }
 
 .logo-badge svg {
-  width: 16px;
-  height: 16px;
+  width: clamp(14px, 3vw, 16px);
+  height: clamp(14px, 3vw, 16px);
 }
 
 .intro-text {
-  margin-bottom: 3rem;
+  flex-shrink: 0;
 }
 
 .intro-title {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 800;
   line-height: 0.9;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vh, 1rem);
   letter-spacing: -0.03em;
 }
 
@@ -415,9 +423,9 @@ export default {
 }
 
 .intro-subtitle {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1.25rem);
   color: #a1a1aa;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
   font-weight: 500;
   animation: subtitleFade 1s ease-out 1.2s both;
 }
@@ -436,9 +444,9 @@ export default {
 .intro-taglines {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
 }
 
 .tagline {
@@ -447,7 +455,7 @@ export default {
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.75rem 1rem;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
   border-radius: 50px;
   backdrop-filter: blur(10px);
   opacity: 0;
@@ -455,13 +463,14 @@ export default {
 }
 
 .tag-icon {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .tag-text {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 500;
   color: #d1d5db;
+  white-space: nowrap;
 }
 
 @keyframes taglineSlide {
@@ -478,8 +487,8 @@ export default {
 .intro-stats {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: clamp(1rem, 3vh, 2rem);
   flex-wrap: wrap;
 }
 
@@ -491,16 +500,17 @@ export default {
 
 .stat strong {
   display: block;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 800;
   color: white;
   margin-bottom: 0.25rem;
 }
 
 .stat span {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   color: #71717a;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 @keyframes statFade {
@@ -515,8 +525,8 @@ export default {
 }
 
 .intro-actions {
-  margin-bottom: 2rem;
   animation: actionsFade 1s ease-out 2.5s both;
+  flex-shrink: 0;
 }
 
 @keyframes actionsFade {
@@ -536,15 +546,16 @@ export default {
   gap: 0.75rem;
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   color: white;
-  padding: 1.25rem 2.5rem;
+  padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem);
   border: none;
-  border-radius: 16px;
-  font-size: 1.125rem;
+  border-radius: clamp(12px, 2vw, 16px);
+  font-size: clamp(1rem, 3vw, 1.125rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vh, 1rem);
+  white-space: nowrap;
 }
 
 .enter-btn:hover {
@@ -557,8 +568,8 @@ export default {
 }
 
 .btn-arrow {
-  width: 20px;
-  height: 20px;
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
   transition: transform 0.3s ease;
 }
 
@@ -567,14 +578,14 @@ export default {
 }
 
 .skip-intro {
-  margin-top: 1rem;
+  margin-top: clamp(0.5rem, 2vh, 1rem);
 }
 
 .skip-btn {
   background: none;
   border: none;
   color: #71717a;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -589,9 +600,10 @@ export default {
 .intro-footer {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1rem, 4vw, 2rem);
   flex-wrap: wrap;
   animation: footerFade 1s ease-out 3s both;
+  flex-shrink: 0;
 }
 
 @keyframes footerFade {
@@ -608,14 +620,15 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   color: #a1a1aa;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .location-badge svg {
-  width: 16px;
-  height: 16px;
+  width: clamp(14px, 3vw, 16px);
+  height: clamp(14px, 3vw, 16px);
   color: #22c55e;
 }
 
@@ -635,26 +648,29 @@ export default {
   transition: width 0.1s ease;
 }
 
-@media (max-width: 768px) {
+/* Mobile-specific optimizations */
+@media (max-height: 700px) {
   .intro-content {
-    padding: 1rem;
+    gap: clamp(0.75rem, 2vh, 1.5rem);
+  }
+  
+  .intro-title {
+    font-size: clamp(2rem, 6vw, 4rem);
   }
   
   .intro-logo {
-    width: 250px;
-    height: 250px;
+    width: clamp(150px, 20vw, 220px);
+    height: clamp(150px, 20vw, 220px);
   }
-  
+}
+
+@media (max-width: 768px) {
   .intro-taglines {
     gap: 0.5rem;
   }
   
-  .tagline {
-    padding: 0.5rem 0.75rem;
-  }
-  
   .intro-stats {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .intro-footer {
@@ -665,15 +681,6 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .intro-title {
-    font-size: 3rem;
-  }
-  
-  .enter-btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
   .intro-taglines {
     flex-direction: column;
     align-items: center;
@@ -685,7 +692,42 @@ export default {
   }
 }
 
-/* Accessibility improvements */
+/* Landscape mobile orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .intro-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    max-width: 95vw;
+  }
+  
+  .logo-container {
+    flex-shrink: 0;
+  }
+  
+  .intro-logo {
+    width: clamp(120px, 15vw, 180px);
+    height: clamp(120px, 15vw, 180px);
+  }
+  
+  .intro-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .intro-actions {
+    width: 100%;
+    order: 3;
+  }
+  
+  .intro-footer {
+    width: 100%;
+    order: 4;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .particle,
   .orb,
@@ -711,7 +753,6 @@ export default {
   }
 }
 
-/* Focus states for accessibility */
 .enter-btn:focus,
 .skip-btn:focus {
   outline: 2px solid #3b82f6;

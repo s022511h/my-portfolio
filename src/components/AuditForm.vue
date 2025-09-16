@@ -20,7 +20,6 @@
     </div>
 
     <form @submit.prevent="handleSubmit" class="form-content">
-      <!-- Step 1: Website URL -->
       <div v-if="currentStep === 0" class="form-step">
         <h2>Enter Your Website URL</h2>
         <p>We'll analyze your website's performance, SEO, and security</p>
@@ -31,7 +30,7 @@
             id="websiteUrl"
             v-model="formData.websiteUrl"
             type="url"
-            placeholder="https://yourwebsite.com"
+            placeholder="https://n15labs.co.uk"
             class="form-input"
             :class="{ error: errors.websiteUrl }"
             @input="validateUrl"
@@ -49,7 +48,6 @@
         </div>
       </div>
 
-      <!-- Step 2: Business Information -->
       <div v-if="currentStep === 1" class="form-step">
         <h2>Tell Us About Your Business</h2>
         <p>This helps us provide more relevant recommendations</p>
@@ -96,7 +94,6 @@
         </div>
       </div>
 
-      <!-- Step 3: Technical Information -->
       <div v-if="currentStep === 2" class="form-step">
         <h2>Technical Details</h2>
         <p>Help us understand your current situation and technical expertise</p>
@@ -156,7 +153,6 @@
         </div>
         </div>
 
-      <!-- Navigation Buttons -->
       <div class="form-navigation">
         <button
           v-if="currentStep > 0"
@@ -259,15 +255,13 @@ export default {
       
       if (!url) return;
       
-      // Basic URL validation
       try {
         new URL(url);
       } catch {
         this.errors.websiteUrl = 'Please enter a valid URL';
         return;
       }
-      
-      // Check if URL is accessible
+
       this.urlValidation.checking = true;
       
       try {
@@ -316,7 +310,6 @@ export default {
     async handleSubmit() {
       if (!this.canSubmit) return;
       
-      // Final validation
       const eligibilityCheck = await this.performFinalEligibilityCheck();
       
       if (eligibilityCheck.eligible) {
@@ -347,7 +340,7 @@ export default {
         return await response.json();
       } catch (error) {
         console.error('Final eligibility check error:', error);
-        return { eligible: true }; // Allow to proceed if check fails
+        return { eligible: true }; 
       }
     },
     

@@ -48,7 +48,6 @@
           
           <p class="category-description">{{ category.description }}</p>
           
-          <!-- Issues for this category -->
           <div v-if="getCategoryIssues(category.key).length > 0" class="category-issues">
             <div 
               v-for="issue in getCategoryIssues(category.key)" 
@@ -120,7 +119,6 @@
       </div>
     </div>
 
-    <!-- Action Buttons -->
     <div class="action-buttons">
       <button @click="downloadReport" class="action-btn primary">
         📄 Download Full Report
@@ -133,7 +131,6 @@
       </button>
     </div>
 
-    <!-- Next Steps -->
     <div class="next-steps">
       <h3>Next Steps</h3>
       <div class="steps-grid">
@@ -224,7 +221,7 @@ export default {
           }
           return (b.impact || 0) - (a.impact || 0);
         })
-        .slice(0, 6); // Show top 6 recommendations
+        .slice(0, 6); 
     }
   },
   methods: {
@@ -292,7 +289,6 @@ export default {
           url: window.location.href
         });
       } else {
-        // Fallback to copying to clipboard
         const shareText = `I just analyzed my website with N15 Labs and got a score of ${this.results.overallScore}/100! Check it out: ${window.location.href}`;
         navigator.clipboard.writeText(shareText).then(() => {
           alert('Results copied to clipboard!');

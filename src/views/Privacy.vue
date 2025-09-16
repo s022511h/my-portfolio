@@ -34,9 +34,9 @@
           <h2 class="section-title">Overview</h2>
           <div class="content-card">
             <p class="intro-text">
-              N15 Labs ("we," "our," or "us") operates the website n15labs.com and provides web development 
+              N15 Labs ("we," "our," or "us") operates the website n15labs.co.uk and provides web development 
               services. This Privacy Policy explains how we collect, use, disclose, and safeguard your 
-              information when you visit our website or use our services.
+              information when you visit our website or use our services under UK GDPR.
             </p>
             
             <div class="key-points">
@@ -44,21 +44,21 @@
                 <div class="point-icon">🛡️</div>
                 <div>
                   <strong>Data Protection:</strong>
-                  <span>We comply with UK GDPR and handle your data responsibly</span>
+                  <span>We comply with UK GDPR and handle your data responsibly with clear lawful basis</span>
                 </div>
               </div>
               <div class="key-point">
                 <div class="point-icon">🔒</div>
                 <div>
                   <strong>Secure Storage:</strong>
-                  <span>Your personal information is encrypted and securely stored</span>
+                  <span>Your personal information is encrypted and securely stored with access controls</span>
                 </div>
               </div>
               <div class="key-point">
                 <div class="point-icon">⚡</div>
                 <div>
                   <strong>Your Rights:</strong>
-                  <span>You can access, modify, or delete your data at any time</span>
+                  <span>You can access, modify, or delete your data at any time under UK GDPR</span>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="privacy-section">
-          <h2 class="section-title">Information We Collect</h2>
+          <h2 class="section-title">Information We Collect and Lawful Basis</h2>
           
           <div class="subsection-grid">
             <div class="subsection-card">
@@ -81,6 +81,9 @@
                 <li>Project details and messages</li>
                 <li>Preferred contact methods and timing</li>
               </ul>
+              <div class="lawful-basis">
+                <strong>Lawful Basis:</strong> Consent (Article 6(1)(a) UK GDPR) - You provide explicit consent when submitting contact forms
+              </div>
             </div>
 
             <div class="subsection-card">
@@ -95,6 +98,9 @@
                 <li>Referral sources and search terms</li>
                 <li>User interactions and navigation patterns</li>
               </ul>
+              <div class="lawful-basis">
+                <strong>Lawful Basis:</strong> Legitimate interests (Article 6(1)(f) UK GDPR) - We have a legitimate interest in understanding website performance to improve user experience. Your privacy rights and freedoms do not override this interest.
+              </div>
             </div>
 
             <div class="subsection-card">
@@ -109,26 +115,26 @@
                 <li>Error logs and debugging information</li>
                 <li>Session data and user preferences</li>
               </ul>
+              <div class="lawful-basis">
+                <strong>Lawful Basis:</strong> Legitimate interests (Article 6(1)(f) UK GDPR) - Essential for website security, functionality, and performance optimization
+              </div>
             </div>
 
-            <div class="subsection-card future-plans">
-              <div class="future-badge">Future Plans</div>
-              <h3 class="subsection-title">Planned Data Collection</h3>
+            <div class="subsection-card">
+              <h3 class="subsection-title">Client Project Data</h3>
               <p class="subsection-text">
-                We may implement additional data collection features:
+                When providing web development services, we process:
               </p>
               <ul class="data-list">
-                <li>User accounts and authentication systems</li>
-                <li>Project management and client portals</li>
-                <li>Newsletter subscriptions and marketing preferences</li>
-                <li>Service usage analytics and performance monitoring</li>
-                <li>Customer feedback and satisfaction surveys</li>
-                <li>Payment and billing information (via secure processors)</li>
+                <li>Project requirements and specifications</li>
+                <li>Business information and content</li>
+                <li>Communication records and meeting notes</li>
+                <li>Payment and billing information</li>
+                <li>Project deliverables and documentation</li>
               </ul>
-              <p class="future-note">
-                <strong>Note:</strong> Any new data collection will be implemented with appropriate consent mechanisms 
-                and will be clearly communicated through updates to this policy.
-              </p>
+              <div class="lawful-basis">
+                <strong>Lawful Basis:</strong> Contract performance (Article 6(1)(b) UK GDPR) - Processing necessary to perform our contractual obligations and Legal obligation (Article 6(1)(c) UK GDPR) for accounting and tax purposes
+              </div>
             </div>
           </div>
         </div>
@@ -141,24 +147,28 @@
               <div class="usage-icon">📞</div>
               <h3>Communication</h3>
               <p>Respond to your inquiries, provide quotes, and manage ongoing projects and client relationships.</p>
+              <div class="usage-basis">Basis: Consent and Contract performance</div>
             </div>
             
             <div class="usage-card">
               <div class="usage-icon">🔧</div>
               <h3>Service Delivery</h3>
               <p>Deliver web development services, maintain project records, and provide technical support.</p>
+              <div class="usage-basis">Basis: Contract performance</div>
             </div>
             
             <div class="usage-card">
               <div class="usage-icon">📊</div>
               <h3>Website Improvement</h3>
               <p>Analyze website performance, user experience, and optimize content based on visitor behavior.</p>
+              <div class="usage-basis">Basis: Legitimate interests</div>
             </div>
             
             <div class="usage-card">
               <div class="usage-icon">⚖️</div>
               <h3>Legal Requirements</h3>
               <p>Comply with legal obligations, resolve disputes, and enforce our terms of service.</p>
+              <div class="usage-basis">Basis: Legal obligation</div>
             </div>
           </div>
         </div>
@@ -168,19 +178,20 @@
           
           <div class="content-card">
             <p class="intro-text">
-              We use cookies and similar technologies to enhance your browsing experience and analyze website performance.
+              We use cookies and similar technologies to enhance your browsing experience and analyze website performance. 
+              You can control these through our cookie banner and browser settings.
             </p>
             
             <div class="cookie-types">
               <div class="cookie-type">
                 <h4>Essential Cookies</h4>
-                <p>Required for basic website functionality, security, and user preferences. These cannot be disabled.</p>
+                <p>Required for basic website functionality, security, and user preferences. These cannot be disabled as they are necessary for the website to function.</p>
                 <span class="cookie-status required">Required</span>
               </div>
               
               <div class="cookie-type">
                 <h4>Analytics Cookies (GA4)</h4>
-                <p>Help us understand website usage patterns and improve user experience through data analysis.</p>
+                <p>Help us understand website usage patterns and improve user experience through data analysis. You can opt-out of these.</p>
                 <span class="cookie-status optional">Optional</span>
               </div>
               
@@ -192,20 +203,26 @@
             </div>
             
             <div class="cookie-control">
-              <p><strong>Cookie Control:</strong> You can manage cookie preferences through your browser settings. 
-              Disabling certain cookies may affect website functionality.</p>
+              <h4>Managing Your Cookie Preferences</h4>
+              <p><strong>Website Cookie Banner:</strong> You can accept or reject optional cookies through our cookie banner when you first visit our site.</p>
+              <p><strong>Changing Preferences:</strong> You can update your cookie preferences at any time by clearing your browser cookies and revisiting our site, or by contacting us directly.</p>
+              <p><strong>Browser Settings:</strong> You can also control cookies through your browser settings, though this may affect website functionality.</p>
+              <p><strong>Analytics Opt-out:</strong> To opt-out of Google Analytics specifically, you can use Google's opt-out tool at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a></p>
             </div>
           </div>
         </div>
 
         <div class="privacy-section">
-          <h2 class="section-title">Data Sharing and Third-Party Services</h2>
+          <h2 class="section-title">Data Sharing and International Transfers</h2>
           
           <div class="sharing-grid">
             <div class="sharing-card">
               <h3>Google Analytics 4</h3>
-              <p>Website analytics and performance monitoring</p>
+              <p>Website analytics and performance monitoring service</p>
               <div class="sharing-purpose">Analytics and website optimization</div>
+              <div class="transfer-info">
+                <strong>International Transfer:</strong> Data may be transferred to Google servers in the United States. Google LLC participates in the EU-US Data Privacy Framework, providing adequate protection for your data.
+              </div>
               <a href="https://policies.google.com/privacy" target="_blank" class="privacy-link">
                 View Google's Privacy Policy →
               </a>
@@ -215,25 +232,25 @@
               <h3>Email Service Providers</h3>
               <p>Secure email delivery and communication management</p>
               <div class="sharing-purpose">Business communication and support</div>
+              <div class="transfer-info">
+                <strong>Data Location:</strong> Email services may use servers in the UK and EU with appropriate safeguards.
+              </div>
             </div>
             
             <div class="sharing-card">
               <h3>Hosting Providers</h3>
               <p>Secure website hosting and data storage infrastructure</p>
               <div class="sharing-purpose">Website operation and data security</div>
-            </div>
-            
-            <div class="sharing-card future-plans">
-              <div class="future-badge">Future</div>
-              <h3>Additional Services</h3>
-              <p>CRM systems, payment processors, and project management tools</p>
-              <div class="sharing-purpose">Enhanced service delivery and client management</div>
+              <div class="transfer-info">
+                <strong>Data Location:</strong> Website hosted on servers with appropriate technical and organizational security measures.
+              </div>
             </div>
           </div>
           
           <div class="sharing-note">
             <p><strong>Important:</strong> We never sell your personal information to third parties. Data sharing 
-            is limited to trusted service providers who help us operate our business and serve you better.</p>
+            is limited to trusted service providers who help us operate our business and serve you better. All 
+            third-party processors are bound by data processing agreements ensuring they meet UK GDPR standards.</p>
           </div>
         </div>
 
@@ -244,7 +261,7 @@
             <div class="right-card">
               <div class="right-icon">👁️</div>
               <h3>Right to Access</h3>
-              <p>Request a copy of all personal data we hold about you, including how it's being used.</p>
+              <p>Request a copy of all personal data we hold about you, including how it's being used and on what lawful basis.</p>
             </div>
             
             <div class="right-card">
@@ -256,26 +273,37 @@
             <div class="right-card">
               <div class="right-icon">🗑️</div>
               <h3>Right to Erasure</h3>
-              <p>Request deletion of your personal data when it's no longer necessary for our services.</p>
+              <p>Request deletion of your personal data when it's no longer necessary for our services or you withdraw consent.</p>
             </div>
             
             <div class="right-card">
               <div class="right-icon">📋</div>
               <h3>Right to Portability</h3>
-              <p>Receive your personal data in a structured, machine-readable format for transfer.</p>
+              <p>Receive your personal data in a structured, machine-readable format for transfer to another service.</p>
             </div>
             
             <div class="right-card">
               <div class="right-icon">🚫</div>
               <h3>Right to Object</h3>
-              <p>Object to processing of your personal data for marketing or legitimate interest purposes.</p>
+              <p>Object to processing of your personal data for legitimate interests or direct marketing purposes.</p>
             </div>
             
             <div class="right-card">
               <div class="right-icon">⏸️</div>
               <h3>Right to Restrict</h3>
-              <p>Request temporary suspension of data processing while disputes are being resolved.</p>
+              <p>Request temporary suspension of data processing while disputes are being resolved or during objection reviews.</p>
             </div>
+          </div>
+          
+          <div class="consent-withdrawal">
+            <h3>Withdrawing Consent</h3>
+            <p>Where we process your data based on consent, you have the right to withdraw that consent at any time:</p>
+            <ul class="withdrawal-methods">
+              <li><strong>Contact Forms:</strong> Email us at dre_86@hotmail.co.uk to withdraw consent for future contact</li>
+              <li><strong>Analytics Cookies:</strong> Use browser settings or Google's opt-out tool to stop analytics tracking</li>
+              <li><strong>Marketing Communications:</strong> Unsubscribe links in emails or contact us directly</li>
+            </ul>
+            <p><em>Note: Withdrawing consent does not affect the lawfulness of processing based on consent before its withdrawal.</em></p>
           </div>
         </div>
 
@@ -290,28 +318,28 @@
                   <div class="security-icon">🔐</div>
                   <div>
                     <strong>Encryption:</strong>
-                    <span>All data transmitted and stored using industry-standard encryption protocols</span>
+                    <span>All data transmitted using HTTPS/TLS encryption and stored using industry-standard encryption protocols</span>
                   </div>
                 </div>
                 <div class="security-item">
                   <div class="security-icon">🛡️</div>
                   <div>
                     <strong>Access Control:</strong>
-                    <span>Strict access controls and authentication for all data handling</span>
+                    <span>Strict access controls, multi-factor authentication, and role-based permissions for all data handling</span>
                   </div>
                 </div>
                 <div class="security-item">
                   <div class="security-icon">📊</div>
                   <div>
                     <strong>Monitoring:</strong>
-                    <span>Continuous monitoring for security threats and unauthorized access</span>
+                    <span>Continuous monitoring for security threats, unauthorized access attempts, and data breaches</span>
                   </div>
                 </div>
                 <div class="security-item">
-                  <div class="security-icon">🔄</div>
+                  <div class="security-icon">💾</div>
                   <div>
                     <strong>Backups:</strong>
-                    <span>Regular secure backups to prevent data loss and ensure recovery</span>
+                    <span>Regular encrypted backups with secure storage to prevent data loss and ensure business continuity</span>
                   </div>
                 </div>
               </div>
@@ -322,19 +350,19 @@
               <div class="retention-grid">
                 <div class="retention-item">
                   <h4>Contact Form Data</h4>
-                  <p>Retained for up to 3 years or until you request deletion</p>
+                  <p>Retained for up to 3 years to maintain business relationships, or until you request deletion or withdraw consent</p>
                 </div>
                 <div class="retention-item">
                   <h4>Analytics Data</h4>
-                  <p>Anonymous analytics data retained according to Google's policies</p>
+                  <p>Anonymous analytics data retained for 26 months (Google Analytics default), then automatically deleted</p>
                 </div>
                 <div class="retention-item">
                   <h4>Project Records</h4>
-                  <p>Client project data retained for 7 years for legal and business purposes</p>
+                  <p>Client project data retained for 7 years for legal and business purposes, then securely deleted</p>
                 </div>
                 <div class="retention-item">
                   <h4>Marketing Data</h4>
-                  <p>Marketing preferences retained until you unsubscribe or request deletion</p>
+                  <p>Marketing preferences retained until you unsubscribe, request deletion, or withdraw consent</p>
                 </div>
               </div>
             </div>
@@ -354,10 +382,13 @@
                   <a href="mailto:dre_86@hotmail.co.uk?subject=Privacy Request">dre_86@hotmail.co.uk</a>
                 </div>
                 <div class="contact-item">
-                  <strong>Subject:</strong> Privacy Request
+                  <strong>Subject:</strong> Privacy Request - [specify your request type]
                 </div>
                 <div class="contact-item">
-                  <strong>Response Time:</strong> Within 30 days
+                  <strong>Response Time:</strong> Within 30 days (may be extended by 2 months for complex requests)
+                </div>
+                <div class="contact-item">
+                  <strong>ID Verification:</strong> We may request proof of identity to protect your personal data
                 </div>
               </div>
             </div>
@@ -395,6 +426,9 @@
                 <div class="authority-item">
                   <strong>Phone:</strong> 0303 123 1113
                 </div>
+                <div class="authority-item">
+                  <strong>Live Chat:</strong> Available on ICO website
+                </div>
               </div>
             </div>
           </div>
@@ -416,7 +450,7 @@
                   <div class="step-number">1</div>
                   <div class="step-content">
                     <strong>Email Notification:</strong>
-                    <span>We'll email registered users about important changes at least 30 days in advance</span>
+                    <span>We'll email existing clients about important changes at least 30 days in advance</span>
                   </div>
                 </div>
                 <div class="update-step">
@@ -452,7 +486,7 @@ export default {
   name: 'PrivacyPolicy',
   data() {
     return {
-      lastUpdated: 'September 14, 2025'
+      lastUpdated: 'September 16, 2025'
     }
   },
   methods: {
@@ -682,25 +716,6 @@ export default {
   border-color: #3b82f6;
 }
 
-.subsection-card.future-plans {
-  border: 2px solid #f59e0b;
-  background: linear-gradient(135deg, #fffbeb, #fefce8);
-}
-
-.future-badge {
-  position: absolute;
-  top: -0.5rem;
-  right: 1rem;
-  background: #f59e0b;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .subsection-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -717,7 +732,7 @@ export default {
 .data-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .data-list li {
@@ -734,14 +749,14 @@ export default {
   margin-right: 0.75rem;
 }
 
-.future-note {
-  margin-top: 1.5rem;
+.lawful-basis {
   padding: 1rem;
-  background: rgba(245, 158, 11, 0.1);
+  background: #f0f9ff;
   border-radius: 8px;
-  color: #92400e;
+  border-left: 4px solid #0ea5e9;
   font-size: 0.9375rem;
   line-height: 1.5;
+  color: #0c4a6e;
 }
 
 .usage-grid {
@@ -782,7 +797,17 @@ export default {
 .usage-card p {
   color: #6b7280;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1rem 0;
+}
+
+.usage-basis {
+  font-size: 0.875rem;
+  color: #059669;
+  font-weight: 600;
+  background: #f0fdf4;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
 }
 
 .cookie-types {
@@ -844,6 +869,33 @@ export default {
   border-left: 4px solid #8b5cf6;
 }
 
+.cookie-control h4 {
+  color: #111827;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cookie-control p {
+  margin-bottom: 0.75rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.cookie-control p:last-child {
+  margin-bottom: 0;
+}
+
+.cookie-control a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cookie-control a:hover {
+  text-decoration: underline;
+}
+
 .sharing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -865,11 +917,6 @@ export default {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   border-color: #3b82f6;
-}
-
-.sharing-card.future-plans {
-  border: 2px solid #f59e0b;
-  background: linear-gradient(135deg, #fffbeb, #fefce8);
 }
 
 .sharing-card h3 {
@@ -895,6 +942,17 @@ export default {
   text-align: center;
 }
 
+.transfer-info {
+  background: #fef3c7;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #f59e0b;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #92400e;
+}
+
 .privacy-link {
   color: #3b82f6;
   text-decoration: none;
@@ -918,6 +976,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .right-card {
@@ -953,6 +1012,48 @@ export default {
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
+}
+
+.consent-withdrawal {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.consent-withdrawal h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.consent-withdrawal p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.withdrawal-methods {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.withdrawal-methods li {
+  padding: 0.75rem 0;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  font-weight: 500;
+}
+
+.withdrawal-methods li:before {
+  content: '→';
+  color: #3b82f6;
+  font-weight: bold;
+  margin-right: 0.75rem;
 }
 
 .security-content {
