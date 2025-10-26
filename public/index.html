@@ -5,17 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
     
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://cdn.jsdelivr.net https://cdn.curator.io https://connect.facebook.net https://www.googletagmanager.com https://apis.google.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdn.curator.io;
-      img-src 'self' data: https: blob:;
-      media-src 'self' https://curator-assets.b-cdn.net;
-      font-src 'self' https://fonts.gstatic.com;
-      frame-src https://www.youtube.com https://n15labs.firebaseapp.com https://*.firebaseapp.com https://securetoken.googleapis.com;
-      <%= CSP_CONNECT_SRC %>;
-      object-src 'none';
-    ">
+    <!-- Content Security Policy - FIXED -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://cdn.jsdelivr.net https://cdn.curator.io https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdn.curator.io; img-src 'self' data: https: blob:; media-src 'self' https://curator-assets.b-cdn.net; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com https://n15labs.firebaseapp.com https://*.firebaseapp.com https://securetoken.googleapis.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://my-portfolio-backend-production-9cc8.up.railway.app https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firebaseinstallations.googleapis.com ws://localhost:* wss://localhost:*; object-src 'none';">
     
     <meta name="description" content="Andre Simpson - Full Stack Developer specializing in Vue.js and Node.js. Building performance-first websites for businesses in Stoke-on-Trent and beyond." />
     <meta name="robots" content="index, follow" />
@@ -26,8 +17,8 @@
     <meta property="og:description" content="Freelance website developer based in Stoke-on-Trent, UK. I build fast, SEO-optimised websites using Vue.js, Node.js and modern tools.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://n15labs.co.uk">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com;">
-     <!-- FAVICONS (root-relative, no template vars) -->
+    
+    <!-- FAVICONS (root-relative, no template vars) -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
 
