@@ -22,7 +22,7 @@
     <form @submit.prevent="handleSubmit" class="form-content">
       <div v-if="currentStep === 0" class="form-step">
         <h2>Enter Your Website URL</h2>
-        <p>We'll analyze your website's performance, SEO, and security</p>
+        <p>We'll analyse your website's performance, SEO, and security</p>
         
         <div class="form-group">
           <label for="websiteUrl">Website URL</label>
@@ -30,7 +30,7 @@
             id="websiteUrl"
             v-model="formData.websiteUrl"
             type="url"
-            placeholder="https://n15labs.co.uk"
+            placeholder="https://example.com"
             class="form-input"
             :class="{ error: errors.websiteUrl }"
             @input="validateUrl"
@@ -132,26 +132,28 @@
           </select>
         </div>
       </div>
+
       <div v-if="currentStep === 3" class="form-step">
         <h2>Contact Information</h2>
         <p>We'll send your audit report to this email address</p>
         
         <div class="form-group">
-            <label for="email">Email Address</label>
-            <input
+          <label for="email">Email Address</label>
+          <input
             id="email"
             v-model="formData.email"
             type="email"
             placeholder="your@email.com"
             class="form-input"
             :class="{ error: errors.email }"
+            @input="validateEmail"
             required
-            />
-            <div v-if="errors.email" class="error-message">
+          />
+          <div v-if="errors.email" class="error-message">
             {{ errors.email }}
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
 
       <div class="form-navigation">
         <button
@@ -159,6 +161,7 @@
           type="button"
           @click="previousStep"
           class="nav-btn prev-btn"
+          aria-label="Go to previous step"
         >
           Previous
         </button>
@@ -169,6 +172,7 @@
           @click="nextStep"
           :disabled="!canProceed"
           class="nav-btn next-btn"
+          aria-label="Go to next step"
         >
           Next
         </button>
@@ -178,9 +182,10 @@
           type="submit"
           :disabled="!canSubmit || loading"
           class="nav-btn submit-btn"
+          aria-label="Start analysis"
         >
           <span v-if="!loading">Start Analysis</span>
-          <span v-else>Validating...</span>
+          <span v-else>Analyzing...</span>
         </button>
       </div>
     </form>
@@ -230,6 +235,9 @@ export default {
     }
   },
   computed: {
+    apiUrl() {
+      return process.env.VUE_APP_API_URL || 'http://localhost:5000/api';
+    },
     canProceed() {
       switch (this.currentStep) {
         case 0:
@@ -238,13 +246,21 @@ export default {
           return this.formData.businessType && this.formData.websiteGoals.length > 0;
         case 2:
           return this.formData.trafficVolume && this.formData.technicalLevel;
+        case 3:
+          return this.formData.email && !this.errors.email;
         default:
           return false;
       }
     },
-    
     canSubmit() {
-      return this.canProceed && this.currentStep === this.steps.length - 1;
+      return this.formData.websiteUrl && 
+             this.formData.businessType && 
+             this.formData.websiteGoals.length > 0 &&
+             this.formData.trafficVolume &&
+             this.formData.technicalLevel &&
+             this.formData.email && 
+             !this.errors.email &&
+             this.urlValidation.valid;
     }
   },
   methods: {
@@ -265,7 +281,9 @@ export default {
       this.urlValidation.checking = true;
       
       try {
-        const response = await fetch(`${process.env.VUE_APP_API_URL}/audit/validate-url`, {
+        console.log('API URL:', this.apiUrl);
+        console.log('Validating URL:', url);
+        const response = await fetch(`${this.apiUrl}/audit/validate-url`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -292,6 +310,19 @@ export default {
         this.errors.websiteUrl = 'Unable to validate website URL';
       } finally {
         this.urlValidation.checking = false;
+      }
+    },
+    
+    validateEmail() {
+      const email = this.formData.email;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!email) {
+        this.errors.email = '';
+      } else if (!emailRegex.test(email)) {
+        this.errors.email = 'Please enter a valid email address';
+      } else {
+        this.errors.email = '';
       }
     },
     
@@ -326,7 +357,7 @@ export default {
     
     async performFinalEligibilityCheck() {
       try {
-        const response = await fetch(`${process.env.VUE_APP_API_URL}/audit/final-eligibility`, {
+        const response = await fetch(`${this.apiUrl}/audit/final-eligibility`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -340,7 +371,7 @@ export default {
         return await response.json();
       } catch (error) {
         console.error('Final eligibility check error:', error);
-        return { eligible: true }; 
+        return { eligible: true };
       }
     },
     

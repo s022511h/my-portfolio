@@ -11,7 +11,7 @@
         
         <div class="logo-block">
           <img
-            :src="require('@/assets/webp/logo-n15labs-white.webp')"
+            :src="require('@/assets/webp/logo-n15labs-white_comp.webp')"
             alt="N15 Labs Footer Logo"
             class="footer-logo"
             width="120"
@@ -60,7 +60,7 @@
         <div class="legal-links">
           <router-link to="/privacy" class="legal-link">Privacy Policy</router-link>
           <router-link to="/terms" class="legal-link">Terms of Service</router-link>
-          <button @click="showCookieSettings" class="cookie-settings-btn">
+          <button @click="showCookieSettings" class="cookie-settings-btn" aria-label="cookie-settings">
             Cookie Settings
           </button>
         </div>
@@ -131,7 +131,7 @@ export default {
   align-items: center;
   gap: 0.75rem;
   font-size: 1.125rem;
-  color: #d4d4d8;
+  color: #f4f4f5;
   font-weight: 500;
   text-decoration: none;
   padding: 1rem 1.5rem;
@@ -227,7 +227,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: #d4d4d8;
+  color: #f4f4f5;
   text-decoration: none;
   padding: 1rem 1.5rem;
   border-radius: 12px;
@@ -323,7 +323,7 @@ export default {
 }
 
 .legal-link.router-link-active {
-  color: #d4d4d8;
+  color: #f4f4f5;
   background: rgba(156, 163, 175, 0.05);
   border-color: rgba(156, 163, 175, 0.3);
 }

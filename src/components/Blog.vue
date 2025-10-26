@@ -37,6 +37,7 @@
                 'filter-tag',
                 selectedTag === tag ? 'active' : ''
               ]"
+              :aria-pressed="selectedTag === tag"
             >
               {{ tag }}
             </button>
@@ -74,7 +75,7 @@
               
               <div class="post-footer">
                 <span class="read-time">{{ post.readTime }} min read</span>
-                <button class="read-more-btn">
+                <button class="read-more-btn" aria-label="Read more about {{ post.title }}">
                   Read More →
                 </button>
               </div>
@@ -108,7 +109,7 @@
       <div class="modal-container">
         <div class="modal-header">
           <h2 class="modal-title">{{ selectedPost.title }}</h2>
-          <button @click="closePost" class="modal-close">
+          <button @click="closePost" class="modal-close" aria-label="Close post">
             <svg viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
@@ -137,7 +138,7 @@
 
 <script>
 import codexBuilderImage from '@/assets/webp/codex-builder.webp';
-import n15LogoImage from '@/assets/webp/logo-n15labs.webp';
+import n15LogoImage from '@/assets/webp/logo-n15labs_comp.webp';
 import AIimageAR from '@/assets/webp/ai-a&r.webp';  
 
 export default {

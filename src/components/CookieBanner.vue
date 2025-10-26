@@ -2,21 +2,21 @@
   <div v-if="showBanner" class="cookie-banner">
     <div class="cookie-content">
       <h3>Cookie Settings</h3>
-      <p>We use cookies to improve your experience and analyze website usage. You can manage your preferences below. For more information, see our <router-link to="/privacy" class="privacy-link-inline">Privacy Policy</router-link>.</p>
+      <p>We use cookies to improve your experience and analyse website usage. You can manage your preferences below. For more information, see our <router-link to="/privacy" class="privacy-link-inline">Privacy Policy</router-link>.</p>
       
       <div class="cookie-categories">
         <label class="cookie-option">
-          <input type="checkbox" v-model="consents.necessary" disabled checked>
+          <input type="checkbox" v-model="consents.necessary" disabled checked aria-label="Necessary cookies">
           <span><strong>Necessary</strong> - Required for site functionality (cannot be disabled)</span>
         </label>
         
         <label class="cookie-option">
-          <input type="checkbox" v-model="consents.analytics">
-          <span><strong>Analytics</strong> - Google Analytics to understand site usage. Data is anonymized and transferred to Google's servers in the USA.</span>
+          <input type="checkbox" v-model="consents.analytics" aria-label="Analytics cookies">
+          <span><strong>Analytics</strong> - Google Analytics to understand site usage. Data is anonymised and transferred to Google's servers in the USA.</span>
         </label>
         
         <label class="cookie-option">
-          <input type="checkbox" v-model="consents.marketing">
+          <input type="checkbox" v-model="consents.marketing" aria-label="Marketing cookies">
           <span><strong>Marketing</strong> - Social media content feeds and marketing cookies</span>
         </label>
       </div>
@@ -27,9 +27,9 @@
       </div>
       
       <div class="cookie-actions">
-        <button @click="acceptAll" class="btn-accept">Accept All</button>
-        <button @click="savePreferences" class="btn-save">Save Preferences</button>
-        <button @click="declineAll" class="btn-decline">Decline All</button>
+        <button @click="acceptAll" class="btn-accept" aria-label="Accept all cookies">Accept All</button>
+        <button @click="savePreferences" class="btn-save" aria-label="Save cookie preferences">Save Preferences</button>
+        <button @click="declineAll" class="btn-decline" aria-label="Decline all cookies">Decline All</button>
       </div>
       
       <div class="cookie-links">
@@ -127,7 +127,7 @@ export default {
           'analytics_storage': this.consents.analytics ? 'granted' : 'denied',
           'ad_storage': this.consents.marketing ? 'granted' : 'denied',
           'ad_user_data': this.consents.marketing ? 'granted' : 'denied',
-          'ad_personalization': this.consents.marketing ? 'granted' : 'denied',
+          'ad_personalisation': this.consents.marketing ? 'granted' : 'denied',
           'functionality_storage': 'granted',
           'security_storage': 'granted'
         })
@@ -258,7 +258,7 @@ export default {
 }
 
 .cookie-option span {
-  color: #e5e7eb;
+  color: #f4f4f5;
   font-size: 0.95rem;
   line-height: 1.5;
 }

@@ -3,7 +3,9 @@
     <AnimatedIntro v-if="showIntro" @enter="handleEnter" />
     <div v-else>
       <AppHeader />
-      <router-view style="flex: 1;" />
+      <main id="main-content">
+        <router-view style="flex: 1;" />
+      </main>
       <AppFooter @show-cookie-settings="showCookieSettings" />
     </div>
     
@@ -145,6 +147,23 @@ body {
 
 .router-view {
   flex: 1;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 9999;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Mobile header spacing */

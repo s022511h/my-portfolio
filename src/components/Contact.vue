@@ -30,7 +30,7 @@
             <ul class="option-features">
               <li>Core Web Vitals analysis</li>
               <li>Competitor comparison</li>
-              <li>Conversion optimization roadmap</li>
+              <li>Conversion optimisation roadmap</li>
             </ul>
           </div>
           
@@ -55,10 +55,18 @@
           <p>Tell me about your project and I'll respond within 24 hours with next steps.</p>
         </div>
 
-        <form @submit.prevent="submitForm" class="contact-form">
+        <form 
+          @submit.prevent="submitForm" 
+          class="contact-form"
+          aria-label="Contact form"
+          novalidate
+        >
           <div class="form-grid">
             <div class="form-group">
-              <label for="name">Full Name *</label>
+              <label for="name">
+                Full Name 
+                <span aria-label="required">*</span>
+              </label>
               <input 
                 id="name" 
                 v-model="form.name" 
@@ -68,7 +76,14 @@
                 :class="{ 'error': errors.name }"
                 @blur="validateField('name')"
               />
-              <span v-if="errors.name" class="error-message">{{ errors.name }}</span>
+              <span 
+                v-if="errors.name" 
+                class="error-message" 
+                role="alert" 
+                aria-live="polite"
+              >
+                {{ errors.name }}
+              </span>
             </div>
 
             <div class="form-group">
@@ -120,7 +135,7 @@
               <option value="new-website">New Website Project</option>
               <option value="website-redesign">Website Redesign</option>
               <option value="custom-tool">Custom Tool/Application</option>
-              <option value="performance-optimization">Performance Optimization</option>
+              <option value="performance-optimisation">Performance Optimisation</option>
               <option value="consultation">General Consultation</option>
               <option value="other">Other</option>
             </select>
@@ -179,7 +194,7 @@
           </div>
 
           <div class="form-actions">
-            <button type="submit" class="submit-btn" :disabled="submitting">
+            <button type="submit" class="submit-btn" :disabled="submitting" aria-label="Submit form">
               <span v-if="!submitting">
                 {{ form.projectType === 'audit' ? 'Request Free Audit' : 'Send Message' }}
               </span>
@@ -321,7 +336,7 @@ export default {
       faqs: [
         {
           question: "What's included in the free £500 audit?",
-          answer: "Comprehensive performance analysis, Core Web Vitals assessment, competitor comparison, SEO review, and detailed optimization recommendations with priority rankings."
+          answer: "Comprehensive performance analysis, Core Web Vitals assessment, competitor comparison, SEO review, and detailed optimisation recommendations with priority rankings."
         },
         {
           question: "How long does a typical project take?",
@@ -421,7 +436,7 @@ export default {
           })
           
           if (this.form.projectType === 'audit') {
-            alert('Thank you for requesting your free audit! I\'ll analyze your website and send you a comprehensive report within 48 hours.')
+            alert('Thank you for requesting your free audit! I\'ll analyse your website and send you a comprehensive report within 48 hours.')
           } else {
             alert('Message sent successfully! I\'ll get back to you within 24 hours to discuss your project.')
           }

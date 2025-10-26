@@ -3,23 +3,26 @@
     <div class="logo-container">
       <router-link to="/" class="logo-link" aria-label="Go to homepage">
         <img
-          :src="require('@/assets/webp/logo-n15labs-white.webp')"
+          :src="require('@/assets/webp/logo-n15labs-white_comp.webp')"
           alt="N15 Labs Logo"
           class="logo"
-          loading="lazy"
+          loading="eager"
+          width="110"
+          height="110"
+          fetchpriority="high"
         />
       </router-link>
       <h1 class="brand">N15 Labs</h1>
     </div>
 
-    <nav class="nav-links desktop-only">
+    <nav class="nav-links desktop-only" aria-label="Main navigation">
       <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/portfolio">Skills</router-link>
-      <router-link to="/projects">Projects</router-link>
+      <router-link to="/launch-sites" class="launch-link">£600 Websites</router-link>
+      <router-link to="/audit" class="audit-link">Free Audit</router-link>
       <router-link to="/services">Services</router-link>
+      <router-link to="/projects">Projects</router-link>
+      <router-link to="/about">About</router-link>
       <router-link to="/blog">Blog</router-link>
-      <router-link to="/cv">CV</router-link>
       <router-link to="/contact">Contact</router-link>
       
       <div v-if="!authStore.isAuthenticated" class="auth-links">
@@ -31,9 +34,10 @@
           {{ authStore.user?.firstName }} {{ authStore.user?.lastName }}
         </router-link>
         <router-link 
-          v-if="authStore.user?.id === 1" 
+          v-if="authStore.user?.isAdmin" 
           to="/admin" 
           class="user-link admin-link"
+          aria-label="Go to admin dashboard"
         >
           Admin Dashboard
         </router-link>
@@ -47,17 +51,28 @@
 
     <transition name="fade">
       <div v-if="menuOpen" class="mobile-menu-overlay">
-        <div class="mobile-menu">
+        <div class="mobile-menu" role="navigation" aria-label="Mobile menu">
           <button class="close-menu" @click="menuOpen = false" aria-label="Close Menu">
             <svg viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </button>
+          
+          <!-- Featured Mobile Links -->
+          <div class="mobile-featured">
+            <router-link @click="handleNavClick" to="/launch-sites" class="mobile-launch-link">
+              🚀 £600 Websites in 7 Days
+            </router-link>
+            <router-link @click="handleNavClick" to="/audit" class="mobile-audit-link">
+              📊 Free Website Audit
+            </router-link>
+          </div>
+          
           <router-link @click="handleNavClick" to="/">Home</router-link>
+          <router-link @click="handleNavClick" to="/services">Services</router-link>
+          <router-link @click="handleNavClick" to="/projects">Projects</router-link>
           <router-link @click="handleNavClick" to="/about">About</router-link>
           <router-link @click="handleNavClick" to="/portfolio">Skills</router-link>
-          <router-link @click="handleNavClick" to="/projects">Projects</router-link>
-          <router-link @click="handleNavClick" to="/services">Services</router-link>
           <router-link @click="handleNavClick" to="/blog">Blog</router-link>
           <router-link @click="handleNavClick" to="/cv">CV</router-link>
           <router-link @click="handleNavClick" to="/contact">Contact</router-link>
@@ -71,10 +86,11 @@
               My Profile
             </router-link>
             <router-link 
-              v-if="authStore.user?.id === 1"
+              v-if="authStore.user?.isAdmin"
               @click="handleNavClick" 
               to="/admin" 
               class="mobile-user-link admin-link"
+              aria-label="Go to admin dashboard"
             >
               Admin Dashboard
             </router-link>
@@ -137,7 +153,6 @@ export default {
   box-sizing: border-box;
 }
 
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -183,7 +198,7 @@ export default {
 }
 
 .nav-links a {
-  color: #d4d4d8;
+  color: #f4f4f5;
   font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
@@ -205,6 +220,36 @@ export default {
   background: rgba(59, 130, 246, 0.15);
 }
 
+/* Special styling for Launch Sites link */
+.launch-link {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.launch-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Special styling for Audit link */
+.audit-link {
+  border: 2px solid #3b82f6 !important;
+  color: #3b82f6 !important;
+  font-weight: 600 !important;
+}
+
+.audit-link:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: white !important;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -222,6 +267,12 @@ export default {
   width: 80%;
 }
 
+/* Don't show underline for special buttons */
+.launch-link::after,
+.audit-link::after {
+  display: none !important;
+}
+
 .auth-links {
   display: flex;
   align-items: center;
@@ -230,7 +281,7 @@ export default {
 }
 
 .auth-link {
-  color: #d4d4d8;
+  color: #f4f4f5;
   font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
@@ -381,6 +432,51 @@ export default {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Mobile Featured Links */
+.mobile-featured {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #374151;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-launch-link {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 1rem !important;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 1.125rem !important;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.mobile-launch-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
+}
+
+.mobile-audit-link {
+  border: 2px solid #3b82f6 !important;
+  color: #3b82f6 !important;
+  background: rgba(59, 130, 246, 0.1) !important;
+  font-weight: 700 !important;
+  padding: 1rem !important;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 1.125rem !important;
+  text-decoration: none;
+}
+
+.mobile-audit-link:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: white !important;
+}
+
 .mobile-menu a {
   font-size: 1.125rem;
   color: #ffffff;
@@ -525,6 +621,12 @@ export default {
     padding: 0.5rem 0.5rem;
   }
   
+  .launch-link,
+  .audit-link {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
   .auth-links {
     gap: 0.5rem;
   }
@@ -545,9 +647,24 @@ export default {
     padding: 0.5rem 0.375rem;
   }
   
+  .launch-link,
+  .audit-link {
+    padding: 0.5rem 0.625rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
   .auth-link {
     font-size: 0.8125rem;
     padding: 0.375rem 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Hide CV and Blog on smaller screens to make room */
+  .nav-links a[href="/cv"],
+  .nav-links a[href="/blog"],
+  .nav-links a[href="/portfolio"] {
+    display: none;
   }
 }
 
@@ -556,7 +673,6 @@ export default {
     padding: 1rem 1.5rem;
     height: 90px;
   }
-  
   
   .logo-container {
     gap: 0.75rem;
@@ -613,6 +729,12 @@ export default {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
   }
+  
+  .mobile-launch-link,
+  .mobile-audit-link {
+    font-size: 1rem !important;
+    padding: 0.75rem !important;
+  }
 }
 
 .home-container {
@@ -652,6 +774,11 @@ export default {
   
   .nav-links a::after {
     transition: none;
+  }
+  
+  @keyframes subtle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 1; }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,12 +26,27 @@
     <meta property="og:description" content="Freelance website developer based in Stoke-on-Trent, UK. I build fast, SEO-optimised websites using Vue.js, Node.js and modern tools.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://n15labs.co.uk">
-    <meta property="og:image" content="https://n15labs.co.uk/img/logo-n15labs.webp">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com;">
+     <!-- FAVICONS (root-relative, no template vars) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+
+    <!-- Apple iOS icon -->
+    <link rel="apple-touch-icon" href="/logo-192.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <!-- Open Graph / SEO (absolute URL still best for crawlers) -->
+    <meta property="og:image" content="https://n15labs.co.uk/logo-512.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-24LMEN7WRQ"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.1.4/src/lite-yt-embed.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <title>Andre Simpson - Full Stack Developer | N15 Labs</title>
     

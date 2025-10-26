@@ -1,7 +1,7 @@
 <template>
   <div class="capture-overlay" @click="handleOverlayClick">
     <div class="capture-panel" @click.stop>
-      <button @click="$emit('close')" class="close-btn">✕</button>
+      <button @click="$emit('close')" class="close-btn" aria-label="Close panel">✕</button>
       
       <div v-if="isEligible" class="capture-content">
         <div class="capture-header">
@@ -34,6 +34,7 @@
             @click="handleLoggedInCapture" 
             :disabled="capturing"
             class="capture-btn primary"
+            aria-label="Send me updates"
           >
             <span v-if="!capturing">Yes, Send Me Updates!</span>
             <span v-else>Updating Preferences...</span>
@@ -60,7 +61,7 @@
             </div>
             <div class="benefit-item">
               <span class="benefit-icon">💡</span>
-              <span>Monthly Optimization Tips</span>
+              <span>Monthly Optimisation Tips</span>
             </div>
             <div class="benefit-item">
               <span class="benefit-icon">🔧</span>
@@ -121,6 +122,7 @@
               type="submit" 
               :disabled="capturing || !canSubmit"
               class="capture-btn primary"
+              aria-label="Get my audit report"
             >
               <span v-if="!capturing">Get My Audit Report</span>
               <span v-else>Sending Report...</span>
@@ -136,8 +138,8 @@
       
       <div v-else class="capture-content">
         <div class="capture-header">
-          <h3>Get Personalized Website Advice</h3>
-          <p>Plus tool updates and optimization strategies</p>
+          <h3>Get Personalised Website Advice</h3>
+          <p>Plus tool updates and optimisation strategies</p>
         </div>
         
         <div class="ineligible-message">
@@ -150,7 +152,7 @@
               ✅ Website performance guides
             </div>
             <div class="benefit-item">
-              ✅ Monthly optimization tips
+              ✅ Monthly optimisation tips
             </div>
             <div class="benefit-item">
               ✅ Early access to new tools
@@ -196,6 +198,7 @@
             type="submit" 
             :disabled="capturing"
             class="capture-btn primary"
+            aria-label="Get website improvement tips"
           >
             <span v-if="!capturing">Get Website Improvement Tips</span>
             <span v-else>Subscribing...</span>
@@ -203,7 +206,7 @@
         </form>
         
         <div class="consent-note">
-          <p>You'll receive helpful website optimization content. Unsubscribe anytime.</p>
+          <p>You'll receive helpful website optimisation content. Unsubscribe anytime.</p>
         </div>
       </div>
       

@@ -1,4 +1,49 @@
+# N15 Labs - Robots.txt
+# Updated: October 2025
+
 User-agent: *
 Allow: /
 
+# Disallow authentication and admin pages from crawlers
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /admin
+Disallow: /verify-email
+Disallow: /forgot-password
+
+# Allow important service pages
+Allow: /launch-sites
+Allow: /audit
+Allow: /services
+Allow: /portfolio
+Allow: /projects
+Allow: /contact
+Allow: /about
+Allow: /blog
+
+# Prevent indexing of specific resources
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+
+# Crawl delay for polite crawlers
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://n15labs.co.uk/sitemap.xml
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: AhrefsBot
+Crawl-delay: 5
+
+User-agent: SemrushBot
+Crawl-delay: 5

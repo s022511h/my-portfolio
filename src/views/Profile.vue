@@ -214,7 +214,7 @@
 
 <script>
 import { authStore } from '../stores/firebaseAuth.js'
-import { getStoredConsents, getComplianceLogs, deleteAllStoredData } from '../utils/analytics.js'
+import { getStoredConsents, deleteAllStoredData } from '../utils/analytics.js'
 
 export default {
   name: 'UserProfile',

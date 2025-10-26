@@ -19,7 +19,7 @@
         </h1>
         
         <p class="hero-subhead">
-          I help businesses and individuals build modern web applications, optimize workflows, 
+          I help businesses and individuals build modern web applications, optimise workflows, 
           and implement technical solutions that drive real results.
         </p>
       </div>
@@ -33,7 +33,7 @@
             <h3 class="service-title">Full-Stack Web Development</h3>
             <p class="service-description">
               Custom web applications built with modern frameworks like Vue.js, React, and Next.js. 
-              From concept to deployment, I create responsive, accessible, and performance-optimized solutions.
+              From concept to deployment, I create responsive, accessible, and performance-optimised solutions.
             </p>
             <ul class="service-features">
               <li>Single Page Applications (SPAs)</li>
@@ -56,22 +56,22 @@
               <li>CSV/Excel data processing</li>
               <li>API integrations and data syncing</li>
               <li>Reporting and analytics dashboards</li>
-              <li>Database design and optimization</li>
+              <li>Database design and optimisation</li>
             </ul>
           </div>
 
           <div class="service-card">
             <div class="service-icon">📊</div>
-            <h3 class="service-title">SEO & Digital Optimization</h3>
+            <h3 class="service-title">SEO & Digital Optimisation</h3>
             <p class="service-description">
-              Improve your online presence with technical SEO implementations, performance optimization, 
+              Improve your online presence with technical SEO implementations, performance optimisation, 
               and content management tools that drive organic growth.
             </p>
             <ul class="service-features">
               <li>Technical SEO audits and fixes</li>
-              <li>Page speed optimization</li>
+              <li>Page speed optimisation</li>
               <li>Google Analytics & GA4 setup</li>
-              <li>Content optimization tools</li>
+              <li>Content optimisation tools</li>
               <li>Local SEO and schema markup</li>
             </ul>
           </div>
@@ -747,7 +747,7 @@ export default {
 .cta-secondary {
   display: inline-flex;
   align-items: center;
-  color: #d4d4d8;
+  color: #f4f4f5;
   padding: 1.25rem 2rem;
   border: 1px solid #374151;
   border-radius: 12px;

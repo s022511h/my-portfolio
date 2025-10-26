@@ -194,7 +194,9 @@ export default {
     }
   },
   async mounted() {
-    if (!authStore.isAuthenticated || authStore.user?.id !== 1) {
+    // ✅ UPDATED: Check isAdmin instead of user.id === 1
+    if (!authStore.isAuthenticated || !authStore.user?.isAdmin) {
+      console.log('❌ Not admin, redirecting to profile');
       this.$router.push('/profile');
       return;
     }

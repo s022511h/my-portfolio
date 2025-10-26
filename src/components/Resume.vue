@@ -25,20 +25,20 @@
         
         <div class="contact-details">
           <div class="contact-item">
-            <svg viewBox="0 0 20 20" fill="currentColor">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
             <span>dre_86@hotmail.co.uk</span>
           </div>
           <div class="contact-item">
-            <svg viewBox="0 0 20 20" fill="currentColor">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             <span>07931 206686</span>
           </div>
           <div class="contact-item">
-            <svg viewBox="0 0 20 20" fill="currentColor">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
             </svg>
             <span>Stoke-on-Trent, UK</span>
@@ -46,8 +46,8 @@
         </div>
 
         <div class="hero-actions">
-          <button @click="downloadCV" class="cta-primary">
-            <svg viewBox="0 0 20 20" fill="currentColor">
+          <button @click="downloadCV" class="cta-primary" aria-label="Download CV PDF">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
             Download CV PDF
@@ -439,7 +439,7 @@ export default {
 .cta-secondary {
   display: inline-flex;
   align-items: center;
-  color: #d4d4d8;
+  color: #f4f4f5;
   padding: 1.25rem 2rem;
   border: 1px solid #374151;
   border-radius: 12px;

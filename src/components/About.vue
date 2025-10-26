@@ -45,7 +45,7 @@
               
               <p class="story-paragraph">
                 Today, I combine my creative background with technical expertise to build full-stack applications 
-                that are both functional and engaging. I specialize in full-stack development, and modern web 
+                that are both functional and engaging. I specialise in full-stack development, and modern web 
                 technologies, with a growing interest in AI integration and automation.
               </p>
             </div>
@@ -70,7 +70,7 @@
             <div class="value-icon">🚀</div>
             <h3 class="value-title">Performance-First Mindset</h3>
             <p class="value-description">
-              Every line of code I write is optimized for speed and efficiency. I believe fast websites 
+              Every line of code I write is optimised for speed and efficiency. I believe fast websites 
               create better user experiences and drive real business results.
             </p>
           </div>
@@ -117,7 +117,7 @@
             </div>
             <p class="achievement-description">
               Graduated from Staffordshire University with strong marks in Web Development (77%) 
-              and Final Year Project (70%). Specialized in modern web frameworks and full-stack development.
+              and Final Year Project (70%). Specialised in modern web frameworks and full-stack development.
             </p>
           </div>
           

@@ -31,11 +31,13 @@
                 @click="prevSneaktrackImage" 
                 :disabled="sneaktrackImageIndex === 0"
                 class="control-btn"
+                aria-label="Previous image"
               >‹</button>
               <button 
                 @click="nextSneaktrackImage" 
                 :disabled="sneaktrackImageIndex === sneaktrackImages.length - 1"
                 class="control-btn"
+                aria-label="Next image"
               >›</button>
             </div>
           </div>
@@ -87,11 +89,13 @@
                 @click="prevKeywordImage" 
                 :disabled="keywordImageIndex === 0"
                 class="control-btn"
+                aria-label="Previous image"
               >‹</button>
               <button 
                 @click="nextKeywordImage" 
                 :disabled="keywordImageIndex === keywordImages.length - 1"
                 class="control-btn"
+                aria-label="Next image"
               >›</button>
             </div>
           </div>
@@ -132,11 +136,13 @@
                 @click="prevSalesTrackerImage" 
                 :disabled="salesTrackerImageIndex === 0"
                 class="control-btn"
+                aria-label="Previous image"
               >‹</button>
               <button 
                 @click="nextSalesTrackerImage" 
                 :disabled="salesTrackerImageIndex === salesTrackerImages.length - 1"
                 class="control-btn"
+                aria-label="Next image"
               >›</button>
             </div>
           </div>
@@ -176,8 +182,8 @@
     </div>
 
     <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
-      <button class="modal-close" @click="closeModal">
-        <svg viewBox="0 0 20 20" fill="currentColor">
+      <button class="modal-close" @click="closeModal" aria-label="Close modal">
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
           <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </button>
@@ -187,6 +193,7 @@
           :src="currentModalImages[modalImageIndex]"
           :alt="'Project image ' + (modalImageIndex + 1)"
           class="modal-image"
+          loading="lazy"
         />
         
         <div class="modal-controls" v-if="currentModalImages.length > 1">
@@ -194,8 +201,9 @@
             @click="prevModalImage" 
             :disabled="modalImageIndex === 0"
             class="modal-nav-btn"
+            aria-label="Previous image"
           >
-            <svg viewBox="0 0 20 20" fill="currentColor">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
           </button>
@@ -206,8 +214,9 @@
             @click="nextModalImage" 
             :disabled="modalImageIndex === currentModalImages.length - 1"
             class="modal-nav-btn"
+            aria-label="Next image"
           >
-            <svg viewBox="0 0 20 20" fill="currentColor">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
             </svg>
           </button>

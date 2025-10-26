@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <section class="hero-section">
+    <section class="hero-section" aria-label="Hero banner">
       <div class="hero-background">
         <div class="floating-particles">
           <div class="particle" v-for="n in 6" :key="n" :style="getParticleStyle(n)"></div>
@@ -15,39 +15,47 @@
           </div>
           
           <h1 class="hero-headline">
-            Building <span class="gradient-text">Performance-First</span><br>
-            Websites That Convert
+            <span class="gradient-text">Digital Marketing</span> &<br>
+            Performance Websites
           </h1>
           
           <p class="hero-subhead">
-            Full-stack developer specializing fast solutions and accessible applications. I create fast, 
-            conversion-optimized websites for ambitious businesses, within Stoke-on-Trent and beyond.
+            Freelance Digital Marketer, SEO Specialist & Full-Stack Developer. I help Stoke-on-Trent businesses 
+            grow online with fast websites, strategic SEO, and conversion-focused marketing.
           </p>
 
           <div class="hero-stats">
             <div class="stat-item">
-              <strong>&lt;4s</strong>
-              <span>Load Time</span>
+              <strong>SEO</strong>
+              <span>Specialist</span>
             </div>
             <div class="stat-item">
-              <strong>100%</strong>
-              <span>Custom Code</span>
+              <strong>14-Day</strong>
+              <span>Websites</span>
             </div>
             <div class="stat-item">
               <strong>Local</strong>
-              <span>Support</span>
+              <span>Focus</span>
             </div>
           </div>
 
           <div class="hero-ctas">
-            <router-link class="cta-primary" to="/audit">
-              Get Free £500 Audit
-              <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            <router-link 
+              class="cta-primary" 
+              to="/launch-sites"
+              aria-label="Get your £600 website - Learn about our Launch Sites service"
+            >
+              Get Your £600 Website
+              <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1..." clip-rule="evenodd" />
               </svg>
             </router-link>
-            <router-link class="cta-secondary" to="/projects">
-              See My Work
+            <router-link 
+              class="cta-secondary" 
+              to="/projects"
+              aria-label="View portfolio - See examples of our work"
+            >
+              View Portfolio
             </router-link>
           </div>
         </div>
@@ -55,12 +63,63 @@
         <div class="hero-visual">
           <div class="profile-container">
             <div class="profile-glow"></div>
-            <img src="@/assets/webp/me.avif" alt="Andre Simpson - Full Stack Developer" class="profile-image" loading="lazy" decoding="async">
+            <img 
+              src="@/assets/webp/me_comp.avif" 
+              alt="Andre Simpson, Full-Stack Developer and Digital Marketing Specialist based in Stoke-on-Trent" 
+              class="profile-image" 
+              loading="eager"
+              decoding="async"
+              width="400"
+              height="400"
+              fetchpriority="high"
+            >
             <div class="profile-badge">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              Verified Developer
+              Marketing & Dev Expert
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Launch Sites Section -->
+    <section class="launch-sites-hero">
+      <div class="container">
+        <div class="launch-content">
+          <div class="launch-badge">
+            <span class="pulse-dot"></span>
+            NEW SERVICE
+          </div>
+          <h2 class="launch-headline">Website in 14 Days or Your Money Back</h2>
+          <p class="launch-subhead">£600 Small Business Websites | No Hidden Fees | Built by N15 Labs</p>
+          <router-link class="launch-cta" to="/launch-sites">
+            Get Your Free Quote
+            <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </router-link>
+          
+          <div class="trust-signals">
+            <div class="trust-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              14-day delivery guarantee
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              Stoke-on-Trent specialist
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
+                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
+              </svg>
+              Freelance professional
             </div>
           </div>
         </div>
@@ -74,22 +133,26 @@
             <span class="section-label">About Me</span>
             <h2>Hi, I'm <span class="highlight">Andre Simpson</span></h2>
             <p class="about-intro">
-              Computer Science graduate (2:1 Honours) and founder of N15 Labs. 
-              I specialize in building high-performance web applications that drive real business results.
+              Freelance Digital Marketer, SEO Specialist, and Full-Stack Developer. 
+              Computer Science graduate (2:1 Honours) and founder of N15 Labs - where marketing meets modern development.
             </p>
             
             <div class="credentials-simple">
+              <div class="credential">
+                <strong>Digital Marketing & SEO</strong>
+                <span>Freelance specialist helping local businesses rank</span>
+              </div>
               <div class="credential">
                 <strong>BSc Computer Science</strong>
                 <span>2:1 Honours, Staffordshire University</span>
               </div>
               <div class="credential">
-                <strong>SneakTrack Creator</strong>
-                <span>70/100 Final Year Project Score</span>
+                <strong>N15 Labs Founder</strong>
+                <span>Digital Marketing & Development Studio</span>
               </div>
               <div class="credential">
-                <strong>N15 Labs Founder</strong>
-                <span>Innovation & Development Studio</span>
+                <strong>Current Project</strong>
+                <span>Nobody's Hair - First client website in development</span>
               </div>
             </div>
 
@@ -112,11 +175,11 @@
           <div class="about-visual">
             <div class="bio-images">
               <div class="workspace-image">
-                <img src="@/assets/webp/workspace.webp" alt="Development Workspace" loading="lazy" decoding="async" />
+                <img src="@/assets/webp/workspace.webp" alt="Development Workspace" loading="lazy" decoding="async" width="800" height="600" />
                 <div class="image-label">My Workspace</div>
               </div>
               <div class="code-image">
-                <img src="@/assets/webp/code.avif" alt="Code Editor Setup" loading="lazy" decoding="async" />
+                <img src="@/assets/webp/code.avif" alt="Code Editor Setup" loading="lazy" decoding="async" width="800" height="600" />
                 <div class="image-label">Code Editor</div>
               </div>
             </div>
@@ -137,31 +200,87 @@
       </div>
     </section>
 
+    <!-- New Services Cards Section -->
+    <section class="services-cards-section">
+      <div class="container">
+        <h2>Complete Digital Solutions for Local Businesses</h2>
+        <p class="services-subtitle">Everything you need to grow online - from websites to marketing</p>
+        
+        <div class="services-cards-grid">
+          <div class="service-offer-card featured">
+            <div class="service-offer-badge">MOST POPULAR</div>
+            <div class="service-offer-icon">🚀</div>
+            <h3>Launch Sites</h3>
+            <div class="service-price">£600</div>
+            <div class="service-timeline">14-day delivery</div>
+            <ul class="service-features">
+              <li>3 professional pages</li>
+              <li>Mobile responsive design</li>
+              <li>Basic SEO setup</li>
+              <li>Google Analytics installed</li>
+              <li>You own everything</li>
+            </ul>
+            <router-link class="service-cta" to="/launch-sites">Get Started</router-link>
+          </div>
+          
+          <div class="service-offer-card">
+            <div class="service-offer-icon">📈</div>
+            <h3>SEO + Ads Starter</h3>
+            <div class="service-price">£400/mo</div>
+            <div class="service-timeline">Monthly service</div>
+            <ul class="service-features">
+              <li>Google Ads setup & management</li>
+              <li>Local SEO optimisation</li>
+              <li>Monthly performance reports</li>
+              <li>Keyword research & targeting</li>
+              <li>Competitor analysis</li>
+            </ul>
+            <router-link class="service-cta secondary" to="/contact" aria-label="Learn more about our SEO and advertising services">Learn More About SEO & Ads</router-link>
+          </div>
+          
+          <div class="service-offer-card">
+            <div class="service-offer-icon">🛡️</div>
+            <h3>Hosting & Care</h3>
+            <div class="service-price">£40/mo</div>
+            <div class="service-timeline">Monthly service</div>
+            <ul class="service-features">
+              <li>Fast, secure hosting</li>
+              <li>Weekly backups</li>
+              <li>Security updates</li>
+              <li>2 hours of edits/month</li>
+              <li>99.9% uptime guarantee</li>
+            </ul>
+            <router-link class="service-cta secondary" to="/contact">Learn More</router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="services-section">
       <div class="container">
-        <h2>What I Build</h2>
-        <p class="services-intro">Custom solutions using modern technology stacks</p>
+        <h2>My Expertise</h2>
+        <p class="services-intro">Full-service digital marketing and development</p>
         
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">🚀</div>
-            <h3>Performance Websites</h3>
-            <p>Custom applications built for speed, SEO, and conversions. Every line of code optimized for your business goals.</p>
-            <div class="service-tech">Vue.js • React • Nuxt.js • Next.js • Node.js • Performance-First</div>
+            <div class="service-icon">💻</div>
+            <h3>Custom Development</h3>
+            <p>Hand-coded websites built for speed, SEO, and conversions. No templates, just clean code optimised for your business goals.</p>
+            <div class="service-tech">Vue.js • React • Node.js • Performance-First</div>
           </div>
           
           <div class="service-card">
-            <div class="service-icon">🛠️</div>
-            <h3>Custom Tools</h3>
-            <p>Bespoke applications like SneakTrack that solve specific business challenges and automate workflows.</p>
-            <div class="service-tech">APIs • Automation • Analytics</div>
+            <div class="service-icon">🎯</div>
+            <h3>Digital Marketing</h3>
+            <p>Strategic campaigns that drive real results. From Google Ads to social media, I help local businesses get found online.</p>
+            <div class="service-tech">Google Ads • Facebook Ads • Analytics • Conversion Optimisation</div>
           </div>
           
           <div class="service-card">
-            <div class="service-icon">📊</div>
-            <h3>Performance Audits</h3>
-            <p>Comprehensive website analysis with actionable recommendations. Worth up to £500, but yours for totally free.</p>
-            <div class="service-tech">Core Web Vitals • SEO • Conversion</div>
+            <div class="service-icon">🔍</div>
+            <h3>SEO Services</h3>
+            <p>Get your business ranking on Google. Local SEO specialist focusing on Stoke-on-Trent and surrounding areas.</p>
+            <div class="service-tech">Local SEO • Technical SEO • Content Strategy • Google My Business</div>
           </div>
         </div>
       </div>
@@ -171,33 +290,33 @@
       <div class="container">
         <div class="value-content">
           <div class="value-text">
-            <h2>Hand-Coded for Performance,<br><span class="accent-text">Not Convenience</span></h2>
+            <h2>Marketing Expertise Meets<br><span class="accent-text">Technical Excellence</span></h2>
             <p>
-              Whilst others use WordPress templates, I hand-code every site with a chosen tech stack, 
-              for maximum speed and flexibility. No bloated themes, no security vulnerabilities, 
-              just clean, modern code that performs.
+              As a freelance Digital Marketer and Developer, I bring a unique combination of marketing strategy 
+              and technical implementation. While others outsource, I handle everything in-house - 
+              from SEO audits to custom code.
             </p>
             
             <div class="value-features">
               <div class="feature">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">🎯</div>
                 <div>
-                  <strong>Lightning Fast</strong>
-                  <span>Sub-4s load times guaranteed</span>
+                  <strong>Complete Digital Strategy</strong>
+                  <span>Marketing + Development under one roof</span>
                 </div>
               </div>
               <div class="feature">
-                <div class="feature-icon">🔒</div>
+                <div class="feature-icon">📍</div>
                 <div>
-                  <strong>Bulletproof Security</strong>
-                  <span>Custom code means fewer vulnerabilities</span>
+                  <strong>Local Focus</strong>
+                  <span>Helping Stoke-on-Trent businesses grow online</span>
                 </div>
               </div>
               <div class="feature">
-                <div class="feature-icon">📈</div>
+                <div class="feature-icon">📊</div>
                 <div>
-                  <strong>Conversion Optimized</strong>
-                  <span>Built to turn visitors into customers</span>
+                  <strong>Data-Driven Results</strong>
+                  <span>SEO and marketing that actually converts</span>
                 </div>
               </div>
             </div>
@@ -211,12 +330,12 @@
                   <span class="control yellow"></span>
                   <span class="control green"></span>
                 </div>
-                <span class="window-title">FastWebsite.vue</span>
+                <span class="window-title">seo-optimised.vue</span>
               </div>
               <div class="code-content">
                 <div class="code-line">
                   <span class="line-number">1</span>
-                  <span class="comment">// Performance-first Vue.js component</span>
+                  <span class="comment">// SEO-optimised Vue component</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">2</span>
@@ -224,15 +343,15 @@
                 </div>
                 <div class="code-line">
                   <span class="line-number">3</span>
-                  <span class="property">  name</span><span class="punctuation">:</span> <span class="string">'FastWebsite'</span><span class="punctuation">,</span>
+                  <span class="property">  marketing</span><span class="punctuation">:</span> <span class="string">'data-driven'</span><span class="punctuation">,</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">4</span>
-                  <span class="property">  loadTime</span><span class="punctuation">:</span> <span class="string">'&lt; 2.5s'</span><span class="punctuation">,</span>
+                  <span class="property">  development</span><span class="punctuation">:</span> <span class="string">'custom-coded'</span><span class="punctuation">,</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">5</span>
-                  <span class="property">  performance</span><span class="punctuation">:</span> <span class="string">'optimized'</span>
+                  <span class="property">  results</span><span class="punctuation">:</span> <span class="string">'guaranteed'</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">6</span>
@@ -248,38 +367,38 @@
     <section class="cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Build Something Exceptional?</h2>
-          <p>Get your free website audit worth up to £500, and discover exactly how to improve your site's performance and conversions.</p>
+          <h2>Ready to Grow Your Business Online?</h2>
+          <p>Get your professional website in 14 days, or explore our complete digital marketing services.</p>
           
           <div class="cta-features">
             <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              Comprehensive performance analysis
+              Professional freelance services
             </div>
             <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              Actionable recommendations
+              Marketing + Development expertise
             </div>
             <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              No obligations
+              Local Stoke-on-Trent focus
             </div>
           </div>
           
-          <router-link class="cta-primary large" to="/audit">
-            Claim Your Free £500 Audit
+          <router-link class="cta-primary large" to="/launch-sites">
+            Get Your £600 Website Now
             <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </router-link>
           
-          <p class="cta-location">Proudly serving businesses in Stoke-on-Trent and beyond</p>
+          <p class="cta-location">Proudly serving businesses in Stoke-on-Trent and the Staffordshire area</p>
         </div>
       </div>
     </section>
@@ -289,7 +408,7 @@
         <div class="showcase-header">
           <span class="section-label">Innovation Lab</span>
           <h2>Welcome to <span class="highlight">N15 Labs</span></h2>
-          <p>N15 Labs is where I build and launch custom full stack apps, creative automations, and experimental systems. Delivered fast, lean, and clean.</p>
+          <p>N15 Labs is where digital marketing meets modern development. Building custom solutions, automation systems, and growth strategies for local businesses.</p>
         </div>
         
         <div class="showcase-visual">
@@ -301,13 +420,13 @@
           />
           
           <div class="showcase-controls">
-            <button @click="prevImage" :disabled="currentImageIndex === 0" class="control-btn">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+            <button @click="prevImage" :disabled="currentImageIndex === 0" class="control-btn" aria-label="Previous image">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
             </button>
-            <button @click="nextImage" :disabled="currentImageIndex === slideshowImages.length - 1" class="control-btn">
-              <svg viewBox="0 0 20 20" fill="currentColor">
+            <button @click="nextImage" :disabled="currentImageIndex === slideshowImages.length - 1" class="control-btn" aria-label="Next image">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
               </svg>
             </button>
@@ -317,8 +436,8 @@
     </section>
 
     <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
-      <button class="modal-close" @click="closeModal">
-        <svg viewBox="0 0 20 20" fill="currentColor">
+      <button class="modal-close" aria-label="Close modal" @click="closeModal">
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
           <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </button>
@@ -334,27 +453,28 @@
 <script>
 import { useHead } from '@vueuse/head'
 
+
 export default {
   name: 'HomePage',
   setup() {
     useHead({
-      title: 'Andre Simpson - Full Stack Developer | N15 Labs',
+      title: 'Andre Simpson - Digital Marketing & Web Development | Stoke-on-Trent',
       meta: [
         {
           name: 'description',
-          content: 'Performance-first web development in Stoke-on-Trent. Vue.js and Node.js specialist building fast, conversion-optimized websites for ambitious businesses.'
+          content: 'Freelance Digital Marketer, SEO Specialist & Web Developer in Stoke-on-Trent. £600 websites in 14 days. Google Ads, Local SEO, and custom development services.'
         },
         {
           property: 'og:title',
-          content: 'Andre Simpson - Full Stack Developer | N15 Labs'
+          content: 'Andre Simpson - Digital Marketing & Web Development | N15 Labs'
         },
         {
           property: 'og:description',
-          content: 'Performance-first web development in Stoke-on-Trent. Vue.js and Node.js specialist building fast, conversion-optimized websites.'
+          content: 'Freelance Digital Marketing and Web Development services in Stoke-on-Trent. Get your professional website for £600 in just 14 days.'
         },
         {
           name: 'keywords',
-          content: 'full stack developer, Vue.js developer, Node.js developer, Stoke-on-Trent, web development, performance optimization'
+          content: 'digital marketing stoke on trent, SEO specialist staffordshire, web developer stoke, freelance marketer, £600 websites, local SEO, Google Ads management'
         }
       ]
     })
@@ -398,6 +518,7 @@ export default {
 </script>
 
 <style scoped>
+/* Keep all existing styles from original Home.vue */
 * {
   box-sizing: border-box;
 }
@@ -579,7 +700,7 @@ export default {
 .cta-secondary {
   display: inline-flex;
   align-items: center;
-  color: #d4d4d8;
+  color: #f4f4f5;
   padding: 1.25rem 2rem;
   border: 1px solid #374151;
   border-radius: 12px;
@@ -623,12 +744,13 @@ export default {
 
 .profile-image {
   width: 350px;
-  height: 350px;
+  height: auto;
   border-radius: 24px;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
+  max-width: 400px;
 }
 
 .profile-image:hover {
@@ -672,9 +794,251 @@ export default {
   height: 16px;
 }
 
-.about-section {
+/* New Launch Sites Hero Section */
+.launch-sites-hero {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-top: 1px solid #e0e7ff;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.launch-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.launch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.launch-headline {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.2 !important;
+}
+
+.launch-subhead {
+  font-size: 1.5rem !important;
+  color: #6b7280 !important;
+  margin-bottom: 2.5rem !important;
+  font-weight: 500 !important;
+}
+
+.launch-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700 !important;
+  font-size: 1.375rem !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+  margin-bottom: 3rem;
+}
+
+.launch-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+}
+
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-weight: 600 !important;
+  color: #374151 !important;
+}
+
+.trust-item svg {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+}
+
+/* New Services Cards Section */
+.services-cards-section {
   padding: 6rem 0;
   background: white;
+}
+
+.services-cards-section h2 {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+
+.services-subtitle {
+  font-size: 1.375rem !important;
+  color: #6b7280 !important;
+  text-align: center;
+  margin-bottom: 3rem !important;
+  font-weight: 500 !important;
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-offer-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-offer-card.featured {
+  border-color: #3b82f6;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+  transform: scale(1.02);
+}
+
+.service-offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-offer-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 0.375rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-offer-icon {
+  font-size: 3rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.service-offer-card h3 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.service-price {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #3b82f6 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.service-timeline {
+  font-size: 1rem !important;
+  color: #6b7280 !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 500 !important;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.service-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+  font-weight: 500 !important;
+  display: flex;
+  align-items: center;
+}
+
+.service-features li:before {
+  content: "✓";
+  color: #10b981;
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+.service-cta {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600 !important;
+  font-size: 1.125rem !important;
+  transition: all 0.3s ease;
+}
+
+.service-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.service-cta.secondary {
+  background: white;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.service-cta.secondary:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.about-section {
+  padding: 6rem 0;
+  background: #f9fafb;
 }
 
 .about-content {
@@ -733,7 +1097,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background: #f9fafb;
+  background: white;
   border-radius: 8px;
   border-left: 4px solid #3b82f6;
 }
@@ -853,7 +1217,7 @@ export default {
 
 .services-section {
   padding: 6rem 0;
-  background: #f9fafb;
+  background: white;
   text-align: center;
 }
 
@@ -882,7 +1246,7 @@ export default {
 }
 
 .service-card {
-  background: white;
+  background: #f9fafb;
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid #e5e7eb;
@@ -894,6 +1258,7 @@ export default {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border-color: #3b82f6;
+  background: white;
 }
 
 .service-icon {
@@ -929,7 +1294,7 @@ export default {
 
 .value-proposition {
   padding: 6rem 0;
-  background: white;
+  background: #f9fafb;
 }
 
 .value-content {
@@ -1125,7 +1490,7 @@ export default {
 
 .n15-labs-showcase {
   padding: 6rem 0;
-  background: #f9fafb;
+  background: white;
 }
 
 .showcase-header {
@@ -1146,7 +1511,7 @@ export default {
   color: #6b7280 !important;
   font-size: 1.375rem !important;
   line-height: 1.6 !important;
-  max-width: 600px !important;
+  max-width: 700px !important;
   margin: 0 auto !important;
   font-weight: 500 !important;
 }
@@ -1259,6 +1624,7 @@ export default {
   .profile-image {
     width: 300px;
     height: 300px;
+    max-width: 300px;
   }
   
   .value-content,
@@ -1268,6 +1634,19 @@ export default {
   }
   
   .cta-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .launch-content {
+    padding: 0 1rem;
+  }
+  
+  .trust-signals {
     flex-direction: column;
     align-items: center;
   }
@@ -1293,6 +1672,14 @@ export default {
     font-size: 1.375rem !important;
   }
 
+  .launch-headline {
+    font-size: 2.5rem !important;
+  }
+
+  .launch-subhead {
+    font-size: 1.25rem !important;
+  }
+
   .home-container .about-text h2,
   .about-text h2,
   .home-container .services-section h2,
@@ -1302,7 +1689,8 @@ export default {
   .home-container .cta-content h2,
   .cta-content h2,
   .home-container .showcase-header h2,
-  .showcase-header h2 {
+  .showcase-header h2,
+  .services-cards-section h2 {
     font-size: 2.5rem !important;
   }
 
@@ -1346,12 +1734,20 @@ export default {
   .bio-images {
     grid-template-columns: 1fr;
   }
+  
+  .service-offer-card.featured {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {
   .home-container .hero-headline,
   .hero-headline {
     font-size: 2.5rem !important;
+  }
+
+  .launch-headline {
+    font-size: 2rem !important;
   }
 
   .home-container .about-text h2,
@@ -1363,7 +1759,8 @@ export default {
   .home-container .cta-content h2,
   .cta-content h2,
   .home-container .showcase-header h2,
-  .showcase-header h2 {
+  .showcase-header h2,
+  .services-cards-section h2 {
     font-size: 2rem !important;
   }
   
@@ -1377,6 +1774,23 @@ export default {
     width: 250px;
     height: 250px;
   }
+  
+  .launch-cta {
+    padding: 1rem 1.5rem;
+    font-size: 1.125rem !important;
+  }
+  
+  .trust-item {
+    font-size: 0.875rem !important;
+  }
+  
+  .service-offer-card {
+    padding: 1.5rem;
+  }
+  
+  .service-price {
+    font-size: 2rem !important;
+  }
 }
 
 /* Accessibility improvements */
@@ -1387,15 +1801,35 @@ export default {
     animation: none;
   }
   
-  .status-dot {
+  .status-dot,
+  .pulse-dot {
     animation: none;
   }
 }
 
 .cta-primary:focus,
 .cta-secondary:focus,
-.control-btn:focus {
+.control-btn:focus,
+.launch-cta:focus,
+.service-cta:focus,
+.social-link:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .hero-section,
+  .launch-sites-hero,
+  .n15-labs-showcase,
+  .modal-overlay {
+    display: none;
+  }
+  
+  .services-cards-section,
+  .about-section,
+  .services-section {
+    break-inside: avoid;
+  }
 }
 </style>

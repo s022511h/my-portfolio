@@ -56,7 +56,7 @@
       </div>
       
       <div class="intro-actions">
-        <button @click="enterSite" class="enter-btn">
+        <button @click="enterSite" class="enter-btn" aria-label="Enter portfolio">
           <span class="btn-text">Enter Portfolio</span>
           <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -64,7 +64,7 @@
         </button>
         
         <div class="skip-intro">
-          <button @click="enterSite" class="skip-btn">Skip Intro</button>
+          <button @click="enterSite" class="skip-btn" aria-label="Skip intro">Skip Intro</button>
         </div>
       </div>
       
@@ -94,7 +94,7 @@ export default {
     return {
       show: true,
       progressWidth: 0,
-      logo: require('@/assets/webp/logo-n15labs-white.webp'),
+      logo: require('@/assets/webp/logo-n15labs-white_comp.webp'),
       taglines: [
         { icon: '🚀', text: 'Modern & Fast' },
         { icon: '⚡', text: 'Performance-First' },
