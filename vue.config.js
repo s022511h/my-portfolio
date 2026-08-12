@@ -24,7 +24,7 @@ module.exports = defineConfig({
         ? [
             new PrerendererWebpackPlugin({
               routes: PRERENDER_ROUTES,
-              renderer: '@prerenderer/renderer-puppeteer',
+              renderer: '@prerenderer/renderer-jsdom',
               rendererOptions: {
                 // Lets App.vue detect prerendering and skip the intro splash.
                 inject: { prerender: true },
@@ -33,21 +33,8 @@ module.exports = defineConfig({
                 // main.js dispatches this after router.isReady() and mount.
                 renderAfterDocumentEvent: 'render-event',
 
-                // Blocks cross-origin requests during prerender. This is what
-                // stops Firebase's auth connection holding the network open —
-                // which was the real cause of the /launch-sites timeout.
-                skipThirdPartyRequests: true,
-
-                maxConcurrentRoutes: 2,
-                timeout: 60000,
-
-                consoleHandler: (route, message) => {
-                  console.log(`[prerender ${route}] ${message.text()}`)
-                },
-
-                launchOptions: {
-                  args: ['--no-sandbox', '--disable-setuid-sandbox']
-                }
+                maxConcurrentRoutes: 4,
+                timeout: 60000
               }
             })
           ]
