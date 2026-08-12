@@ -1,79 +1,161 @@
-<template> 
+<template>
   <footer class="app-footer">
     <div class="footer-content">
-      <div class="footer-top">
-        <a class="footer-contact" href="tel:07931206686">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="contact-icon">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-          </svg>
-          07931 206686
-        </a>
-        
-        <div class="logo-block">
-          <img
-            :src="require('@/assets/webp/logo-n15labs-white_comp.webp')"
-            alt="N15 Labs Footer Logo"
-            class="footer-logo"
-            width="120"
-            height="120"
-            loading="lazy"
-          />
-          <div class="logo-glow"></div>
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <router-link to="/" class="footer-logo-link">
+            <img
+              :src="require('@/assets/webp/logo-n15labs-white_comp.webp')"
+              alt="N15 Labs Logo"
+              class="footer-logo"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </router-link>
+          <p class="brand-tagline">
+            Helping local businesses get more customers from Google through ads, SEO, and conversion-focused websites.
+          </p>
+          <div class="social-links">
+            <a 
+              href="https://linkedin.com/in/andre-simpson-502365178" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow N15 Labs on LinkedIn"
+              class="social-link"
+            >
+              <LinkedinIcon aria-hidden="true" />
+            </a>
+            <a 
+              href="https://www.instagram.com/n15labs" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow N15 Labs on Instagram"
+              class="social-link"
+            >
+              <InstagramIcon aria-hidden="true" />
+            </a>
+            <a 
+              href="https://www.facebook.com/n15labs" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow N15 Labs on Facebook"
+              class="social-link"
+            >
+              <FacebookIcon aria-hidden="true" />
+            </a>
+          </div>
         </div>
-        
-        <a class="footer-contact" href="mailto:dre_86@hotmail.co.uk">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="contact-icon">
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-          </svg>
-          dre_86@hotmail.co.uk
-        </a>
-      </div>
-      
-      <div class="footer-divider"></div>
-      
-      <div class="social-section">
-        <p class="social-label">Connect with N15 Labs</p>
-        <div class="social-icons">
-          <a href="https://github.com/s022511h" target="_blank" aria-label="GitHub" class="social-link">
-            <GithubIcon />
-            <span class="social-text">GitHub</span>
-          </a>
-          <a href="https://linkedin.com/in/andre-simpson-502365178" target="_blank" aria-label="LinkedIn" class="social-link">
-            <LinkedinIcon />
-            <span class="social-text">LinkedIn</span>
-          </a>
-          <a href="https://www.instagram.com/n15labs?utm_source=ig_web_button_share_sheet&igsh=MXBwYXN6ZWF0d3FibA==" target="_blank" aria-label="Instagram" class="social-link">
-            <InstagramIcon />
-            <span class="social-text">Instagram</span>
-          </a>
-          <a href="https://x.com" target="_blank" aria-label="Twitter/X" class="social-link">
-            <TwitterIcon />
-            <span class="social-text">Twitter</span>
+
+        <!-- Services Column -->
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><router-link to="/services/google-ads">Google Ads Management</router-link></li>
+            <li><router-link to="/services/seo">SEO Services</router-link></li>
+            <li><router-link to="/services/web-design">Web Design</router-link></li>
+            <li><router-link to="/launch-sites">Launch Sites — £600</router-link></li>
+            <li><router-link to="/pricing">Pricing</router-link></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/case-studies">Case Studies</router-link></li>
+            <li><router-link to="/blog">Blog</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
+            <li><router-link to="/audit">Free Website Audit</router-link></li>
+          </ul>
+        </div>
+
+        <!-- Areas Served Column -->
+        <div class="footer-column">
+          <h3>Areas Served</h3>
+          <ul>
+            <li><router-link to="/areas/stoke-on-trent">Stoke-on-Trent</router-link></li>
+            <li><router-link to="/areas/newcastle-under-lyme">Newcastle-under-Lyme</router-link></li>
+            <li><router-link to="/areas/stafford">Stafford</router-link></li>
+            <li><router-link to="/areas/staffordshire">Staffordshire</router-link></li>
+            <li><router-link to="/areas/crewe">Crewe</router-link></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-column footer-contact-col">
+          <h3>Get in Touch</h3>
+          <div class="contact-info">
+            <a href="tel:+447931206686" class="contact-item">
+              <PhoneIcon aria-hidden="true" />
+              <span>07931 206686</span>
+            </a>
+            <a href="mailto:hello@n15labs.co.uk" class="contact-item">
+              <MailIcon aria-hidden="true" />
+              <span>hello@n15labs.co.uk</span>
+            </a>
+            <div class="contact-item location">
+              <MapPinIcon aria-hidden="true" />
+              <span>Stoke-on-Trent, Staffordshire</span>
+            </div>
+          </div>
+          <a 
+            href="https://calendly.com/n15labs/strategy-call" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-cta"
+          >
+            Book Free Strategy Call
           </a>
         </div>
       </div>
-      
-      <div class="footer-divider"></div>
-      
-      <div class="legal-section">
-        <div class="legal-links">
-          <router-link to="/privacy" class="legal-link">Privacy Policy</router-link>
-          <router-link to="/terms" class="legal-link">Terms of Service</router-link>
-          <button @click="showCookieSettings" class="cookie-settings-btn" aria-label="cookie-settings">
-            Cookie Settings
-          </button>
+
+      <!-- Trust Signals -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <CheckCircleIcon aria-hidden="true" />
+          <span>BSc Computer Science (2:1)</span>
         </div>
-        <p class="compliance-note">
-          This site uses cookies with your consent. You can change your preferences anytime.
-        </p>
+        <div class="trust-item">
+          <CheckCircleIcon aria-hidden="true" />
+          <span>£60k+ Ad Spend Managed</span>
+        </div>
+        <div class="trust-item">
+          <CheckCircleIcon aria-hidden="true" />
+          <span>618+ Conversions Generated</span>
+        </div>
+        <div class="trust-item">
+          <CheckCircleIcon aria-hidden="true" />
+          <span>Local Stoke-on-Trent Business</span>
+        </div>
       </div>
-      
+
+      <!-- Bottom Bar -->
       <div class="footer-bottom">
-        <p class="copyright">
-          &copy; {{ new Date().getFullYear() }} N15 Labs. Built by <span class="highlight">Andre Simpson</span>.
-        </p>
-        <p class="location">Proudly serving Stoke-on-Trent and beyond</p>
+        <div class="footer-bottom-left">
+          <p class="copyright">
+            © {{ currentYear }} N15 Labs. All rights reserved.
+          </p>
+        </div>
+        
+        <div class="footer-bottom-center">
+          <div class="legal-links">
+            <router-link to="/privacy">Privacy Policy</router-link>
+            <router-link to="/terms">Terms of Service</router-link>
+            <button @click="showCookieSettings" class="cookie-btn">
+              Cookie Settings
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-bottom-right">
+          <p class="built-by">
+            Designed & built by <span class="highlight">Andre Simpson</span>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
@@ -81,19 +163,30 @@
 
 <script>
 import {
-  GithubIcon,
   LinkedinIcon,
   InstagramIcon,
-  TwitterIcon
+  FacebookIcon,
+  PhoneIcon,
+  MailIcon,
+  MapPinIcon,
+  CheckCircleIcon
 } from 'lucide-vue-next'
 
 export default {
   name: 'AppFooter',
   components: {
-    GithubIcon,
     LinkedinIcon,
     InstagramIcon,
-    TwitterIcon
+    FacebookIcon,
+    PhoneIcon,
+    MailIcon,
+    MapPinIcon,
+    CheckCircleIcon
+  },
+  computed: {
+    currentYear() {
+      return new Date().getFullYear()
+    }
   },
   methods: {
     showCookieSettings() {
@@ -104,146 +197,79 @@ export default {
 </script>
 
 <style scoped>
+/* ==================== BASE FOOTER ==================== */
 .app-footer {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
   color: #ffffff;
   border-top: 1px solid #374151;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   margin-top: auto;
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem 2rem;
+  padding: 4.5rem 2rem 2.5rem;
 }
 
-.footer-top {
+/* ==================== FOOTER GRID ==================== */
+.footer-grid {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-.footer-contact {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.125rem;
-  color: #f4f4f5;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+/* Brand Column */
+.footer-brand {
+  padding-right: 2rem;
 }
 
-.footer-contact:hover {
-  color: #ffffff;
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  transition: transform 0.2s ease;
 }
 
-.footer-contact:first-child {
-  justify-self: start;
-}
-
-.footer-contact:last-child {
-  justify-self: end;
-}
-
-.contact-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.logo-block {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  z-index: 2;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.footer-logo:hover {
+.footer-logo-link:hover {
   transform: scale(1.05);
 }
 
-.logo-glow {
-  position: absolute;
-  inset: -20px;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-  border-radius: 50%;
-  z-index: 1;
-  filter: blur(20px);
-  animation: logoGlow 3s ease-in-out infinite;
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
-@keyframes logoGlow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+.brand-tagline {
+  color: #d4d4d8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
 }
 
-.footer-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #374151, transparent);
-  margin: 2rem 0;
-}
-
-.social-section {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.social-label {
-  font-size: 1.125rem;
-  color: #9ca3af;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.social-icons {
+.social-links {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 0.875rem;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  color: #f4f4f5;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid #374151;
-  background: rgba(255, 255, 255, 0.02);
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 10px;
+  color: #a1a1aa;
+  transition: all 0.2s ease;
 }
 
 .social-link:hover {
-  color: #ffffff;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: rgba(59, 130, 246, 0.1);
   border-color: #3b82f6;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  transform: translateY(-2px);
 }
 
 .social-link svg {
@@ -251,20 +277,153 @@ export default {
   height: 20px;
 }
 
-.social-text {
+/* Footer Columns */
+.footer-column h3 {
   font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.875rem;
+}
+
+.footer-column a {
+  color: #d4d4d8;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color: #3b82f6;
+  transform: translateX(4px);
+}
+
+/* Contact Column */
+.footer-contact-col {
+  min-width: 200px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  color: #d4d4d8;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+a.contact-item:hover {
+  color: #3b82f6;
+}
+
+.contact-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.contact-item.location {
+  color: #a1a1aa;
+}
+
+.footer-cta {
+  display: inline-block;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.footer-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* ==================== TRUST BAR ==================== */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+  margin-bottom: 2.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+}
+
+.trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: #10b981;
+}
+
+/* ==================== BOTTOM BAR ==================== */
 .footer-bottom {
-  text-align: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid #374151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.footer-bottom-left,
+.footer-bottom-right {
+  flex: 1;
+}
+
+.footer-bottom-right {
+  text-align: right;
+}
+
+.footer-bottom-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
 }
 
 .copyright {
-  font-size: 1rem;
-  color: #9ca3af;
-  margin-bottom: 0.5rem;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.built-by {
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  margin: 0;
 }
 
 .highlight {
@@ -275,193 +434,191 @@ export default {
   font-weight: 600;
 }
 
-.location {
-  font-size: 1rem;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0;
-}
-
-.footer-contact:focus,
-.social-link:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-.legal-section {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 2rem 0;
-  border-top: 1px solid #374151;
-}
-
 .legal-links {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.legal-link {
-  color: #9ca3af;
+.legal-links a {
+  color: #a1a1aa;
   text-decoration: none;
   font-size: 0.9375rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(156, 163, 175, 0.2);
+  transition: color 0.2s ease;
 }
 
-.legal-link:hover {
-  color: #ffffff;
-  background: rgba(156, 163, 175, 0.1);
-  border-color: rgba(156, 163, 175, 0.4);
-  transform: translateY(-1px);
+.legal-links a:hover {
+  color: #d4d4d8;
 }
 
-.legal-link.router-link-active {
-  color: #f4f4f5;
-  background: rgba(156, 163, 175, 0.05);
-  border-color: rgba(156, 163, 175, 0.3);
-}
-
-.cookie-settings-btn {
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.cookie-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
   font-size: 0.9375rem;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 0;
+  transition: color 0.2s ease;
 }
 
-.cookie-settings-btn:hover {
-  background: rgba(59, 130, 246, 0.2);
-  color: #ffffff;
-  border-color: rgba(59, 130, 246, 0.5);
-  transform: translateY(-1px);
+.cookie-btn:hover {
+  color: #d4d4d8;
 }
 
-.compliance-note {
-  font-size: 0.875rem;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0;
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.5;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+    padding-right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .brand-tagline {
+    max-width: 440px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .footer-content {
-    padding: 2rem 1.5rem 1.5rem;
+    padding: 3.5rem 1.5rem 2rem;
   }
-
-  .footer-top {
-    grid-template-columns: 1fr;
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer-contact-col {
+    grid-column: 1 / -1;
     text-align: center;
-    gap: 1.5rem;
   }
-
-  .footer-contact:first-child,
-  .footer-contact:last-child {
-    justify-self: center;
+  
+  .contact-info {
+    align-items: center;
   }
-
-  .footer-contact {
-    font-size: 1rem;
-    padding: 0.75rem 1.25rem;
+  
+  .footer-cta {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
   }
-
-  .footer-logo {
-    width: 100px;
-    height: 100px;
+  
+  .trust-bar {
+    gap: 1.25rem;
   }
-
-  .social-icons {
-    gap: 1rem;
-  }
-
-  .social-link {
-    padding: 0.75rem 1rem;
+  
+  .trust-item {
     font-size: 0.875rem;
   }
-
-  .social-text {
-    display: none;
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
   }
-
-  .social-link svg {
-    width: 18px;
-    height: 18px;
+  
+  .footer-bottom-left,
+  .footer-bottom-center,
+  .footer-bottom-right {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .legal-links {
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .footer-content {
-    padding: 1.5rem 1rem;
+    padding: 2.5rem 1rem 1.5rem;
   }
-
-  .footer-contact {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    padding: 1rem;
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
-
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column a:hover {
+    transform: none;
+  }
+  
   .footer-logo {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
   }
-
-  .social-icons {
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    gap: 0.75rem;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-
-  .social-link {
-    padding: 0.75rem;
-    justify-content: center;
-  }
-
-  .copyright,
-  .location {
-    font-size: 0.875rem;
-  }
-}
-
-.legal-links {
+  
+  .trust-bar {
     flex-direction: column;
     gap: 1rem;
   }
-
-  .legal-link,
-  .cookie-settings-btn {
-    font-size: 0.875rem;
-    padding: 0.625rem 1rem;
+  
+  .legal-links {
+    flex-direction: column;
+    gap: 1rem;
   }
+}
 
-  .compliance-note {
-    font-size: 0.8125rem;
-  }
-
+/* ==================== ACCESSIBILITY ==================== */
 @media (prefers-reduced-motion: reduce) {
-  .footer-contact,
+  .footer-logo-link,
   .social-link,
-  .footer-logo {
+  .footer-column a,
+  .footer-cta {
     transition: none;
   }
+}
+
+.footer-logo-link:focus,
+.social-link:focus,
+.footer-column a:focus,
+.footer-cta:focus,
+.contact-item:focus,
+.legal-links a:focus,
+.cookie-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ==================== PRINT ==================== */
+@media print {
+  .app-footer {
+    background: white;
+    color: black;
+    border-top: 1px solid #ccc;
+  }
   
-  .logo-glow {
-    animation: none;
+  .social-links,
+  .footer-cta,
+  .trust-bar {
+    display: none;
+  }
+  
+  .footer-column a,
+  .contact-item,
+  .copyright,
+  .built-by {
+    color: black;
   }
 }
 </style>

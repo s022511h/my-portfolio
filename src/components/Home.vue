@@ -1,5 +1,6 @@
 <template>
   <div class="home-container">
+    <!-- Hero Section -->
     <section class="hero-section" aria-label="Hero banner">
       <div class="hero-background">
         <div class="floating-particles">
@@ -11,52 +12,52 @@
         <div class="hero-text">
           <div class="hero-badge">
             <span class="status-dot"></span>
-            Available for Projects
+            Accepting New Clients
           </div>
           
           <h1 class="hero-headline">
-            <span class="gradient-text">Digital Marketing</span> &<br>
-            Performance Websites
+            I help local businesses get<br>
+            <span class="gradient-text">more customers from Google.</span>
           </h1>
           
           <p class="hero-subhead">
-            Freelance Digital Marketer, SEO Specialist & Full-Stack Developer. I help Stoke-on-Trent businesses 
-            grow online with fast websites, strategic SEO, and conversion-focused marketing.
+            Google Ads management, SEO, and websites that actually bring in leads. 
+            Based in Stoke-on-Trent, working with businesses across Staffordshire.
           </p>
 
           <div class="hero-stats">
             <div class="stat-item">
-              <strong>SEO</strong>
-              <span>Specialist</span>
+              <strong>75%</strong>
+              <span>Lower Cost Per Lead</span>
             </div>
             <div class="stat-item">
-              <strong>14-Day</strong>
-              <span>Websites</span>
+              <strong>618+</strong>
+              <span>Conversions Generated</span>
             </div>
             <div class="stat-item">
-              <strong>Local</strong>
-              <span>Focus</span>
+              <strong>£60k+</strong>
+              <span>Ad Spend Managed</span>
             </div>
           </div>
 
           <div class="hero-ctas">
-            <router-link 
-              class="cta-primary" 
-              to="/launch-sites"
-              aria-label="Get your £600 website - Learn about our Launch Sites service"
+            <a 
+              href="https://calendly.com/n15labs/strategy-call" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-primary"
+              aria-label="Book a free strategy call"
             >
-              Get Your £600 Website
-              <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </router-link>
-            <router-link 
-              class="cta-secondary" 
-              to="/projects"
-              aria-label="View portfolio - See examples of our work"
+              Book a Free Strategy Call
+              <ArrowRightIcon class="cta-arrow" aria-hidden="true" />
+            </a>
+            <a 
+              href="#results" 
+              class="cta-secondary"
+              aria-label="See proof of results"
             >
-              View Portfolio
-            </router-link>
+              See My Results
+            </a>
           </div>
         </div>
 
@@ -65,7 +66,7 @@
             <div class="profile-glow"></div>
             <img 
               src="@/assets/webp/me_comp.avif" 
-              alt="Andre Simpson, Full-Stack Developer and Digital Marketing Specialist based in Stoke-on-Trent" 
+              alt="Andre Simpson, Digital Marketing Specialist helping local businesses grow online" 
               class="profile-image" 
               loading="eager"
               decoding="async"
@@ -74,458 +75,628 @@
               fetchpriority="high"
             >
             <div class="profile-badge">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              Marketing & Dev Expert
+              <CheckIcon aria-hidden="true" />
+              Google Ads & SEO Expert
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- New Launch Sites Section -->
-    <section class="launch-sites-hero">
+    <!-- Results Section -->
+    <section id="results" class="results-section">
       <div class="container">
-        <div class="launch-content">
-          <div class="launch-badge">
-            <span class="pulse-dot"></span>
-            NEW SERVICE
-          </div>
-          <h2 class="launch-headline">Website in 14 Days or Your Money Back</h2>
-          <p class="launch-subhead">£600 Small Business Websites | No Hidden Fees | Built by N15 Labs</p>
-          <router-link class="launch-cta" to="/launch-sites">
-            Get Your Free Quote
-            <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </router-link>
-          
-          <div class="trust-signals">
-            <div class="trust-item">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              14-day delivery guarantee
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-              </svg>
-              Stoke-on-Trent specialist
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
-                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
-              </svg>
-              Freelance professional
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <span class="section-label">About Me</span>
-            <h2>Hi, I'm <span class="highlight">Andre Simpson</span></h2>
-            <p class="about-intro">
-              Freelance Digital Marketer, SEO Specialist, and Full-Stack Developer. 
-              Computer Science graduate (2:1 Honours) and founder of N15 Labs - where marketing meets modern development.
-            </p>
-            
-            <div class="credentials-simple">
-              <div class="credential">
-                <strong>Digital Marketing & SEO</strong>
-                <span>Freelance specialist helping local businesses rank</span>
-              </div>
-              <div class="credential">
-                <strong>BSc Computer Science</strong>
-                <span>2:1 Honours, Staffordshire University</span>
-              </div>
-              <div class="credential">
-                <strong>N15 Labs Founder</strong>
-                <span>Digital Marketing & Development Studio</span>
-              </div>
-              <div class="credential">
-                <strong>Current Project</strong>
-                <span>Nobody's Hair - First client website in development</span>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="https://github.com/s022511h/" target="_blank" class="social-link">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/andre-simpson-502365178" target="_blank" class="social-link">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                LinkedIn
-              </a>
-            </div>
-          </div>
-          
-          <div class="about-visual">
-            <div class="bio-images">
-              <div class="workspace-image">
-                <img src="@/assets/webp/workspace.webp" alt="Development Workspace" loading="lazy" decoding="async" width="800" height="600" />
-                <div class="image-label">My Workspace</div>
-              </div>
-              <div class="code-image">
-                <img src="@/assets/webp/code.avif" alt="Code Editor Setup" loading="lazy" decoding="async" width="800" height="600" />
-                <div class="image-label">Code Editor</div>
-              </div>
-            </div>
-            
-            <div class="video-container">
-              <iframe
-                src="https://www.youtube.com/embed/U9SeG8yyVjo"
-                title="SneakTrack Demo - Performance-First Development"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-              <div class="video-label">SneakTrack - Final Year Project</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- New Services Cards Section -->
-    <section class="services-cards-section">
-      <div class="container">
-        <h2>Complete Digital Solutions for Local Businesses</h2>
-        <p class="services-subtitle">Everything you need to grow online - from websites to marketing</p>
+        <span class="section-label">Proven Results</span>
+        <h2>Real outcomes for <span class="highlight">real businesses</span></h2>
+        <p class="section-intro">Not promises. Not projections. Actual results I've delivered for clients.</p>
         
-        <div class="services-cards-grid">
-          <div class="service-offer-card featured">
-            <div class="service-offer-badge">MOST POPULAR</div>
-            <div class="service-offer-icon">🚀</div>
-            <h3>Launch Sites</h3>
-            <div class="service-price">£600</div>
-            <div class="service-timeline">14-day delivery</div>
-            <ul class="service-features">
-              <li>3 professional pages</li>
-              <li>Mobile responsive design</li>
-              <li>Basic SEO setup</li>
-              <li>Google Analytics installed</li>
-              <li>You own everything</li>
-            </ul>
-            <router-link class="service-cta" to="/launch-sites">Get Started</router-link>
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <div class="client-info">
+              <div class="client-avatar">
+                <BuildingIcon aria-hidden="true" />
+              </div>
+              <div>
+                <h3>Regional Home Services Company</h3>
+                <span class="client-type">Driveway & Paving • Multiple Locations • Staffordshire & Shropshire</span>
+              </div>
+            </div>
+            <span class="case-study-badge">Ongoing Client</span>
           </div>
           
-          <div class="service-offer-card">
-            <div class="service-offer-icon">📈</div>
-            <h3>SEO + Ads Starter</h3>
-            <div class="service-price">£400/mo</div>
-            <div class="service-timeline">Monthly service</div>
-            <ul class="service-features">
-              <li>Google Ads setup & management</li>
-              <li>Local SEO optimisation</li>
-              <li>Monthly performance reports</li>
-              <li>Keyword research & targeting</li>
-              <li>Competitor analysis</li>
-            </ul>
-            <router-link class="service-cta secondary" to="/contact" aria-label="Learn more about our SEO and advertising services">Learn More About SEO & Ads</router-link>
+          <div class="case-study-content">
+            <div class="challenge-section">
+              <h4>The Situation</h4>
+              <p>
+                A regional driveway company with multiple locations was struggling with their previous digital agency. 
+                Google Ads were burning through budget with a cost per lead of £111, their website wasn't converting visitors, 
+                and they had no visibility on organic search. They needed someone who could actually fix the problems, 
+                not just send monthly reports.
+              </p>
+            </div>
+            
+            <div class="solution-section">
+              <h4>What I Did</h4>
+              <ul class="solution-list">
+                <li>
+                  <strong>Google Ads Overhaul:</strong> Restructured campaigns, fixed conversion tracking that was missing 30+ leads per month, 
+                  implemented proper negative keywords and audience targeting
+                </li>
+                <li>
+                  <strong>Complete Website Redesign:</strong> Built conversion-focused pages for each service area (Shropshire complete, Staffordshire in progress)
+                </li>
+                <li>
+                  <strong>Technical Fixes:</strong> Resolved a form submission issue when their shared IP got blacklisted — leads were being lost for weeks
+                </li>
+                <li>
+                  <strong>Ongoing Support:</strong> Managing social media, designing price guides, and providing ongoing optimisation
+                </li>
+              </ul>
+            </div>
           </div>
           
-          <div class="service-offer-card">
-            <div class="service-offer-icon">🛡️</div>
-            <h3>Hosting & Care</h3>
-            <div class="service-price">£40/mo</div>
-            <div class="service-timeline">Monthly service</div>
-            <ul class="service-features">
-              <li>Fast, secure hosting</li>
-              <li>Weekly backups</li>
-              <li>Security updates</li>
-              <li>2 hours of edits/month</li>
-              <li>99.9% uptime guarantee</li>
-            </ul>
-            <router-link class="service-cta secondary" to="/contact">Learn More</router-link>
+          <div class="results-metrics">
+            <div class="metric">
+              <div class="metric-value">
+                <TrendingDownIcon class="metric-icon down" aria-hidden="true" />
+                75%
+              </div>
+              <div class="metric-label">Reduction in Cost Per Lead</div>
+              <div class="metric-detail">£111 → £28 per lead</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">618+</div>
+              <div class="metric-label">Conversions Generated</div>
+              <div class="metric-detail">Tracked enquiries & calls</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">
+                <TrendingUpIcon class="metric-icon up" aria-hidden="true" />
+                110%
+              </div>
+              <div class="metric-label">Organic Traffic Growth</div>
+              <div class="metric-detail">Within 3 weeks of site launch</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">4×</div>
+              <div class="metric-label">Better Than Previous Agency</div>
+              <div class="metric-detail">Same budget, 4x the leads</div>
+            </div>
+          </div>
+          
+          <div class="case-study-footer">
+            <router-link to="/case-studies/scs-driveways" class="case-study-link">
+              Read the full case study
+              <ArrowRightIcon aria-hidden="true" />
+            </router-link>
+          </div>
+        </div>
+
+        <!-- Additional Social Proof -->
+        <div class="additional-proof">
+          <div class="proof-card">
+            <div class="proof-icon">
+              <BarChart3Icon aria-hidden="true" />
+            </div>
+            <h4>Own Site Performance</h4>
+            <p>Improved my website's Lighthouse score from 43 to 79 and cut load times from 12.2 seconds to 3.6 seconds through technical optimisation.</p>
+            <div class="proof-metric">84% Performance Improvement</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-icon">
+              <ScissorsIcon aria-hidden="true" />
+            </div>
+            <h4>Nobody's Hair</h4>
+            <p>Local barber in Stoke-on-Trent. Built a fast, mobile-first website focused on driving bookings and foot traffic.</p>
+            <div class="proof-metric">Local Stoke-on-Trent Client</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services-section">
       <div class="container">
-        <h2>My Expertise</h2>
-        <p class="services-intro">Full-service digital marketing and development</p>
+        <span class="section-label">How I Help</span>
+        <h2>Solutions for local businesses</h2>
+        <p class="section-intro">I solve the problems that stop small businesses from growing online.</p>
         
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Custom Development</h3>
-            <p>Hand-coded websites built for speed, SEO, and conversions. No templates, just clean code optimised for your business goals.</p>
-            <div class="service-tech">Vue.js • React • Node.js • Performance-First</div>
+            <div class="service-icon-wrapper">
+              <PoundSterlingIcon aria-hidden="true" />
+            </div>
+            <h3>Your Google Ads are wasting money</h3>
+            <p>
+              Most businesses I audit are overspending on the wrong keywords, missing conversion tracking, 
+              or targeting people who'll never buy. I fix the waste and get your ads bringing in actual customers.
+            </p>
+            <ul class="service-includes">
+              <li><CheckIcon aria-hidden="true" /> Full account audit</li>
+              <li><CheckIcon aria-hidden="true" /> Conversion tracking setup</li>
+              <li><CheckIcon aria-hidden="true" /> Campaign restructuring</li>
+              <li><CheckIcon aria-hidden="true" /> Monthly optimisation & reporting</li>
+            </ul>
+            <router-link to="/services/google-ads" class="service-link">
+              Fix my Google Ads
+              <ArrowRightIcon aria-hidden="true" />
+            </router-link>
           </div>
           
           <div class="service-card">
-            <div class="service-icon">🎯</div>
-            <h3>Digital Marketing</h3>
-            <p>Strategic campaigns that drive real results. From Google Ads to social media, I help local businesses get found online.</p>
-            <div class="service-tech">Google Ads • Facebook Ads • Analytics • Conversion Optimisation</div>
+            <div class="service-icon-wrapper">
+              <SearchIcon aria-hidden="true" />
+            </div>
+            <h3>You're invisible on Google</h3>
+            <p>
+              When people search for what you do, they find your competitors instead. 
+              I fix the technical problems holding you back and get you ranking where your customers are looking.
+            </p>
+            <ul class="service-includes">
+              <li><CheckIcon aria-hidden="true" /> Technical SEO audit</li>
+              <li><CheckIcon aria-hidden="true" /> Local SEO optimisation</li>
+              <li><CheckIcon aria-hidden="true" /> Google Business Profile setup</li>
+              <li><CheckIcon aria-hidden="true" /> Content strategy</li>
+            </ul>
+            <router-link to="/services/seo" class="service-link">
+              Get me ranking
+              <ArrowRightIcon aria-hidden="true" />
+            </router-link>
           </div>
           
           <div class="service-card">
-            <div class="service-icon">🔍</div>
-            <h3>SEO Services</h3>
-            <p>Get your business ranking on Google. Local SEO specialist focusing on Stoke-on-Trent and surrounding areas.</p>
-            <div class="service-tech">Local SEO • Technical SEO • Content Strategy • Google My Business</div>
+            <div class="service-icon-wrapper">
+              <MonitorIcon aria-hidden="true" />
+            </div>
+            <h3>Your website doesn't bring in customers</h3>
+            <p>
+              A slow, confusing website is costing you business every day. 
+              I build fast, conversion-focused sites that turn visitors into enquiries and phone calls.
+            </p>
+            <ul class="service-includes">
+              <li><CheckIcon aria-hidden="true" /> Conversion-focused design</li>
+              <li><CheckIcon aria-hidden="true" /> Mobile-first development</li>
+              <li><CheckIcon aria-hidden="true" /> Speed optimisation</li>
+              <li><CheckIcon aria-hidden="true" /> Analytics setup</li>
+            </ul>
+            <router-link to="/launch-sites" class="service-link">
+              Get a website that works
+              <ArrowRightIcon aria-hidden="true" />
+            </router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="value-proposition">
+    <!-- How I Work Section -->
+    <section class="process-section">
       <div class="container">
-        <div class="value-content">
-          <div class="value-text">
-            <h2>Marketing Expertise Meets<br><span class="accent-text">Technical Excellence</span></h2>
+        <span class="section-label">Simple Process</span>
+        <h2>How we'll work together</h2>
+        <p class="section-intro">No complicated contracts or confusing proposals. Just a clear path to results.</p>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Free Strategy Call</h3>
+              <p>We'll talk about your business, what's working, what isn't, and whether I can actually help. No sales pitch, just honest advice.</p>
+            </div>
+          </div>
+          
+          <div class="process-connector"></div>
+          
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Clear Plan & Quote</h3>
+              <p>If we're a good fit, I'll send you a straightforward proposal with fixed pricing. No hidden fees, no surprises.</p>
+            </div>
+          </div>
+          
+          <div class="process-connector"></div>
+          
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Build & Launch</h3>
+              <p>I get to work. Regular updates so you always know what's happening. Launch when everything's right, not rushed.</p>
+            </div>
+          </div>
+          
+          <div class="process-connector"></div>
+          
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Ongoing Growth</h3>
+              <p>Digital marketing isn't a one-time thing. I'll keep optimising, reporting, and finding new opportunities to grow your business.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+      <div class="container">
+        <span class="section-label">Transparent Pricing</span>
+        <h2>Fixed prices, no surprises</h2>
+        <p class="section-intro">You'll know exactly what you're paying from day one. No hourly rates or scope creep.</p>
+        
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Launch Site</h3>
+              <div class="price">£600</div>
+              <div class="price-term">One-off payment</div>
+            </div>
+            <div class="pricing-body">
+              <p class="pricing-description">A professional 3-page website built to convert visitors into customers. Delivered in 14 days to 1 month.</p>
+              <ul class="pricing-features">
+                <li><CheckIcon aria-hidden="true" /> 3 professional pages</li>
+                <li><CheckIcon aria-hidden="true" /> Mobile responsive design</li>
+                <li><CheckIcon aria-hidden="true" /> Basic SEO setup</li>
+                <li><CheckIcon aria-hidden="true" /> Google Business setup</li>
+                <li><CheckIcon aria-hidden="true" /> Analytics installed</li>
+                <li><CheckIcon aria-hidden="true" /> You own everything</li>
+              </ul>
+              <router-link to="/launch-sites" class="pricing-cta">
+                Learn More
+              </router-link>
+            </div>
+          </div>
+          
+          <div class="pricing-card featured">
+            <div class="featured-badge">Most Popular</div>
+            <div class="pricing-header">
+              <h3>SEO + Ads</h3>
+              <div class="price">£400</div>
+              <div class="price-term">per month</div>
+            </div>
+            <div class="pricing-body">
+              <p class="pricing-description">Ongoing management of your Google Ads and local SEO to bring in a steady stream of customers.</p>
+              <ul class="pricing-features">
+                <li><CheckIcon aria-hidden="true" /> Google Ads management</li>
+                <li><CheckIcon aria-hidden="true" /> Local SEO optimisation</li>
+                <li><CheckIcon aria-hidden="true" /> Conversion tracking</li>
+                <li><CheckIcon aria-hidden="true" /> Keyword research</li>
+                <li><CheckIcon aria-hidden="true" /> Competitor analysis</li>
+                <li><CheckIcon aria-hidden="true" /> Monthly reporting</li>
+              </ul>
+              <router-link to="/contact" class="pricing-cta primary">
+                Get Started
+              </router-link>
+            </div>
+          </div>
+          
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Hosting & Care</h3>
+              <div class="price">£20</div>
+              <div class="price-term">per month</div>
+            </div>
+            <div class="pricing-body">
+              <p class="pricing-description">Keep your website fast, secure, and up-to-date without thinking about it.</p>
+              <ul class="pricing-features">
+                <li><CheckIcon aria-hidden="true" /> Fast, secure hosting</li>
+                <li><CheckIcon aria-hidden="true" /> Weekly backups</li>
+                <li><CheckIcon aria-hidden="true" /> Security updates</li>
+                <li><CheckIcon aria-hidden="true" /> 2 hours of edits/month</li>
+                <li><CheckIcon aria-hidden="true" /> 99.9% uptime guarantee</li>
+                <li><CheckIcon aria-hidden="true" /> Priority support</li>
+              </ul>
+              <router-link to="/contact" class="pricing-cta">
+                Add to Your Site
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image">
+            <img 
+              src="@/assets/webp/grad.webp" 
+              alt="Andre Simpson - BSc Computer Science Graduate" 
+              loading="lazy"
+              decoding="async"
+              width="500"
+              height="500"
+            >
+          </div>
+          <div class="about-text">
+            <span class="section-label">About Me</span>
+            <h2>Marketing that's built on <span class="highlight">technical expertise</span></h2>
             <p>
-              As a freelance Digital Marketer and Developer, I bring a unique combination of marketing strategy 
-              and technical implementation. While others outsource, I handle everything in-house - 
-              from SEO audits to custom code.
+              I'm Andre Simpson, a freelance digital marketer and developer based in Stoke-on-Trent. 
+              I started N15 Labs because I saw too many local businesses getting burned by agencies 
+              that couldn't actually fix their problems.
+            </p>
+            <p>
+              With a Computer Science degree and experience with Google Ads, Amazon Ads, and full-stack development, 
+              I can do what most marketers can't: actually go into the code and fix what's broken. 
+              When your conversion tracking isn't working or your site is slow, I don't just report the problem — I solve it.
             </p>
             
-            <div class="value-features">
-              <div class="feature">
-                <div class="feature-icon">🎯</div>
-                <div>
-                  <strong>Complete Digital Strategy</strong>
-                  <span>Marketing + Development under one roof</span>
-                </div>
+            <div class="trust-signals">
+              <div class="trust-item">
+                <GraduationCapIcon aria-hidden="true" />
+                <span>BSc Computer Science (2:1), Staffordshire University</span>
               </div>
-              <div class="feature">
-                <div class="feature-icon">📍</div>
-                <div>
-                  <strong>Local Focus</strong>
-                  <span>Helping Stoke-on-Trent businesses grow online</span>
-                </div>
+              <div class="trust-item">
+                <BriefcaseIcon aria-hidden="true" />
+                <span>Previously worked for Staffordshire University</span>
               </div>
-              <div class="feature">
-                <div class="feature-icon">📊</div>
-                <div>
-                  <strong>Data-Driven Results</strong>
-                  <span>SEO and marketing that actually converts</span>
-                </div>
+              <div class="trust-item">
+                <MapPinIcon aria-hidden="true" />
+                <span>Based in Stoke-on-Trent, serving Staffordshire</span>
+              </div>
+              <div class="trust-item">
+                <BadgeCheckIcon aria-hidden="true" />
+                <span>Google Ads & Amazon Ads/A+ Content experience</span>
               </div>
             </div>
-          </div>
-          
-          <div class="code-showcase">
-            <div class="code-window">
-              <div class="window-header">
-                <div class="window-controls">
-                  <span class="control red"></span>
-                  <span class="control yellow"></span>
-                  <span class="control green"></span>
-                </div>
-                <span class="window-title">seo-optimised.vue</span>
-              </div>
-              <div class="code-content">
-                <div class="code-line">
-                  <span class="line-number">1</span>
-                  <span class="comment">// SEO-optimised Vue component</span>
-                </div>
-                <div class="code-line">
-                  <span class="line-number">2</span>
-                  <span class="keyword">export default</span> <span class="punctuation">{</span>
-                </div>
-                <div class="code-line">
-                  <span class="line-number">3</span>
-                  <span class="property">  marketing</span><span class="punctuation">:</span> <span class="string">'data-driven'</span><span class="punctuation">,</span>
-                </div>
-                <div class="code-line">
-                  <span class="line-number">4</span>
-                  <span class="property">  development</span><span class="punctuation">:</span> <span class="string">'custom-coded'</span><span class="punctuation">,</span>
-                </div>
-                <div class="code-line">
-                  <span class="line-number">5</span>
-                  <span class="property">  results</span><span class="punctuation">:</span> <span class="string">'guaranteed'</span>
-                </div>
-                <div class="code-line">
-                  <span class="line-number">6</span>
-                  <span class="punctuation">}</span>
-                </div>
-              </div>
-            </div>
+            
+            <router-link to="/about" class="about-link">
+              Learn more about my background
+              <ArrowRightIcon aria-hidden="true" />
+            </router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <!-- Final CTA Section -->
+    <section class="final-cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Grow Your Business Online?</h2>
-          <p>Get your professional website in 14 days, or explore our complete digital marketing services.</p>
+          <h2>Ready to stop guessing and start growing?</h2>
+          <p>
+            Book a free strategy call. We'll talk about your business, identify what's holding you back, 
+            and figure out if I'm the right person to help. No pressure, no hard sell.
+          </p>
           
-          <div class="cta-features">
-            <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              Professional freelance services
-            </div>
-            <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              Marketing + Development expertise
-            </div>
-            <div class="cta-feature">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              Local Stoke-on-Trent focus
-            </div>
+          <div class="cta-form">
+            <form @submit.prevent="submitEnquiry" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    v-model="form.name" 
+                    required
+                    placeholder="John Smith"
+                    autocomplete="name"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="business">Business Name</label>
+                  <input 
+                    type="text" 
+                    id="business" 
+                    v-model="form.business" 
+                    required
+                    placeholder="Smith's Plumbing"
+                    autocomplete="organization"
+                  >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    v-model="form.phone" 
+                    required
+                    placeholder="07123 456789"
+                    autocomplete="tel"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    v-model="form.email" 
+                    required
+                    placeholder="john@smithsplumbing.co.uk"
+                    autocomplete="email"
+                  >
+                </div>
+              </div>
+              <button type="submit" class="submit-btn" :disabled="isSubmitting">
+                <span v-if="!isSubmitting">
+                  Book Your Free Strategy Call
+                  <ArrowRightIcon class="cta-arrow" aria-hidden="true" />
+                </span>
+                <span v-else>Sending...</span>
+              </button>
+              <p v-if="submitSuccess" class="success-message">
+                Thanks! I'll be in touch within 24 hours to arrange your call.
+              </p>
+              <p v-if="submitError" class="error-message">
+                Something went wrong. Please try again or call me directly.
+              </p>
+            </form>
           </div>
           
-          <router-link class="cta-primary large" to="/launch-sites">
-            Get Your £600 Website Now
-            <svg class="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </router-link>
+          <div class="cta-alternatives">
+            <p>Prefer to talk now?</p>
+            <a href="tel:+447931206686" class="phone-link">
+              <PhoneIcon aria-hidden="true" />
+              07931 206686
+            </a>
+          </div>
           
-          <p class="cta-location">Proudly serving businesses in Stoke-on-Trent and the Staffordshire area</p>
+          <p class="cta-location">Proudly serving businesses in Stoke-on-Trent and across Staffordshire</p>
         </div>
       </div>
     </section>
-
-    <section class="n15-labs-showcase">
-      <div class="container">
-        <div class="showcase-header">
-          <span class="section-label">Innovation Lab</span>
-          <h2>Welcome to <span class="highlight">N15 Labs</span></h2>
-          <p>N15 Labs is where digital marketing meets modern development. Building custom solutions, automation systems, and growth strategies for local businesses.</p>
-        </div>
-        
-        <div class="showcase-visual">
-          <img
-            :src="slideshowImages[currentImageIndex]"
-            :alt="'N15 Labs Project ' + (currentImageIndex + 1)"
-            class="showcase-image"
-            @click="openModal"
-          />
-          
-          <div class="showcase-controls">
-            <button @click="prevImage" :disabled="currentImageIndex === 0" class="control-btn" aria-label="Previous image">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <button @click="nextImage" :disabled="currentImageIndex === slideshowImages.length - 1" class="control-btn" aria-label="Next image">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
-      <button class="modal-close" aria-label="Close modal" @click="closeModal">
-        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
-          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </button>
-      <img
-        :src="slideshowImages[currentImageIndex]"
-        :alt="'Full view ' + (currentImageIndex + 1)"
-        class="modal-image"
-      />
-    </div>
   </div>
 </template>
 
 <script>
 import { useHead } from '@vueuse/head'
-
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  BuildingIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
+  BarChart3Icon,
+  ScissorsIcon,
+  PoundSterlingIcon,
+  SearchIcon,
+  MonitorIcon,
+  GraduationCapIcon,
+  BriefcaseIcon,
+  MapPinIcon,
+  BadgeCheckIcon,
+  PhoneIcon
+} from 'lucide-vue-next'
 
 export default {
   name: 'HomePage',
+  
+  components: {
+    ArrowRightIcon,
+    CheckIcon,
+    BuildingIcon,
+    TrendingDownIcon,
+    TrendingUpIcon,
+    BarChart3Icon,
+    ScissorsIcon,
+    PoundSterlingIcon,
+    SearchIcon,
+    MonitorIcon,
+    GraduationCapIcon,
+    BriefcaseIcon,
+    MapPinIcon,
+    BadgeCheckIcon,
+    PhoneIcon
+  },
+  
   setup() {
     useHead({
-      title: 'Andre Simpson - Digital Marketing & Web Development | Stoke-on-Trent',
+      title: 'Google Ads & SEO for Local Businesses | N15 Labs Stoke-on-Trent',
       meta: [
         {
           name: 'description',
-          content: 'Freelance Digital Marketer, SEO Specialist & Web Developer in Stoke-on-Trent. £600 websites in 14 days. Google Ads, Local SEO, and custom development services.'
-        },
-        {
-          property: 'og:title',
-          content: 'Andre Simpson - Digital Marketing & Web Development | N15 Labs'
-        },
-        {
-          property: 'og:description',
-          content: 'Freelance Digital Marketing and Web Development services in Stoke-on-Trent. Get your professional website for £600 in just 14 days.'
+          content: 'I help Stoke-on-Trent businesses get more customers online. Google Ads management, SEO, and conversion-focused websites from £600. Free strategy call available.'
         },
         {
           name: 'keywords',
-          content: 'digital marketing stoke on trent, SEO specialist staffordshire, web developer stoke, freelance marketer, £600 websites, local SEO, Google Ads management'
+          content: 'Google Ads Stoke-on-Trent, SEO Staffordshire, web design Stoke-on-Trent, digital marketing Staffordshire, PPC management, local SEO'
+        },
+        {
+          property: 'og:title',
+          content: 'Google Ads & SEO for Local Businesses | N15 Labs'
+        },
+        {
+          property: 'og:description',
+          content: 'I help Stoke-on-Trent businesses get more customers online. Google Ads, SEO, and websites that convert.'
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          property: 'og:url',
+          content: 'https://n15labs.co.uk'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://n15labs.co.uk'
         }
       ]
     })
   },
+  
   data() {
     return {
-      currentImageIndex: 0,
-      modalOpen: false,
-      slideshowImages: [
-        require('@/assets/webp/wireframe-collage.webp'),
-        require('@/assets/webp/collage.webp')
-      ]
+      form: {
+        name: '',
+        business: '',
+        phone: '',
+        email: ''
+      },
+      isSubmitting: false,
+      submitSuccess: false,
+      submitError: false
     }
   },
+  
   methods: {
     getParticleStyle(n) {
+      const sizes = [60, 80, 100, 70, 90, 50]
+      const positions = [
+        { top: '10%', left: '5%' },
+        { top: '20%', right: '10%' },
+        { bottom: '30%', left: '15%' },
+        { top: '60%', right: '5%' },
+        { bottom: '10%', right: '20%' },
+        { top: '40%', left: '2%' }
+      ]
+      const delays = [0, 2, 4, 1, 3, 5]
+      
       return {
-        left: Math.random() * 100 + '%',
-        animationDelay: (n * 0.5) + 's',
-        animationDuration: (3 + Math.random() * 2) + 's'
+        width: `${sizes[n - 1]}px`,
+        height: `${sizes[n - 1]}px`,
+        ...positions[n - 1],
+        animationDelay: `${delays[n - 1]}s`
       }
     },
-    nextImage() {
-      if (this.currentImageIndex < this.slideshowImages.length - 1) {
-        this.currentImageIndex++
+    
+    async submitEnquiry() {
+      this.isSubmitting = true
+      this.submitSuccess = false
+      this.submitError = false
+      
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.form)
+        })
+        
+        if (response.ok) {
+          this.submitSuccess = true
+          this.form = { name: '', business: '', phone: '', email: '' }
+        } else {
+          this.submitError = true
+        }
+      } catch (error) {
+        console.error('Form submission error:', error)
+        this.submitError = true
+      } finally {
+        this.isSubmitting = false
       }
-    },
-    prevImage() {
-      if (this.currentImageIndex > 0) {
-        this.currentImageIndex--
-      }
-    },
-    openModal() {
-      this.modalOpen = true
-    },
-    closeModal() {
-      this.modalOpen = false
     }
   }
 }
 </script>
 
 <style scoped>
-/* Keep all existing styles from original Home.vue */
-* {
-  box-sizing: border-box;
-}
-
+/* ==================== BASE STYLES ==================== */
 .home-container {
-  background: #fafafa;
-  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #f4f4f5;
 }
 
 .container {
@@ -534,540 +705,27 @@ export default {
   padding: 0 2rem;
 }
 
-.hero-section {
-  position: relative;
-  min-height: calc(100vh - 100px);
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-  color: white;
-  overflow: hidden;
-  margin-top: 100px;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.floating-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(59, 130, 246, 0.6);
-  border-radius: 50%;
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px);
-    opacity: 0.3;
-  }
-  50% { 
-    transform: translateY(-100px) translateX(50px);
-    opacity: 1;
-  }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 4rem;
-  align-items: center;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  padding: 0.75rem 1.25rem;
-  border-radius: 50px;
-  font-size: 1.125rem !important;
-  font-weight: 600 !important;
-  color: #22c55e;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.home-container .hero-headline,
-.hero-headline {
-  font-size: clamp(3.5rem, 7vw, 5rem) !important;
-  font-weight: 800 !important;
-  line-height: 1.1 !important;
-  margin: 0 0 2rem 0 !important;
-  letter-spacing: -0.02em !important;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.home-container .hero-subhead,
-.hero-subhead {
-  font-size: 1.5rem !important;
-  line-height: 1.7 !important;
-  color: #d1d5db !important;
-  margin-bottom: 2.5rem !important;
-  max-width: 500px !important;
-  font-weight: 500 !important;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-item strong {
-  display: block;
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  color: white !important;
-}
-
-.stat-item span {
-  font-size: 1.125rem !important;
-  color: #9ca3af !important;
-  font-weight: 500 !important;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.cta-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
-  padding: 1.25rem 2rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600 !important;
-  font-size: 1.25rem !important;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-}
-
-.cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
-}
-
-.cta-primary.large {
-  padding: 1.5rem 2.5rem !important;
-  font-size: 1.375rem !important;
-}
-
-.cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  color: #f4f4f5;
-  padding: 1.25rem 2rem;
-  border: 1px solid #374151;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 500 !important;
-  font-size: 1.25rem !important;
-  transition: all 0.3s ease;
-}
-
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: #4b5563;
-}
-
-.cta-arrow {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.3s ease;
-}
-
-.cta-primary:hover .cta-arrow {
-  transform: translateX(3px);
-}
-
-.hero-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-container {
-  position: relative;
-  animation: profileFloat 6s ease-in-out infinite;
-}
-
-@keyframes profileFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
-}
-
-.profile-image {
-  width: 350px;
-  height: auto;
-  border-radius: 24px;
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-  max-width: 400px;
-}
-
-.profile-image:hover {
-  transform: scale(1.02);
-}
-
-.profile-glow {
-  position: absolute;
-  inset: -30px;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
-  border-radius: 40px;
-  z-index: -1;
-  filter: blur(30px);
-  animation: glowPulse 3s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
-}
-
-.profile-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(34, 197, 94, 0.9);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.9375rem !important;
-  font-weight: 600 !important;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  backdrop-filter: blur(10px);
-}
-
-.profile-badge svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* New Launch Sites Hero Section */
-.launch-sites-hero {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border-top: 1px solid #e0e7ff;
-  border-bottom: 1px solid #e0e7ff;
-}
-
-.launch-content {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.launch-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
-}
-
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
-
-.launch-headline {
-  font-size: 3.5rem !important;
-  font-weight: 800 !important;
-  color: #111827 !important;
-  margin-bottom: 1rem !important;
-  line-height: 1.2 !important;
-}
-
-.launch-subhead {
-  font-size: 1.5rem !important;
-  color: #6b7280 !important;
-  margin-bottom: 2.5rem !important;
-  font-weight: 500 !important;
-}
-
-.launch-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
-  padding: 1.25rem 2.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700 !important;
-  font-size: 1.375rem !important;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
-  margin-bottom: 3rem;
-}
-
-.launch-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
-}
-
-.trust-signals {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  font-weight: 600 !important;
-  color: #374151 !important;
-}
-
-.trust-item svg {
-  width: 20px;
-  height: 20px;
-  color: #10b981;
-}
-
-/* New Services Cards Section */
-.services-cards-section {
-  padding: 6rem 0;
-  background: white;
-}
-
-.services-cards-section h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  color: #111827 !important;
-  margin-bottom: 1rem !important;
-  text-align: center;
-}
-
-.services-subtitle {
-  font-size: 1.375rem !important;
-  color: #6b7280 !important;
-  text-align: center;
-  margin-bottom: 3rem !important;
-  font-weight: 500 !important;
-}
-
-.services-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.service-offer-card {
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 2.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.service-offer-card.featured {
-  border-color: #3b82f6;
-  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
-  transform: scale(1.02);
-}
-
-.service-offer-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.service-offer-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
-  padding: 0.375rem 1rem;
-  border-radius: 50px;
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.service-offer-icon {
-  font-size: 3rem !important;
-  margin-bottom: 1rem !important;
-}
-
-.service-offer-card h3 {
-  font-size: 1.75rem !important;
-  font-weight: 700 !important;
-  color: #111827 !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.service-price {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #3b82f6 !important;
-  margin-bottom: 0.25rem !important;
-}
-
-.service-timeline {
-  font-size: 1rem !important;
-  color: #6b7280 !important;
-  margin-bottom: 1.5rem !important;
-  font-weight: 500 !important;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-  text-align: left;
-}
-
-.service-features li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #f3f4f6;
-  color: #4b5563;
-  font-weight: 500 !important;
-  display: flex;
-  align-items: center;
-}
-
-.service-features li:before {
-  content: "✓";
-  color: #10b981;
-  font-weight: 700;
-  margin-right: 0.75rem;
-}
-
-.service-cta {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600 !important;
-  font-size: 1.125rem !important;
-  transition: all 0.3s ease;
-}
-
-.service-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-}
-
-.service-cta.secondary {
-  background: white;
-  color: #3b82f6;
-  border: 2px solid #3b82f6;
-}
-
-.service-cta.secondary:hover {
-  background: #3b82f6;
-  color: white;
-}
-
-.about-section {
-  padding: 6rem 0;
-  background: #f9fafb;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
+/* Section Labels */
 .section-label {
   display: inline-block;
-  background: #dbeafe;
-  color: #1d4ed8;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1.25rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 50px;
-  font-size: 0.9375rem !important;
-  font-weight: 600 !important;
+  color: #60a5fa;
+  font-size: 0.9375rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
 }
 
-.home-container .about-text h2,
-.about-text h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  color: #111827 !important;
-  margin-bottom: 1.5rem !important;
-  line-height: 1.2 !important;
+.section-intro {
+  font-size: 1.25rem;
+  color: #d4d4d8;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
 }
 
 .highlight {
@@ -1077,645 +735,1126 @@ export default {
   background-clip: text;
 }
 
-.home-container .about-intro,
-.about-intro {
-  font-size: 1.375rem !important;
-  line-height: 1.7 !important;
-  color: #6b7280 !important;
-  margin-bottom: 2rem !important;
-  font-weight: 500 !important;
-}
-
-.credentials-simple {
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+  min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5rem 2rem;
+  overflow: hidden;
 }
 
-.credential {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  border-left: 4px solid #3b82f6;
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.credential strong {
-  color: #111827 !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.25rem !important;
-  font-size: 1.0625rem !important;
+.floating-particles {
+  position: absolute;
+  inset: 0;
 }
 
-.credential span {
-  color: #6b7280 !important;
-  font-size: 1rem !important;
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+  33% { transform: translate(30px, -30px) rotate(120deg); opacity: 0.6; }
+  66% { transform: translate(-20px, 20px) rotate(240deg); opacity: 0.3; }
 }
 
-.social-link {
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: #f3f4f6;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #374151;
-  font-weight: 500 !important;
-  font-size: 1.0625rem !important;
-  transition: all 0.3s ease;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  color: #34d399;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
 }
 
-.social-link:hover {
-  background: #111827;
-  color: white;
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.social-link svg {
-  width: 18px;
-  height: 18px;
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 
-.about-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.hero-headline {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.75rem;
+  color: #ffffff;
 }
 
-.bio-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.workspace-image,
-.code-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.workspace-image img,
-.code-image img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.workspace-image:hover img,
-.code-image:hover img {
-  transform: scale(1.1);
-}
-
-.image-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  color: white;
-  padding: 1rem 0.75rem 0.75rem;
-  font-size: 0.9375rem !important;
-  font-weight: 500 !important;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.video-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.video-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  color: white;
-  padding: 1rem 0.75rem 0.75rem;
-  font-size: 0.9375rem !important;
-  font-weight: 500 !important;
-}
-
-.services-section {
-  padding: 6rem 0;
-  background: white;
-  text-align: center;
-}
-
-.home-container .services-section h2,
-.services-section h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  color: #111827 !important;
-  margin-bottom: 1rem !important;
-}
-
-.home-container .services-intro,
-.services-intro {
-  font-size: 1.5rem !important;
-  color: #6b7280 !important;
-  margin-bottom: 3rem !important;
-  font-weight: 500 !important;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: #f9fafb;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  text-align: left;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: #3b82f6;
-  background: white;
-}
-
-.service-icon {
-  font-size: 2.5rem !important;
-  margin-bottom: 1rem !important;
-  display: block !important;
-}
-
-.home-container .service-card h3,
-.service-card h3 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: #111827 !important;
-  margin-bottom: 1rem !important;
-}
-
-.home-container .service-card p,
-.service-card p {
-  color: #6b7280 !important;
-  line-height: 1.6 !important;
-  margin-bottom: 1.5rem !important;
-  font-size: 1.125rem !important;
-  font-weight: 500 !important;
-}
-
-.service-tech {
-  font-size: 1rem !important;
-  color: #3b82f6 !important;
-  font-weight: 500 !important;
-  border-top: 1px solid #e5e7eb;
-  padding-top: 1rem;
-}
-
-.value-proposition {
-  padding: 6rem 0;
-  background: #f9fafb;
-}
-
-.value-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.home-container .value-text h2,
-.value-text h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
-  color: #111827 !important;
-  margin-bottom: 1.5rem !important;
-}
-
-.accent-text {
+.gradient-text {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.home-container .value-text p,
-.value-text p {
-  font-size: 1.375rem !important;
-  line-height: 1.7 !important;
-  color: #6b7280 !important;
-  margin-bottom: 2rem !important;
-  font-weight: 500 !important;
+.hero-subhead {
+  font-size: 1.375rem;
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
 
-.value-features {
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
+}
+
+.stat-item {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.25rem;
 }
 
-.feature {
+.stat-item strong {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.stat-item span {
+  font-size: 1rem;
+  color: #d4d4d8;
+}
+
+.hero-ctas {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.feature-icon {
-  font-size: 1.75rem !important;
-  margin-top: 0.25rem !important;
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-.feature strong {
-  display: block !important;
-  color: #111827 !important;
-  font-weight: 600 !important;
-  font-size: 1.25rem !important;
-  margin-bottom: 0.25rem !important;
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35);
 }
 
-.feature span {
-  color: #6b7280 !important;
-  font-size: 1.0625rem !important;
+.cta-primary .cta-arrow {
+  width: 22px;
+  height: 22px;
 }
 
-.code-showcase {
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: transparent;
+  color: #f4f4f5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: 2px solid #52525b;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* Hero Visual */
+.hero-visual {
   display: flex;
   justify-content: center;
 }
 
-.code-window {
-  background: #1f2937;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 450px;
+.profile-container {
+  position: relative;
 }
 
-.window-header {
-  background: #374151;
-  padding: 1rem;
+.profile-glow {
+  position: absolute;
+  inset: -25px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.profile-image {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #374151;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border: 1px solid #374151;
+  border-radius: 50px;
+  color: #10b981;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.profile-badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==================== RESULTS SECTION ==================== */
+.results-section {
+  padding: 7rem 0;
+  text-align: center;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+}
+
+.results-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+/* Case Study Card */
+.case-study-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border: 1px solid #374151;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: left;
+  margin-top: 3.5rem;
+}
+
+.case-study-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.client-avatar {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-avatar svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.client-info h3 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+  color: #ffffff;
+}
+
+.client-type {
+  font-size: 1rem;
+  color: #a1a1aa;
+}
+
+.case-study-badge {
+  padding: 0.625rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  color: #34d399;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.case-study-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.challenge-section h4,
+.solution-section h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.challenge-section p {
+  color: #e4e4e7;
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+
+.solution-list {
+  list-style: none;
+  padding: 0;
+}
+
+.solution-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: #e4e4e7;
+  line-height: 1.65;
+  font-size: 1.0625rem;
+}
+
+.solution-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.solution-list li strong {
+  color: #ffffff;
+}
+
+/* Results Metrics */
+.results-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}
+
+.metric-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.metric-icon.down,
+.metric-icon.up {
+  color: #10b981;
+}
+
+.metric-label {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0.625rem;
+}
+
+.metric-detail {
+  font-size: 0.9375rem;
+  color: #a1a1aa;
+  margin-top: 0.375rem;
+}
+
+.case-study-footer {
+  text-align: center;
+}
+
+.case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.case-study-link:hover {
   gap: 1rem;
 }
 
-.window-controls {
-  display: flex;
-  gap: 0.5rem;
+.case-study-link svg {
+  width: 22px;
+  height: 22px;
 }
 
-.control {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+/* Additional Proof */
+.additional-proof {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
 }
 
-.control.red { background: #ef4444; }
-.control.yellow { background: #f59e0b; }
-.control.green { background: #10b981; }
-
-.window-title {
-  color: #d1d5db;
-  font-size: 0.875rem;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+.proof-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border: 1px solid #374151;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: left;
 }
 
-.code-content {
-  padding: 1.5rem;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.code-line {
+.proof-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 14px;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #3b82f6;
 }
 
-.line-number {
-  color: #6b7280;
-  width: 2rem;
-  text-align: right;
-  margin-right: 1rem;
-  user-select: none;
+.proof-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
-.comment { color: #6b7280; }
-.keyword { color: #f59e0b; }
-.property { color: #10b981; }
-.string { color: #3b82f6; }
-.punctuation { color: #d1d5db; }
+.proof-card h4 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
 
-.cta-section {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+.proof-card p {
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.proof-metric {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50px;
+  color: #60a5fa;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* ==================== SERVICES SECTION ==================== */
+.services-section {
+  padding: 7rem 0;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.service-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border: 1px solid #374151;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+.service-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  color: #3b82f6;
+}
+
+.service-icon-wrapper svg {
+  width: 32px;
+  height: 32px;
+}
+
+.service-card h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.service-card > p {
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  font-size: 1.0625rem;
+}
+
+.service-includes {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.75rem;
+}
+
+.service-includes li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #e4e4e7;
+  font-size: 1rem;
+}
+
+.service-includes li svg {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  transition: all 0.3s ease;
+}
+
+.service-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.service-link:hover {
+  gap: 0.875rem;
+  color: #60a5fa;
+}
+
+/* ==================== PROCESS SECTION ==================== */
+.process-section {
+  padding: 7rem 0;
+  text-align: center;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+}
+
+.process-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 3.5rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-step {
+  display: flex;
+  gap: 1.75rem;
+  text-align: left;
+  width: 100%;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.375rem;
+  font-weight: 700;
   color: white;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  color: #ffffff;
+}
+
+.step-content p {
+  color: #d4d4d8;
+  line-height: 1.7;
+  font-size: 1.0625rem;
+}
+
+.process-connector {
+  width: 3px;
+  height: 48px;
+  background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 100%);
+  margin-left: 26px;
+}
+
+/* ==================== PRICING SECTION ==================== */
+.pricing-section {
+  padding: 7rem 0;
+  text-align: center;
+}
+
+.pricing-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border: 1px solid #374151;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-header {
+  padding: 2.5rem 2rem 1.75rem;
+  text-align: center;
+}
+
+.pricing-card.featured .pricing-header {
+  padding-top: 3.5rem;
+}
+
+.pricing-header h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.price {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #3b82f6;
+}
+
+.price-term {
+  font-size: 1rem;
+  color: #a1a1aa;
+  margin-top: 0.25rem;
+}
+
+.pricing-body {
+  padding: 0 2rem 2.5rem;
+}
+
+.pricing-description {
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  font-size: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.75rem;
+  text-align: left;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 0.875rem;
+  color: #e4e4e7;
+  font-size: 1rem;
+}
+
+.pricing-features li svg {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.pricing-cta {
+  display: block;
+  width: 100%;
+  padding: 1.125rem;
+  background: transparent;
+  border: 2px solid #52525b;
+  color: #f4f4f5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pricing-cta:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.pricing-cta.primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: transparent;
+  color: white;
+}
+
+.pricing-cta.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35);
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-section {
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  border: 2px solid #374151;
+}
+
+.about-text h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  color: #ffffff;
+}
+
+.about-text > p {
+  color: #e4e4e7;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+}
+
+.trust-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #d4d4d8;
+  font-size: 1.0625rem;
+}
+
+.trust-item svg {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.about-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.about-link:hover {
+  gap: 1rem;
+  color: #60a5fa;
+}
+
+/* ==================== FINAL CTA SECTION ==================== */
+.final-cta-section {
+  padding: 7rem 0;
   text-align: center;
 }
 
 .cta-content {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.home-container .cta-content h2,
 .cta-content h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  margin-bottom: 1rem !important;
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
 }
 
-.home-container .cta-content p,
-.cta-content p {
-  font-size: 1.5rem !important;
-  color: #d1d5db !important;
-  margin-bottom: 2.5rem !important;
-  line-height: 1.6 !important;
-  font-weight: 500 !important;
-}
-
-.cta-features {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+.cta-content > p {
+  color: #d4d4d8;
+  font-size: 1.25rem;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
-  flex-wrap: wrap;
 }
 
-.cta-feature {
+/* Contact Form */
+.contact-form {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border: 1px solid #374151;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #d1d5db;
-  font-size: 1.125rem !important;
-  font-weight: 500 !important;
+  flex-direction: column;
 }
 
-.cta-feature svg {
-  width: 20px;
-  height: 20px;
-  color: #22c55e;
-  flex-shrink: 0;
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  color: #e4e4e7;
 }
 
-.cta-location {
-  margin-top: 1.5rem !important;
-  color: #9ca3af !important;
-  font-size: 1.0625rem !important;
-  font-style: italic !important;
-}
-
-.n15-labs-showcase {
-  padding: 6rem 0;
-  background: white;
-}
-
-.showcase-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.home-container .showcase-header h2,
-.showcase-header h2 {
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-  color: #111827 !important;
-  margin-bottom: 1rem !important;
-}
-
-.home-container .showcase-header p,
-.showcase-header p {
-  color: #6b7280 !important;
-  font-size: 1.375rem !important;
-  line-height: 1.6 !important;
-  max-width: 700px !important;
-  margin: 0 auto !important;
-  font-weight: 500 !important;
-}
-
-.showcase-visual {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.showcase-image {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.showcase-image:hover {
-  transform: scale(1.02);
-}
-
-.showcase-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.control-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
+.form-group input {
+  padding: 1rem 1.25rem;
+  background: #0a0a0a;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  color: #f4f4f5;
+  font-size: 1.0625rem;
   transition: all 0.3s ease;
 }
 
-.control-btn:hover:not(:disabled) {
-  background: #111827;
-  color: white;
-  border-color: #111827;
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.control-btn:disabled {
-  opacity: 0.5;
+.form-group input::placeholder {
+  color: #71717a;
+}
+
+.submit-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.75rem;
+}
+
+.submit-btn .cta-arrow {
+  width: 22px;
+  height: 22px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
-.control-btn svg {
-  width: 20px;
-  height: 20px;
+.success-message {
+  color: #10b981;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 1.0625rem;
 }
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
+.error-message {
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 1.0625rem;
+}
+
+/* CTA Alternatives */
+.cta-alternatives {
+  margin-top: 2.5rem;
+}
+
+.cta-alternatives p {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.phone-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
+  gap: 0.75rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.375rem;
 }
 
-.modal-close {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+.phone-link svg {
+  width: 26px;
+  height: 26px;
 }
 
-.modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
+.phone-link:hover {
+  color: #60a5fa;
 }
 
-.modal-close svg {
-  width: 24px;
-  height: 24px;
+.cta-location {
+  margin-top: 2.5rem;
+  color: #a1a1aa;
+  font-size: 1rem;
 }
 
-.modal-image {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-}
-
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 3rem;
+    gap: 3.5rem;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .hero-ctas {
+    justify-content: center;
   }
   
   .profile-image {
-    width: 300px;
-    height: 300px;
-    max-width: 300px;
+    width: 320px;
+    height: 320px;
   }
   
-  .value-content,
+  .case-study-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+    order: -1;
+  }
+  
   .about-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    text-align: center;
   }
   
-  .cta-features {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .services-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .launch-content {
-    padding: 0 1rem;
+  .about-image img {
+    margin: 0 auto;
   }
   
   .trust-signals {
-    flex-direction: column;
     align-items: center;
+  }
+  
+  .additional-proof {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
   
   .hero-section {
     min-height: auto;
-    padding: 4rem 0;
+    padding: 3.5rem 1.25rem;
   }
-
-  .home-container .hero-headline,
+  
   .hero-headline {
-    font-size: 3rem !important;
+    font-size: 2.75rem;
   }
-
-  .home-container .hero-subhead,
+  
   .hero-subhead {
-    font-size: 1.375rem !important;
-  }
-
-  .launch-headline {
-    font-size: 2.5rem !important;
-  }
-
-  .launch-subhead {
-    font-size: 1.25rem !important;
-  }
-
-  .home-container .about-text h2,
-  .about-text h2,
-  .home-container .services-section h2,
-  .services-section h2,
-  .home-container .value-text h2,
-  .value-text h2,
-  .home-container .cta-content h2,
-  .cta-content h2,
-  .home-container .showcase-header h2,
-  .showcase-header h2,
-  .services-cards-section h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .home-container .about-intro,
-  .about-intro {
-    font-size: 1.25rem !important;
-  }
-
-  .home-container .services-intro,
-  .services-intro,
-  .home-container .cta-content p,
-  .cta-content p,
-  .home-container .showcase-header p,
-  .showcase-header p {
-    font-size: 1.375rem !important;
-  }
-
-  .home-container .service-card p,
-  .service-card p {
-    font-size: 1.0625rem !important;
+    font-size: 1.1875rem;
   }
   
   .hero-stats {
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.75rem;
+    text-align: center;
   }
   
   .hero-ctas {
@@ -1723,113 +1862,134 @@ export default {
     align-items: center;
   }
   
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .social-links {
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
     justify-content: center;
   }
   
-  .bio-images {
+  .profile-image {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .results-section h2,
+  .services-section h2,
+  .process-section h2,
+  .pricing-section h2,
+  .about-text h2,
+  .cta-content h2 {
+    font-size: 2.25rem;
+  }
+  
+  .section-intro {
+    font-size: 1.125rem;
+  }
+  
+  .results-metrics {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .metric-value {
+    font-size: 2.25rem;
+  }
+  
+  .form-row {
     grid-template-columns: 1fr;
   }
   
-  .service-offer-card.featured {
-    transform: none;
+  .case-study-card {
+    padding: 2rem;
+  }
+  
+  .proof-card {
+    padding: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .home-container .hero-headline,
   .hero-headline {
-    font-size: 2.5rem !important;
-  }
-
-  .launch-headline {
-    font-size: 2rem !important;
-  }
-
-  .home-container .about-text h2,
-  .about-text h2,
-  .home-container .services-section h2,
-  .services-section h2,
-  .home-container .value-text h2,
-  .value-text h2,
-  .home-container .cta-content h2,
-  .cta-content h2,
-  .home-container .showcase-header h2,
-  .showcase-header h2,
-  .services-cards-section h2 {
-    font-size: 2rem !important;
-  }
-  
-  .hero-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    font-size: 2.25rem;
   }
   
   .profile-image {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
   }
   
-  .launch-cta {
-    padding: 1rem 1.5rem;
-    font-size: 1.125rem !important;
+  .profile-badge {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
   }
   
-  .trust-item {
-    font-size: 0.875rem !important;
+  .results-section h2,
+  .services-section h2,
+  .process-section h2,
+  .pricing-section h2,
+  .about-text h2,
+  .cta-content h2 {
+    font-size: 1.875rem;
   }
   
-  .service-offer-card {
-    padding: 1.5rem;
+  .price {
+    font-size: 2.75rem;
   }
   
-  .service-price {
-    font-size: 2rem !important;
+  .stat-item strong {
+    font-size: 1.75rem;
+  }
+  
+  .contact-form {
+    padding: 1.75rem;
   }
 }
 
-/* Accessibility improvements */
+/* ==================== ACCESSIBILITY ==================== */
 @media (prefers-reduced-motion: reduce) {
   .particle,
-  .profile-container,
-  .profile-glow {
+  .profile-glow,
+  .status-dot {
     animation: none;
   }
   
-  .status-dot,
-  .pulse-dot {
-    animation: none;
+  .cta-primary:hover,
+  .cta-secondary:hover,
+  .pricing-cta:hover,
+  .service-card:hover,
+  .submit-btn:hover {
+    transform: none;
   }
 }
 
+/* Focus states */
 .cta-primary:focus,
 .cta-secondary:focus,
-.control-btn:focus,
-.launch-cta:focus,
-.service-cta:focus,
-.social-link:focus {
-  outline: 2px solid #3b82f6;
+.pricing-cta:focus,
+.service-link:focus,
+.case-study-link:focus,
+.about-link:focus,
+.phone-link:focus,
+.submit-btn:focus {
+  outline: 3px solid #3b82f6;
   outline-offset: 2px;
 }
 
-/* Print styles */
+.form-group input:focus {
+  outline: none;
+}
+
+/* ==================== PRINT ==================== */
 @media print {
-  .hero-section,
-  .launch-sites-hero,
-  .n15-labs-showcase,
-  .modal-overlay {
+  .hero-background,
+  .floating-particles,
+  .profile-glow {
     display: none;
   }
   
-  .services-cards-section,
-  .about-section,
-  .services-section {
-    break-inside: avoid;
+  .home-container {
+    background: white;
+    color: black;
   }
 }
 </style>

@@ -1,222 +1,346 @@
 <template>
-  <div class="about-container">
+  <div class="about-page">
+    <!-- Hero Section -->
     <section class="about-hero">
-      <div class="hero-background">
-        <div class="floating-particles">
-          <div class="particle" v-for="n in 4" :key="n" :style="getParticleStyle(n)"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="section-label">About N15 Labs</span>
+            <h1>I help local businesses <span class="gradient-text">get more customers</span> from Google</h1>
+            <p class="hero-intro">
+              I'm Andre Simpson — a digital marketer, SEO specialist, and web developer 
+              based in Stoke-on-Trent. I combine genuine technical skill with marketing 
+              expertise to deliver results that actually matter to your business.
+            </p>
+          </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <img 
+                :src="profileImage" 
+                alt="Andre Simpson - N15 Labs Founder" 
+                class="profile-photo"
+              />
+              <div class="image-glow"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          About Andre Simpson
-        </div>
-        
-        <h1 class="hero-headline">
-          From Music to <span class="gradient-text">Code</span><br>
-          My Developer Journey
-        </h1>
-        
-        <p class="hero-subhead">
-          A story of transformation, resilience, and finding purpose in building digital solutions 
-          that make a real difference for businesses and creators.
-        </p>
       </div>
     </section>
 
-    <section class="story-section">
+    <!-- Why Me Section -->
+    <section class="why-section">
       <div class="container">
-        <div class="story-content">
-          <div class="story-text">
-            <h2 class="section-title">The Journey to <span class="highlight">Full-Stack Development</span></h2>
-            
-            <div class="story-card">
-              <h3 class="story-subtitle">From Music Production to Code</h3>
-              <p class="story-paragraph">
-                My path to software development has been anything but conventional. Starting as a music producer/ DJ 
-                and studio owner with N15 Studios, I discovered my passion for creating digital experiences that solve real problems.
-              </p>
-              
-              <p class="story-paragraph">
-                After taking to Computer Science when initially seeking a business course, I completed my degree
-                with University of Staffordshire finding a renewed purpose. I graduated with a 2:1 BSc (Hons) in Computer Science, achieving 77% in Web Development and 70% in my final project.
-              </p>
-              
-              <p class="story-paragraph">
-                Today, I combine my creative background with technical expertise to build full-stack applications 
-                that are both functional and engaging. I specialise in full-stack development, and modern web 
-                technologies, with a growing interest in AI integration and automation.
+        <h2>Why work with me?</h2>
+        <p class="section-intro">
+          Most marketing agencies are either developers who can't do marketing, or 
+          marketers who can't build. I do both.
+        </p>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">
+              <CodeIcon aria-hidden="true" />
+            </div>
+            <div class="why-content">
+              <h3>I Actually Build Things</h3>
+              <p>
+                I'm not just managing your ads — I built this website from scratch. When 
+                your landing page needs fixing, I fix it myself. No waiting for "the tech team".
               </p>
             </div>
           </div>
           
-          <div class="story-visual">
-            <div class="profile-container">
-               <img :src="gradImage" alt="Andre Simpson - Developer" class="profile-image">
-              <div class="profile-glow"></div>
+          <div class="why-card">
+            <div class="why-icon">
+              <TrendingUpIcon aria-hidden="true" />
+            </div>
+            <div class="why-content">
+              <h3>I Focus on Results</h3>
+              <p>
+                I don't care about impressions or vanity metrics. I care about how many 
+                customers you're getting and how much you're paying for them.
+              </p>
+            </div>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <MapPinIcon aria-hidden="true" />
+            </div>
+            <div class="why-content">
+              <h3>I'm Local</h3>
+              <p>
+                Based in Stoke-on-Trent, I understand the Staffordshire market. You're not 
+                working with a faceless agency in London — you're working with me directly.
+              </p>
+            </div>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <ShieldCheckIcon aria-hidden="true" />
+            </div>
+            <div class="why-content">
+              <h3>I'm Honest</h3>
+              <p>
+                I won't promise page one rankings in a week or inflate results to look good. 
+                If something isn't working, I'll tell you and fix it.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Background Section -->
+    <section class="background-section">
+      <div class="container">
+        <div class="background-content">
+          <div class="background-text">
+            <span class="section-label">Background</span>
+            <h2>From Computer Science to <span class="gradient-text">Business Results</span></h2>
+            
+            <div class="story-block">
+              <p>
+                I graduated from Staffordshire University with a 2:1 BSc (Hons) in Computer 
+                Science, achieving 77% in Web Development. But I quickly realised that 
+                most businesses don't need a developer — they need customers.
+              </p>
+              
+              <p>
+                That's why I pivoted from pure development to digital marketing. Now I use 
+                my technical background to build fast, SEO-optimised websites and run 
+                Google Ads campaigns that actually convert.
+              </p>
+              
+              <p>
+                Before starting N15 Labs, I worked for Staffordshire University and gained 
+                hands-on experience with Google Ads, Amazon Advertising, and e-commerce 
+                optimisation. I've managed over £60,000 in ad spend and generated 618+ 
+                tracked conversions for clients.
+              </p>
+            </div>
+          </div>
+          
+          <div class="credentials-card">
+            <h3>Credentials</h3>
+            <ul class="credentials-list">
+              <li>
+                <GraduationCapIcon aria-hidden="true" />
+                <div>
+                  <strong>BSc Computer Science (2:1)</strong>
+                  <span>Staffordshire University</span>
+                </div>
+              </li>
+              <li>
+                <BriefcaseIcon aria-hidden="true" />
+                <div>
+                  <strong>Previous Role</strong>
+                  <span>Staffordshire University</span>
+                </div>
+              </li>
+              <li>
+                <TargetIcon aria-hidden="true" />
+                <div>
+                  <strong>Google Ads Experience</strong>
+                  <span>£60k+ ad spend managed</span>
+                </div>
+              </li>
+              <li>
+                <ShoppingCartIcon aria-hidden="true" />
+                <div>
+                  <strong>Amazon Advertising</strong>
+                  <span>A+ Content &amp; PPC</span>
+                </div>
+              </li>
+              <li>
+                <MapPinIcon aria-hidden="true" />
+                <div>
+                  <strong>Based In</strong>
+                  <span>Stoke-on-Trent, Staffordshire</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container">
+        <h2>What I've Achieved for Clients</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-value">75%</div>
+            <div class="result-label">Lower Cost Per Lead</div>
+            <div class="result-detail">£111 → £28 for a regional home services company</div>
+          </div>
+          
+          <div class="result-card">
+            <div class="result-value">618+</div>
+            <div class="result-label">Conversions Generated</div>
+            <div class="result-detail">Tracked enquiries through Google Ads</div>
+          </div>
+          
+          <div class="result-card">
+            <div class="result-value">110%</div>
+            <div class="result-label">Organic Traffic Growth</div>
+            <div class="result-detail">Within 3 weeks of site launch</div>
+          </div>
+          
+          <div class="result-card">
+            <div class="result-value">4×</div>
+            <div class="result-label">Better Than Previous Agency</div>
+            <div class="result-detail">Same budget, four times the results</div>
+          </div>
+        </div>
+        
+        <div class="results-cta">
+          <router-link to="/results" class="cta-link">
+            See the full case studies
+            <ArrowRightIcon aria-hidden="true" />
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
     <section class="values-section">
       <div class="container">
-        <h2 class="section-title">What Drives Me</h2>
+        <h2>How I Work</h2>
         
         <div class="values-grid">
           <div class="value-card">
-            <div class="value-icon">🚀</div>
-            <h3 class="value-title">Performance-First Mindset</h3>
-            <p class="value-description">
-              Every line of code I write is optimised for speed and efficiency. I believe fast websites 
-              create better user experiences and drive real business results.
-            </p>
+            <div class="value-icon">
+              <MessageSquareIcon aria-hidden="true" />
+            </div>
+            <div class="value-content">
+              <h3>Direct Communication</h3>
+              <p>
+                You work with me directly — no account managers, no runaround. When you 
+                have a question, you get an answer from the person doing the work.
+              </p>
+            </div>
           </div>
           
           <div class="value-card">
-            <div class="value-icon">🎯</div>
-            <h3 class="value-title">Problem-Solving Focus</h3>
-            <p class="value-description">
-              I don't just write code. I solve problems. Whether it's automating workflows or building 
-              custom tools, I focus on creating solutions that make a difference.
-            </p>
+            <div class="value-icon">
+              <EyeIcon aria-hidden="true" />
+            </div>
+            <div class="value-content">
+              <h3>Full Transparency</h3>
+              <p>
+                You'll always know what I'm doing and why. Monthly reports in plain English, 
+                not jargon designed to confuse you.
+              </p>
+            </div>
           </div>
           
           <div class="value-card">
-            <div class="value-icon">🎨</div>
-            <h3 class="value-title">Creative Engineering</h3>
-            <p class="value-description">
-              My background in music production taught me that great work combines technical skill with 
-              creative vision. I bring this same approach to software development.
-            </p>
+            <div class="value-icon">
+              <TargetIcon aria-hidden="true" />
+            </div>
+            <div class="value-content">
+              <h3>Results-Focused</h3>
+              <p>
+                I measure success by customers and revenue, not clicks and impressions. 
+                If it's not making you money, we need to change it.
+              </p>
+            </div>
           </div>
           
           <div class="value-card">
-            <div class="value-icon">📚</div>
-            <h3 class="value-title">Continuous Learning</h3>
-            <p class="value-description">
-              Technology evolves rapidly, and so do I. From AI tools to new frameworks, I'm always 
-              expanding my skillset to deliver cutting-edge solutions.
-            </p>
+            <div class="value-icon">
+              <UsersIcon aria-hidden="true" />
+            </div>
+            <div class="value-content">
+              <h3>Long-Term Partnership</h3>
+              <p>
+                I'm not looking for quick wins and exit. I want to help your business 
+                grow month after month, year after year.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="achievements-section">
-      <div class="container">
-        <h2 class="section-title">Academic & Professional <span class="highlight">Achievements</span></h2>
-        
-        <div class="achievements-grid">
-          <div class="achievement-card">
-            <div class="achievement-header">
-              <div class="achievement-icon">🎓</div>
-              <h3 class="achievement-title">BSc Computer Science (2:1)</h3>
-            </div>
-            <p class="achievement-description">
-              Graduated from Staffordshire University with strong marks in Web Development (77%) 
-              and Final Year Project (70%). Specialised in modern web frameworks and full-stack development.
-            </p>
-          </div>
-          
-          <div class="achievement-card">
-            <div class="achievement-header">
-              <div class="achievement-icon">💻</div>
-              <h3 class="achievement-title">SneakTrack Project</h3>
-            </div>
-            <p class="achievement-description">
-              Built a production-level real-time tracking application using Next.js, Firebase, and Puppeteer. 
-              Scored 70/100 and demonstrated advanced full-stack development skills.
-            </p>
-          </div>
-          
-          <div class="achievement-card">
-            <div class="achievement-header">
-              <div class="achievement-icon">🏢</div>
-              <h3 class="achievement-title">N15 Labs Founder</h3>
-            </div>
-            <p class="achievement-description">
-              Founded and operate N15 Labs, delivering custom web solutions and automation tools. 
-              Combine entrepreneurial vision with technical execution.
-            </p>
-          </div>
-          
-          <div class="achievement-card">
-            <div class="achievement-header">
-              <div class="achievement-icon">🌟</div>
-              <h3 class="achievement-title">Industry Experience</h3>
-            </div>
-            <p class="achievement-description">
-              Gained real-world experience at University of Staffordshire and Tamworth Camping, 
-              working on production systems and data automation projects.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Personal Section -->
     <section class="personal-section">
       <div class="container">
         <div class="personal-content">
           <div class="personal-text">
-            <h2 class="section-title">Beyond the Code</h2>
-            
-            <div class="personal-card">
-              <p class="personal-paragraph">
-                When I'm not coding, you'll find me in the studio producing music, exploring new gaming worlds, 
-                or diving into creative writing projects. These interests aren't just hobbies, they inform my 
-                approach to development, bringing creativity and storytelling to technical solutions.
-              </p>
-              
-              <div class="interests-list">
-                <div class="interest-item">
-                  <span class="interest-icon">🎵</span>
-                  <span class="interest-text">Music Production & Studio Engineering</span>
-                </div>
-                <div class="interest-item">
-                  <span class="interest-icon">🎮</span>
-                  <span class="interest-text">Gaming & Interactive Storytelling</span>
-                </div>
-                <div class="interest-item">
-                  <span class="interest-icon">👟</span>
-                  <span class="interest-text">Sneaker Collecting & Reselling</span>
-                </div>
-                <div class="interest-item">
-                  <span class="interest-icon">✍️</span>
-                  <span class="interest-text">Creative Writing & World-Building</span>
-                </div>
-              </div>
-            </div>
+            <h2>Beyond Work</h2>
+            <p>
+              When I'm not helping businesses grow online, you'll find me producing music 
+              (N15 Studios was my first venture), exploring video games, or working on 
+              creative writing projects. These interests shape how I approach digital 
+              marketing — with creativity, attention to detail, and a genuine passion 
+              for building things that work.
+            </p>
+            <p>
+              The "N15" in N15 Labs comes from the postcode where I grew up in North London. 
+              It's a reminder of where I started and the journey that brought me here.
+            </p>
           </div>
           
-          <div class="contact-card">
-            <h3 class="contact-title">Let's Connect</h3>
-            <p class="contact-description">
-              I'm always interested in discussing new projects, collaboration opportunities, 
-              or just chatting about technology and creative processes.
-            </p>
-            
-            <div class="contact-actions">
-              <router-link class="cta-primary" to="/contact">
-                Start a Conversation
-                <svg viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </router-link>
-              
-              <div class="social-links">
-                <a href="mailto:dre_86@hotmail.co.uk" class="social-link">
-                  <span>Email</span>
-                </a>
-                <a href="https://www.linkedin.com/in/andre-simpson-502365178" class="social-link">
-                  <span>LinkedIn</span>
-                </a>
-                <a href="https://github.com/s022511h/" class="social-link">
-                  <span>GitHub</span>
-                </a>
-              </div>
+          <div class="interests-list">
+            <div class="interest-item">
+              <MusicIcon aria-hidden="true" />
+              <span>Music Production</span>
+            </div>
+            <div class="interest-item">
+              <GamepadIcon aria-hidden="true" />
+              <span>Gaming</span>
+            </div>
+            <div class="interest-item">
+              <PenToolIcon aria-hidden="true" />
+              <span>Creative Writing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Let's talk about your business</h2>
+          <p>
+            Book a free 30-minute strategy call. I'll take a look at your current 
+            situation and tell you honestly what it'll take to get more customers 
+            from Google.
+          </p>
+          <div class="cta-buttons">
+            <a 
+              href="https://calendly.com/n15labs/strategy-call" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-primary"
+            >
+              Book a Free Strategy Call
+              <ArrowRightIcon aria-hidden="true" />
+            </a>
+          </div>
+          <div class="contact-alternatives">
+            <p>Or reach out directly:</p>
+            <div class="contact-links">
+              <a href="mailto:andre@n15labs.co.uk" class="contact-link">
+                <MailIcon aria-hidden="true" />
+                <span>andre@n15labs.co.uk</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/andre-simpson-502365178" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <LinkedinIcon aria-hidden="true" />
+                <span>LinkedIn</span>
+              </a>
             </div>
           </div>
         </div>
@@ -226,35 +350,95 @@
 </template>
 
 <script>
-import gradImage from '@/assets/webp/grad.webp';
+import { useHead } from '@vueuse/head'
+import gradImage from '@/assets/webp/grad.webp'
+import {
+  ArrowRightIcon,
+  CodeIcon,
+  TrendingUpIcon,
+  MapPinIcon,
+  ShieldCheckIcon,
+  GraduationCapIcon,
+  BriefcaseIcon,
+  TargetIcon,
+  ShoppingCartIcon,
+  MessageSquareIcon,
+  EyeIcon,
+  UsersIcon,
+  MusicIcon,
+  GamepadIcon,
+  PenToolIcon,
+  MailIcon,
+  LinkedinIcon
+} from 'lucide-vue-next'
 
 export default {
   name: 'AboutPage',
   
-  data() {
-    return {
-      gradImage
-    };
+  components: {
+    ArrowRightIcon,
+    CodeIcon,
+    TrendingUpIcon,
+    MapPinIcon,
+    ShieldCheckIcon,
+    GraduationCapIcon,
+    BriefcaseIcon,
+    TargetIcon,
+    ShoppingCartIcon,
+    MessageSquareIcon,
+    EyeIcon,
+    UsersIcon,
+    MusicIcon,
+    GamepadIcon,
+    PenToolIcon,
+    MailIcon,
+    LinkedinIcon
   },
   
-  methods: {
-    getParticleStyle(n) {
-      return {
-        left: Math.random() * 100 + '%',
-        animationDelay: (n * 0.8) + 's',
-        animationDuration: (4 + Math.random() * 2) + 's'
-      }
+  data() {
+    return {
+      profileImage: gradImage
     }
   },
-  mounted() {
-    document.title = 'About - Andre Simpson | Full-Stack Developer'
+  
+  setup() {
+    useHead({
+      title: 'About Andre Simpson | N15 Labs | Digital Marketing Stoke-on-Trent',
+      meta: [
+        {
+          name: 'description',
+          content: 'Meet Andre Simpson, founder of N15 Labs. BSc Computer Science graduate, Google Ads specialist, and web developer helping Stoke-on-Trent businesses grow online.'
+        },
+        {
+          property: 'og:title',
+          content: 'About Andre Simpson | N15 Labs'
+        },
+        {
+          property: 'og:description',
+          content: 'Digital marketer, SEO specialist, and web developer based in Stoke-on-Trent helping local businesses get more customers.'
+        },
+        {
+          name: 'keywords',
+          content: 'Andre Simpson, N15 Labs, digital marketing Stoke-on-Trent, web developer Staffordshire, Google Ads specialist'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://n15labs.co.uk/about'
+        }
+      ]
+    })
   }
 }
 </script>
 
 <style scoped>
-.about-container {
-  background: #fafafa;
+/* ==================== BASE STYLES ==================== */
+.about-page {
+  width: 100%;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  color: #f4f4f5;
   min-height: 100vh;
 }
 
@@ -264,91 +448,18 @@ export default {
   padding: 0 2rem;
 }
 
-.about-hero {
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-  color: white;
-  overflow: hidden;
-  padding-top: 100px;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.floating-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(59, 130, 246, 0.4);
-  border-radius: 50%;
-  animation: float 5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px);
-    opacity: 0.2;
-  }
-  50% { 
-    transform: translateY(-80px) translateX(40px);
-    opacity: 0.8;
-  }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(59, 130, 246, 0.15);
+.section-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
   border: 1px solid rgba(59, 130, 246, 0.3);
-  padding: 0.75rem 1.25rem;
   border-radius: 50px;
-  font-size: 1rem;
+  color: #60a5fa;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #3b82f6;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #3b82f6;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.hero-headline {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 2rem 0;
-  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
 }
 
 .gradient-text {
@@ -358,390 +469,614 @@ export default {
   background-clip: text;
 }
 
-.hero-subhead {
-  font-size: 1.375rem;
-  line-height: 1.7;
+.section-intro {
+  font-size: 1.25rem;
   color: #a1a1aa;
-  margin-bottom: 0;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
 }
 
-.story-section {
-  padding: 6rem 0;
-  background: white;
+/* ==================== HERO SECTION ==================== */
+.about-hero {
+  padding: 8rem 0 5rem;
 }
 
-.story-content {
+.hero-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
   align-items: center;
 }
 
-.section-title {
-  font-size: 2.5rem;
+.hero-text h1 {
+  font-size: 3rem;
   font-weight: 800;
-  color: #111827;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
   line-height: 1.2;
 }
 
-.highlight {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.story-card {
-  background: #f9fafb;
-  padding: 2rem;
-  border-radius: 16px;
-  border-left: 4px solid #3b82f6;
-}
-
-.story-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 1rem;
-}
-
-.story-paragraph {
-  font-size: 1.125rem;
+.hero-intro {
+  font-size: 1.25rem;
+  color: #a1a1aa;
   line-height: 1.7;
-  color: #374151;
-  margin-bottom: 1.5rem;
 }
 
-.story-paragraph:last-child {
-  margin-bottom: 0;
-}
-
-.profile-container {
-  position: relative;
+.hero-image {
   display: flex;
   justify-content: center;
 }
 
-.profile-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 24px;
+.image-container {
+  position: relative;
+}
+
+.profile-photo {
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
   object-fit: cover;
-  border: 3px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border: 3px solid #27272a;
+  position: relative;
+  z-index: 2;
 }
 
-.profile-image:hover {
-  transform: scale(1.02);
-}
-
-.profile-glow {
+.image-glow {
   position: absolute;
-  inset: -30px;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
-  border-radius: 40px;
-  z-index: -1;
-  filter: blur(30px);
-  animation: glowPulse 3s ease-in-out infinite;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+  border-radius: 20px;
+  z-index: 1;
+  filter: blur(20px);
 }
 
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+/* ==================== WHY SECTION ==================== */
+.why-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
 }
 
-.values-section {
-  padding: 6rem 0;
-  background: #f9fafb;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.value-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.value-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: #3b82f6;
-}
-
-.value-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.value-title {
-  font-size: 1.5rem;
+.why-section h2 {
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #111827;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
-.value-description {
-  color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.achievements-section {
-  padding: 6rem 0;
-  background: white;
-}
-
-.achievements-grid {
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.achievement-card {
-  background: white;
-  padding: 2rem;
+.why-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.achievement-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.why-card:hover {
   border-color: #3b82f6;
 }
 
-.achievement-header {
+.why-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #3b82f6;
 }
 
-.achievement-icon {
-  font-size: 2rem;
+.why-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
-.achievement-title {
+.why-content h3 {
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
 }
 
-.achievement-description {
-  color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
+.why-content p {
+  color: #a1a1aa;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
-.personal-section {
-  padding: 6rem 0;
-  background: #f9fafb;
+/* ==================== BACKGROUND SECTION ==================== */
+.background-section {
+  padding: 5rem 0;
 }
 
-.personal-content {
+.background-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
   align-items: start;
 }
 
-.personal-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+.background-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
 }
 
-.personal-paragraph {
+.story-block p {
+  color: #a1a1aa;
+  line-height: 1.8;
+  font-size: 1.0625rem;
+  margin-bottom: 1.25rem;
+}
+
+.credentials-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.credentials-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.credentials-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #27272a;
+}
+
+.credentials-list li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.credentials-list li svg {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.credentials-list li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.credentials-list li strong {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.credentials-list li span {
+  color: #71717a;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ==================== RESULTS SECTION ==================== */
+.results-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+}
+
+.results-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.result-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.result-value {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.result-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.result-detail {
+  font-size: 0.875rem;
+  color: #71717a;
+}
+
+.results-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  transition: gap 0.3s ease;
+}
+
+.cta-link:hover {
+  gap: 0.875rem;
+}
+
+.cta-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==================== VALUES SECTION ==================== */
+.values-section {
+  padding: 5rem 0;
+}
+
+.values-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.value-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.value-content h3 {
   font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.value-content p {
+  color: #a1a1aa;
   line-height: 1.7;
-  color: #374151;
-  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+}
+
+/* ==================== PERSONAL SECTION ==================== */
+.personal-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+}
+
+.personal-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.personal-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.personal-text p {
+  color: #a1a1aa;
+  line-height: 1.8;
+  font-size: 1.0625rem;
+  margin-bottom: 1.25rem;
 }
 
 .interests-list {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .interest-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #f9fafb;
-  border-radius: 12px;
+  gap: 0.625rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 50px;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
 }
 
-.interest-icon {
-  font-size: 1.5rem;
+.interest-item svg {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
 }
 
-.interest-text {
-  font-weight: 500;
-  color: #374151;
+/* ==================== CTA SECTION ==================== */
+.cta-section {
+  padding: 5rem 0;
 }
 
-.contact-card {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 16px;
+.cta-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 20px;
+  padding: 4rem;
   text-align: center;
-  position: sticky;
-  top: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.contact-title {
-  font-size: 1.5rem;
+.cta-card h2 {
+  font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: white;
+  color: #ffffff;
 }
 
-.contact-description {
-  color: #d1d5db;
-  line-height: 1.6;
+.cta-card > p {
+  font-size: 1.125rem;
+  color: #a1a1aa;
   margin-bottom: 2rem;
+  line-height: 1.7;
 }
 
-.contact-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.cta-buttons {
+  margin-bottom: 2rem;
 }
 
 .cta-primary {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
 }
 
 .cta-primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-alternatives {
+  border-top: 1px solid #27272a;
+  padding-top: 1.5rem;
+}
+
+.contact-alternatives > p {
+  color: #71717a;
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #3b82f6;
+}
+
+.contact-link svg {
   width: 18px;
   height: 18px;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-link {
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  text-decoration: none;
-  color: #d1d5db;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-link:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-@media (max-width: 768px) {
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
   .hero-content {
-    padding: 2rem 1rem;
-  }
-
-   .about-hero {
-    padding-top: 90px; 
-  }
-  
-  .hero-headline {
-    font-size: 2.75rem;
-  }
-  
-  .hero-subhead {
-    font-size: 1.25rem;
-  }
-  
-  .story-content,
-  .personal-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    text-align: center;
   }
   
-  .section-title {
-    font-size: 2rem;
+  .hero-image {
+    order: -1;
   }
   
-  .profile-image {
-    width: 250px;
-    height: 250px;
+  .profile-photo {
+    width: 280px;
+    height: 280px;
   }
   
-  .contact-card {
+  .why-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .background-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .credentials-card {
     position: relative;
     top: 0;
   }
   
-  .social-links {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .about-hero {
+    padding: 6rem 0 3rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-intro {
+    font-size: 1.125rem;
+  }
+  
+  .profile-photo {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .why-section h2,
+  .background-text h2,
+  .results-section h2,
+  .values-section h2,
+  .cta-card h2 {
+    font-size: 2rem;
+  }
+  
+  .why-card,
+  .value-card {
     flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-card {
+    padding: 2.5rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
+  .hero-text h1 {
+    font-size: 2rem;
   }
   
-  .hero-headline {
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-value {
     font-size: 2.25rem;
   }
+  
+  .interests-list {
+    flex-direction: column;
+  }
+  
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
-  .about-hero {
-    padding-top: 80px; 
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .cta-primary,
+  .cta-link,
+  .why-card,
+  .contact-link {
+    transition: none;
   }
-  
-  .section-title {
-    font-size: 1.75rem;
-  }
-  
-  .value-card,
-  .achievement-card,
-  .personal-card,
-  .contact-card {
-    padding: 1.5rem;
-  }
+}
+
+.cta-primary:focus,
+.cta-link:focus,
+.contact-link:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
 }
 </style>

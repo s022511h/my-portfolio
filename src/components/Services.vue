@@ -1,281 +1,373 @@
 <template>
-  <div class="services-container">
+  <div class="services-page">
+    <!-- Hero Section -->
     <section class="services-hero">
-      <div class="hero-background">
-        <div class="floating-particles">
-          <div class="particle" v-for="n in 4" :key="n" :style="getParticleStyle(n)"></div>
-        </div>
-      </div>
-      
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          Services & Solutions
-        </div>
-        
-        <h1 class="hero-headline">
-          Building <span class="gradient-text">Performance-First</span><br>
-          Digital Solutions
-        </h1>
-        
-        <p class="hero-subhead">
-          I help businesses and individuals build modern web applications, optimise workflows, 
-          and implement technical solutions that drive real results.
-        </p>
-      </div>
-    </section>
-
-    <section class="services-content">
       <div class="container">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🚀</div>
-            <h3 class="service-title">Full-Stack Web Development</h3>
-            <p class="service-description">
-              Custom web applications built with modern frameworks like Vue.js, React, and Next.js. 
-              From concept to deployment, I create responsive, accessible, and performance-optimised solutions.
-            </p>
-            <ul class="service-features">
-              <li>Single Page Applications (SPAs)</li>
-              <li>Progressive Web Apps (PWAs)</li>
-              <li>E-commerce platforms</li>
-              <li>Admin dashboards and CMS</li>
-              <li>API integration and development</li>
-            </ul>
-          </div>
+        <span class="section-label">Services</span>
+        <h1>I help local businesses <span class="gradient-text">get more customers</span> from Google.</h1>
+        <p class="hero-intro">
+          Whether it's paid ads for immediate results, SEO for long-term growth, or a 
+          website that actually converts — I've got you covered. No jargon. Just results.
+        </p>
+        <div class="hero-actions">
+          <a 
+            href="https://calendly.com/n15labs/strategy-call" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Book a Free Strategy Call
+            <ArrowRightIcon aria-hidden="true" />
+          </a>
+          <router-link to="/pricing" class="btn-secondary">
+            View Pricing
+          </router-link>
+        </div>
+      </div>
+    </section>
 
-          <div class="service-card">
-            <div class="service-icon">🛠️</div>
-            <h3 class="service-title">Data Automation & Analytics</h3>
+    <!-- Main Services Section -->
+    <section class="main-services">
+      <div class="container">
+        <!-- Google Ads -->
+        <div class="service-block">
+          <div class="service-content">
+            <div class="service-icon">
+              <TargetIcon aria-hidden="true" />
+            </div>
+            <div class="service-header">
+              <span class="service-problem">Your Google Ads are wasting money</span>
+              <h2>Google Ads Management</h2>
+            </div>
             <p class="service-description">
-              Streamline your workflows with custom automation scripts and data processing solutions. 
-              I build tools that save time and reduce manual work while improving accuracy.
+              Most businesses throw money at Google Ads without knowing what's working. 
+              I audit your campaigns, cut the waste, and focus your budget on keywords 
+              that actually bring in customers.
             </p>
-            <ul class="service-features">
-              <li>Python/Node.js automation scripts</li>
-              <li>CSV/Excel data processing</li>
-              <li>API integrations and data syncing</li>
-              <li>Reporting and analytics dashboards</li>
-              <li>Database design and optimisation</li>
-            </ul>
+            <div class="service-results">
+              <div class="result-item">
+                <TrendingDownIcon aria-hidden="true" />
+                <span>75% lower cost per lead</span>
+              </div>
+              <div class="result-item">
+                <UsersIcon aria-hidden="true" />
+                <span>618+ conversions generated</span>
+              </div>
+              <div class="result-item">
+                <PoundSterlingIcon aria-hidden="true" />
+                <span>£60k+ ad spend managed</span>
+              </div>
+            </div>
+            <div class="service-includes">
+              <h4>What's included:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> Campaign setup &amp; ongoing management</li>
+                <li><CheckIcon aria-hidden="true" /> Keyword research &amp; targeting</li>
+                <li><CheckIcon aria-hidden="true" /> Ad copywriting that converts</li>
+                <li><CheckIcon aria-hidden="true" /> Conversion tracking setup</li>
+                <li><CheckIcon aria-hidden="true" /> Monthly performance reports</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-amount">£750</span>
+                <span class="price-period">/month</span>
+              </div>
+              <router-link to="/services/google-ads" class="service-cta">
+                Learn More
+                <ArrowRightIcon aria-hidden="true" />
+              </router-link>
+            </div>
           </div>
+        </div>
 
-          <div class="service-card">
-            <div class="service-icon">📊</div>
-            <h3 class="service-title">SEO & Digital Optimisation</h3>
+        <!-- SEO -->
+        <div class="service-block alt">
+          <div class="service-content">
+            <div class="service-icon">
+              <SearchIcon aria-hidden="true" />
+            </div>
+            <div class="service-header">
+              <span class="service-problem">You're invisible on Google</span>
+              <h2>SEO Services</h2>
+            </div>
             <p class="service-description">
-              Improve your online presence with technical SEO implementations, performance optimisation, 
-              and content management tools that drive organic growth.
+              If your competitors show up when people search for your services and you don't, 
+              you're losing customers every day. I fix the technical issues holding you back 
+              and build your organic presence over time.
             </p>
-            <ul class="service-features">
-              <li>Technical SEO audits and fixes</li>
-              <li>Page speed optimisation</li>
-              <li>Google Analytics & GA4 setup</li>
-              <li>Content optimisation tools</li>
-              <li>Local SEO and schema markup</li>
-            </ul>
+            <div class="service-results">
+              <div class="result-item">
+                <TrendingUpIcon aria-hidden="true" />
+                <span>+110% organic clicks</span>
+              </div>
+              <div class="result-item">
+                <BarChart3Icon aria-hidden="true" />
+                <span>+194% month-on-month growth</span>
+              </div>
+              <div class="result-item">
+                <MapPinIcon aria-hidden="true" />
+                <span>Local SEO specialist</span>
+              </div>
+            </div>
+            <div class="service-includes">
+              <h4>What's included:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> Technical SEO audit &amp; fixes</li>
+                <li><CheckIcon aria-hidden="true" /> On-page optimisation</li>
+                <li><CheckIcon aria-hidden="true" /> Local SEO &amp; Google Business</li>
+                <li><CheckIcon aria-hidden="true" /> Competitor analysis</li>
+                <li><CheckIcon aria-hidden="true" /> Monthly ranking reports</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-amount">£750</span>
+                <span class="price-period">/month</span>
+              </div>
+              <router-link to="/services/seo" class="service-cta">
+                Learn More
+                <ArrowRightIcon aria-hidden="true" />
+              </router-link>
+            </div>
           </div>
+        </div>
 
-          <div class="service-card">
-            <div class="service-icon">🤖</div>
-            <h3 class="service-title">AI Integration & Consultation</h3>
+        <!-- Web Design -->
+        <div class="service-block">
+          <div class="service-content">
+            <div class="service-icon">
+              <GlobeIcon aria-hidden="true" />
+            </div>
+            <div class="service-header">
+              <span class="service-problem">Your website doesn't bring in customers</span>
+              <h2>Web Design</h2>
+            </div>
             <p class="service-description">
-              Leverage AI tools to enhance your applications and workflows. From ChatGPT API integration 
-              to AI-assisted development strategies, I help you adopt AI effectively.
+              A slow, outdated website costs you customers. I build fast, mobile-friendly 
+              websites designed to convert visitors into leads. No templates. No monthly 
+              lock-ins. You own everything.
             </p>
-            <ul class="service-features">
-              <li>ChatGPT/OpenAI API integration</li>
-              <li>AI-powered content tools</li>
-              <li>Workflow automation with AI</li>
-              <li>AI development strategy consulting</li>
-              <li>Custom AI solution development</li>
-            </ul>
+            <div class="service-results">
+              <div class="result-item">
+                <ZapIcon aria-hidden="true" />
+                <span>Sub-2.5 second load times</span>
+              </div>
+              <div class="result-item">
+                <SmartphoneIcon aria-hidden="true" />
+                <span>Mobile-first design</span>
+              </div>
+              <div class="result-item">
+                <ShieldCheckIcon aria-hidden="true" />
+                <span>Full ownership included</span>
+              </div>
+            </div>
+            <div class="service-includes">
+              <h4>What's included:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> 3 professional pages</li>
+                <li><CheckIcon aria-hidden="true" /> Mobile responsive design</li>
+                <li><CheckIcon aria-hidden="true" /> Basic SEO setup</li>
+                <li><CheckIcon aria-hidden="true" /> Google Analytics &amp; Business setup</li>
+                <li><CheckIcon aria-hidden="true" /> 2 rounds of revisions</li>
+              </ul>
+            </div>
+            <div class="service-footer">
+              <div class="service-price">
+                <span class="price-amount">£600</span>
+                <span class="price-period">one-off</span>
+              </div>
+              <router-link to="/services/web-design" class="service-cta">
+                Learn More
+                <ArrowRightIcon aria-hidden="true" />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Bundle Section -->
+    <section class="bundle-section">
+      <div class="container">
+        <div class="bundle-card">
+          <div class="bundle-badge">Best Value</div>
+          <div class="bundle-header">
+            <div class="bundle-icon">
+              <SparklesIcon aria-hidden="true" />
+            </div>
+            <h2>Google Ads + SEO Bundle</h2>
+            <p>
+              Get the best of both worlds — paid ads for immediate traffic and SEO for 
+              long-term organic growth. This combined approach delivers the best ROI 
+              for most local businesses.
+            </p>
+          </div>
+          <div class="bundle-features">
+            <div class="feature-col">
+              <h4>From Google Ads:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> Full campaign management</li>
+                <li><CheckIcon aria-hidden="true" /> Keyword targeting</li>
+                <li><CheckIcon aria-hidden="true" /> Conversion tracking</li>
+              </ul>
+            </div>
+            <div class="feature-col">
+              <h4>From SEO:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> Technical optimisation</li>
+                <li><CheckIcon aria-hidden="true" /> Local SEO</li>
+                <li><CheckIcon aria-hidden="true" /> Monthly reports</li>
+              </ul>
+            </div>
+            <div class="feature-col">
+              <h4>Bundle extras:</h4>
+              <ul>
+                <li><CheckIcon aria-hidden="true" /> Integrated strategy</li>
+                <li><CheckIcon aria-hidden="true" /> Priority support</li>
+                <li><CheckIcon aria-hidden="true" /> Combined reporting</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bundle-pricing">
+            <div class="bundle-price">
+              <span class="original">£1,500/month</span>
+              <span class="amount">£1,200</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="bundle-savings">
+              <SparklesIcon aria-hidden="true" />
+              <span>Save £300 every month</span>
+            </div>
+            <a 
+              href="https://calendly.com/n15labs/strategy-call" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bundle-cta"
+            >
+              Book a Strategy Call
+              <ArrowRightIcon aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amazon Section -->
+    <section class="amazon-section">
+      <div class="container">
+        <div class="amazon-card">
+          <div class="amazon-content">
+            <div class="amazon-icon">
+              <ShoppingCartIcon aria-hidden="true" />
+            </div>
+            <h3>Sell on Amazon?</h3>
+            <p>
+              I also help Amazon sellers with PPC campaigns and A+ Content creation. 
+              If you're looking to improve your Amazon presence, let's talk.
+            </p>
+          </div>
+          <a 
+            href="https://calendly.com/n15labs/strategy-call" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="amazon-cta"
+          >
+            Discuss Amazon Services
+            <ArrowRightIcon aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
     <section class="process-section">
       <div class="container">
-        <h2 class="section-title">How I Work</h2>
+        <div class="section-header">
+          <h2>How I Work</h2>
+          <p>A straightforward process with no surprises.</p>
+        </div>
         
-        <div class="process-grid">
+        <div class="process-steps">
           <div class="process-step">
             <div class="step-number">1</div>
-            <h3 class="step-title">Discovery</h3>
-            <p class="step-description">
-              We discuss your needs, goals, and technical requirements to define the project scope and timeline.
+            <h3>Free Strategy Call</h3>
+            <p>
+              We jump on a 30-minute call. I learn about your business, look at your 
+              current situation, and give you honest advice — whether that means 
+              working together or not.
             </p>
+          </div>
+          
+          <div class="step-connector">
+            <ArrowRightIcon aria-hidden="true" />
           </div>
           
           <div class="process-step">
             <div class="step-number">2</div>
-            <h3 class="step-title">Planning</h3>
-            <p class="step-description">
-              I create a detailed plan with milestones, technical specifications, and clear deliverables.
+            <h3>Plan &amp; Quote</h3>
+            <p>
+              If we're a good fit, I put together a clear plan with fixed pricing. 
+              You'll know exactly what you're getting and what you're paying before 
+              we start.
             </p>
+          </div>
+          
+          <div class="step-connector">
+            <ArrowRightIcon aria-hidden="true" />
           </div>
           
           <div class="process-step">
             <div class="step-number">3</div>
-            <h3 class="step-title">Development</h3>
-            <p class="step-description">
-              Regular updates and iterative development with your feedback incorporated throughout the process.
+            <h3>Build &amp; Launch</h3>
+            <p>
+              I get to work. You get regular updates throughout. For websites, that's 
+              14 days to 1 month. For ads and SEO, we start seeing data within the 
+              first month.
             </p>
+          </div>
+          
+          <div class="step-connector">
+            <ArrowRightIcon aria-hidden="true" />
           </div>
           
           <div class="process-step">
             <div class="step-number">4</div>
-            <h3 class="step-title">Delivery</h3>
-            <p class="step-description">
-              Final testing, deployment, and handover with documentation and ongoing support options.
+            <h3>Ongoing Growth</h3>
+            <p>
+              For monthly services, I continuously optimise based on real data. 
+              Monthly reports show exactly what's working and where your money is going.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pricing-section">
-      <div class="container">
-        <h2 class="section-title">Flexible <span class="highlight">Pricing Options</span></h2>
-        
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <h3 class="pricing-title">Hourly Consultation</h3>
-            <div class="pricing-amount">£20<span class="pricing-period">/hour</span></div>
-            <p class="pricing-description">Perfect for quick fixes, advice, or small tasks</p>
-            <ul class="pricing-features">
-              <li>Minimum 2 hours</li>
-              <li>Technical consultation</li>
-              <li>Code reviews</li>
-              <li>Problem-solving sessions</li>
-            </ul>
-          </div>
-          
-          <div class="pricing-card featured">
-            <div class="featured-badge">Most Popular</div>
-            <h3 class="pricing-title">Project-Based</h3>
-            <div class="pricing-amount">Custom<span class="pricing-period">Quote</span></div>
-            <p class="pricing-description">Fixed price for defined scope and deliverables</p>
-            <ul class="pricing-features">
-              <li>Detailed project planning</li>
-              <li>Fixed timeline and budget</li>
-              <li>Regular progress updates</li>
-              <li>Full project delivery</li>
-            </ul>
-          </div>
-          
-          <div class="pricing-card">
-            <h3 class="pricing-title">Monthly Retainer</h3>
-            <div class="pricing-amount">£500<span class="pricing-period">/month</span></div>
-            <p class="pricing-description">Ongoing development and maintenance support</p>
-            <ul class="pricing-features">
-              <li>20 hours included</li>
-              <li>Priority support</li>
-              <li>Regular maintenance</li>
-              <li>Strategic planning</li>
-            </ul>
-          </div>
-        </div>
-        
-        <p class="pricing-note">
-          All prices exclude VAT. Custom packages available for larger projects or long-term partnerships.
-        </p>
-      </div>
-    </section>
-
-    <section class="technologies-section">
-        <div class="container">
-            <h2 class="section-title">Technologies I Work With</h2>
-            
-            <div class="tech-grid">
-            <div class="tech-category">
-                <h3 class="tech-category-title">Frontend</h3>
-                <div class="tech-items">
-                <span class="tech-item">Vue.js</span>
-                <span class="tech-item">React</span>
-                <span class="tech-item">Next.js</span>
-                <span class="tech-item">Nuxt 3</span>
-                <span class="tech-item">JavaScript</span>
-                <span class="tech-item">TypeScript</span>
-                <span class="tech-item">Tailwind CSS</span>
-                </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3 class="tech-category-title">Backend</h3>
-                <div class="tech-items">
-                <span class="tech-item">Node.js</span>
-                <span class="tech-item">Python</span>
-                <span class="tech-item">PHP</span>
-                <span class="tech-item">C#/.NET</span>
-                <span class="tech-item">Java</span>
-                <span class="tech-item">Laravel</span>
-                <span class="tech-item">Express.js</span>
-                </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3 class="tech-category-title">Database & Cloud</h3>
-                <div class="tech-items">
-                <span class="tech-item">MySQL</span>
-                <span class="tech-item">MongoDB</span>
-                <span class="tech-item">Firestore</span>
-                <span class="tech-item">Supabase</span>
-                <span class="tech-item">AWS</span>
-                <span class="tech-item">Railway</span>
-                </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3 class="tech-category-title">Tools & Integration</h3>
-                <div class="tech-items">
-                <span class="tech-item">REST APIs</span>
-                <span class="tech-item">Amazon Seller API</span>
-                <span class="tech-item">Docker</span>
-                <span class="tech-item">Linux</span>
-                <span class="tech-item">Git/GitHub</span>
-                <span class="tech-item">WordPress</span>
-                </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3 class="tech-category-title">AI & Analytics</h3>
-                <div class="tech-items">
-                <span class="tech-item">ChatGPT API</span>
-                <span class="tech-item">Puppeteer</span>
-                <span class="tech-item">Google Analytics</span>
-                <span class="tech-item">CMS Services</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        </section>
-
+    <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
         <div class="cta-card">
-          <h2 class="cta-title">Ready to Start Your Project?</h2>
-          <p class="cta-description">
-            Let's discuss how I can help bring your ideas to life. I offer free initial consultations 
-            to understand your needs and provide honest advice on the best path forward.
+          <h2>Not sure where to start?</h2>
+          <p>
+            Book a free strategy call. I'll take a look at your current situation 
+            and tell you honestly what would make the biggest difference for your 
+            business — no pressure, no obligation.
           </p>
-          
-          <div class="cta-actions">
-            <router-link class="cta-primary" to="/contact">
-              Start a Conversation
-              <svg viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </router-link>
-            <router-link class="cta-secondary" to="/projects">
-              View Portfolio
-            </router-link>
+          <a 
+            href="https://calendly.com/n15labs/strategy-call" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-primary"
+          >
+            Book a Free Strategy Call
+            <CalendarIcon aria-hidden="true" />
+          </a>
+          <div class="cta-alternatives">
+            <span>Or</span>
+            <router-link to="/contact">send me a message</router-link>
+            <span>•</span>
+            <router-link to="/pricing">view full pricing</router-link>
           </div>
-          
-          <p class="cta-note">
-            Typically respond within 24 hours • Based in Stoke-on-Trent, UK
-          </p>
         </div>
       </div>
     </section>
@@ -283,26 +375,88 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
+import {
+  ArrowRightIcon,
+  TargetIcon,
+  SearchIcon,
+  GlobeIcon,
+  CheckIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
+  UsersIcon,
+  PoundSterlingIcon,
+  BarChart3Icon,
+  MapPinIcon,
+  ZapIcon,
+  SmartphoneIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
+  ShoppingCartIcon,
+  CalendarIcon
+} from 'lucide-vue-next'
+
 export default {
   name: 'ServicesPage',
-  methods: {
-    getParticleStyle(n) {
-      return {
-        left: Math.random() * 100 + '%',
-        animationDelay: (n * 0.8) + 's',
-        animationDuration: (4 + Math.random() * 2) + 's'
-      }
-    }
+  
+  components: {
+    ArrowRightIcon,
+    TargetIcon,
+    SearchIcon,
+    GlobeIcon,
+    CheckIcon,
+    TrendingDownIcon,
+    TrendingUpIcon,
+    UsersIcon,
+    PoundSterlingIcon,
+    BarChart3Icon,
+    MapPinIcon,
+    ZapIcon,
+    SmartphoneIcon,
+    ShieldCheckIcon,
+    SparklesIcon,
+    ShoppingCartIcon,
+    CalendarIcon
   },
-  mounted() {
-    document.title = 'Services - Andre Simpson | Full-Stack Developer'
+  
+  setup() {
+    useHead({
+      title: 'Services | Google Ads, SEO & Web Design | N15 Labs Stoke-on-Trent',
+      meta: [
+        {
+          name: 'description',
+          content: 'Digital marketing services for local businesses. Google Ads management, SEO, and conversion-focused web design. Transparent pricing from £600.'
+        },
+        {
+          property: 'og:title',
+          content: 'Services | N15 Labs'
+        },
+        {
+          property: 'og:description',
+          content: 'Google Ads, SEO, and web design services for Stoke-on-Trent businesses. Get more customers from Google.'
+        },
+        {
+          name: 'keywords',
+          content: 'Google Ads management Stoke-on-Trent, SEO services Staffordshire, web design Stoke-on-Trent, digital marketing services'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://n15labs.co.uk/services'
+        }
+      ]
+    })
   }
 }
 </script>
 
 <style scoped>
-.services-container {
-  background: #fafafa;
+/* ==================== BASE STYLES ==================== */
+.services-page {
+  width: 100%;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  color: #f4f4f5;
   min-height: 100vh;
 }
 
@@ -312,90 +466,18 @@ export default {
   padding: 0 2rem;
 }
 
-.services-hero {
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-  color: white;
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.floating-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(59, 130, 246, 0.4);
-  border-radius: 50%;
-  animation: float 5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px);
-    opacity: 0.2;
-  }
-  50% { 
-    transform: translateY(-80px) translateX(40px);
-    opacity: 0.8;
-  }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.75rem 1.25rem;
+.section-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 50px;
-  font-size: 1rem;
+  color: #60a5fa;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #10b981;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #10b981;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.hero-headline {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 2rem 0;
-  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
 }
 
 .gradient-text {
@@ -405,437 +487,774 @@ export default {
   background-clip: text;
 }
 
-.hero-subhead {
-  font-size: 1.375rem;
-  line-height: 1.7;
-  color: #a1a1aa;
-  margin-bottom: 0;
-  max-width: 700px;
+/* ==================== HERO SECTION ==================== */
+.services-hero {
+  padding: 8rem 0 5rem;
+  text-align: center;
+}
+
+.services-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  line-height: 1.15;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.services-content {
-  padding: 6rem 0;
-  background: white;
+.hero-intro {
+  font-size: 1.375rem;
+  color: #a1a1aa;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.service-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: #3b82f6;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.125rem 2rem;
+  background: transparent;
+  border: 2px solid #3f3f46;
+  color: #f4f4f5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #52525b;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ==================== MAIN SERVICES ==================== */
+.main-services {
+  padding: 3rem 0;
+}
+
+.service-block {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.service-block.alt {
+  background: linear-gradient(135deg, #1f1f23 0%, #18181b 100%);
+}
+
+.service-content {
+  max-width: 900px;
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.service-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 1rem;
-}
-
-.service-description {
-  color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 1.0625rem;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.service-features li {
-  padding: 0.5rem 0;
-  color: #374151;
-  font-size: 0.9375rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.service-features li:before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #3b82f6;
-  font-weight: bold;
-}
-
-.process-section {
-  padding: 6rem 0;
-  background: #f9fafb;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.highlight {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.process-step {
-  background: white;
-  padding: 2rem;
+  width: 64px;
+  height: 64px;
+  background: rgba(59, 130, 246, 0.1);
   border-radius: 16px;
-  text-align: center;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.process-step:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.step-number {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 50%;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0 auto 1rem auto;
+  margin-bottom: 1.5rem;
+  color: #3b82f6;
 }
 
-.step-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 1rem;
+.service-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
-.step-description {
-  color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
+.service-header {
+  margin-bottom: 1.25rem;
 }
 
-.pricing-section {
-  padding: 6rem 0;
-  background: white;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.pricing-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.pricing-card.featured {
-  border-color: #3b82f6;
-  transform: scale(1.05);
-}
-
-.featured-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+.service-problem {
+  display: inline-block;
+  color: #ef4444;
+  font-size: 0.9375rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.pricing-title {
-  font-size: 1.5rem;
+.service-header h2 {
+  font-size: 2rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
+}
+
+.service-description {
+  font-size: 1.125rem;
+  color: #a1a1aa;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.service-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 12px;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #34d399;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.result-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.service-includes h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
-.pricing-amount {
+.service-includes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.service-includes li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #d4d4d8;
+  font-size: 0.9375rem;
+}
+
+.service-includes li svg {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #27272a;
+}
+
+.service-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.price-amount {
   font-size: 2.5rem;
   font-weight: 800;
   color: #3b82f6;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #71717a;
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.service-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+}
+
+.service-cta svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==================== BUNDLE SECTION ==================== */
+.bundle-section {
+  padding: 3rem 0 5rem;
+}
+
+.bundle-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 2px solid #3b82f6;
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+}
+
+.bundle-badge {
+  position: absolute;
+  top: -14px;
+  left: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.bundle-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.bundle-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #3b82f6;
+}
+
+.bundle-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.bundle-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
-.pricing-period {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #6b7280;
+.bundle-header p {
+  font-size: 1.125rem;
+  color: #a1a1aa;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.pricing-description {
-  color: #6b7280;
-  margin-bottom: 1.5rem;
+.bundle-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 16px;
 }
 
-.pricing-features {
+.feature-col h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+.feature-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.pricing-features li {
-  padding: 0.5rem 0;
-  color: #374151;
+.feature-col li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d4d4d8;
   font-size: 0.9375rem;
+  margin-bottom: 0.625rem;
 }
 
-.pricing-note {
+.feature-col li svg {
+  width: 16px;
+  height: 16px;
+  color: #10b981;
+}
+
+.bundle-pricing {
   text-align: center;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0;
 }
 
-.technologies-section {
-  padding: 6rem 0;
-  background: #f9fafb;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.tech-category {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-}
-
-.tech-category-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
+.bundle-price {
   margin-bottom: 1rem;
 }
 
-.tech-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+.bundle-price .original {
+  display: block;
+  font-size: 1rem;
+  color: #71717a;
+  text-decoration: line-through;
+  margin-bottom: 0.25rem;
 }
 
-.tech-item {
-  background: #f3f4f6;
-  color: #374151;
+.bundle-price .amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #3b82f6;
+}
+
+.bundle-price .period {
+  font-size: 1.125rem;
+  color: #71717a;
+}
+
+.bundle-savings {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  color: #34d399;
   font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid #e5e7eb;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
+.bundle-savings svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bundle-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.bundle-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+}
+
+.bundle-cta svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==================== AMAZON SECTION ==================== */
+.amazon-section {
+  padding: 0 0 5rem;
+}
+
+.amazon-card {
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.amazon-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.amazon-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(251, 146, 60, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fb923c;
+  flex-shrink: 0;
+}
+
+.amazon-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.amazon-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.amazon-content p {
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  max-width: 400px;
+}
+
+.amazon-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: 2px solid #fb923c;
+  color: #fb923c;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.amazon-cta:hover {
+  background: rgba(251, 146, 60, 0.1);
+}
+
+.amazon-cta svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==================== PROCESS SECTION ==================== */
+.process-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: #a1a1aa;
+}
+
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 1.25rem;
+}
+
+.process-step h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.process-step p {
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3f3f46;
+  padding-top: 0.75rem;
+}
+
+.step-connector svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==================== CTA SECTION ==================== */
 .cta-section {
-  padding: 6rem 0;
-  background: white;
+  padding: 5rem 0;
 }
 
 .cta-card {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-  color: white;
-  padding: 4rem;
+  background: linear-gradient(135deg, #18181b 0%, #1f1f23 100%);
+  border: 1px solid #27272a;
   border-radius: 24px;
+  padding: 4rem;
   text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.cta-title {
-  font-size: 2.5rem;
-  font-weight: 800;
+.cta-card h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1rem;
-  color: white;
 }
 
-.cta-description {
-  font-size: 1.25rem;
-  color: #d1d5db;
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.cta-card > p {
+  font-size: 1.125rem;
+  color: #a1a1aa;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
 }
 
 .cta-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  gap: 0.625rem;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  padding: 1.25rem 2rem;
-  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.125rem;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  margin-bottom: 1.5rem;
 }
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
 }
 
 .cta-primary svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
-.cta-secondary {
-  display: inline-flex;
+.cta-alternatives {
+  display: flex;
   align-items: center;
-  color: #f4f4f5;
-  padding: 1.25rem 2rem;
-  border: 1px solid #374151;
-  border-radius: 12px;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #71717a;
+  font-size: 0.9375rem;
+}
+
+.cta-alternatives a {
+  color: #60a5fa;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.125rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: #4b5563;
+.cta-alternatives a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
 }
 
-.cta-note {
-  color: #9ca3af;
-  font-style: italic;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 2rem 1rem;
-  }
-  
-  .hero-headline {
-    font-size: 2.75rem;
-  }
-  
-  .hero-subhead {
-    font-size: 1.25rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .services-grid,
-  .process-grid,
-  .pricing-grid,
-  .tech-grid {
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .bundle-features {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .pricing-card.featured {
-    transform: none;
-  }
-  
-  .cta-actions {
+  .process-steps {
     flex-direction: column;
     align-items: center;
   }
   
-  .cta-card {
-    padding: 3rem 2rem;
+  .process-step {
+    max-width: 400px;
   }
   
-  .cta-title {
+  .step-connector {
+    transform: rotate(90deg);
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .services-hero {
+    padding: 6rem 0 3rem;
+  }
+  
+  .services-hero h1 {
+    font-size: 2.75rem;
+  }
+  
+  .hero-intro {
+    font-size: 1.125rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-block {
+    padding: 2rem;
+  }
+  
+  .service-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .bundle-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .bundle-header h2,
+  .section-header h2,
+  .cta-card h2 {
     font-size: 2rem;
   }
   
-  .cta-description {
-    font-size: 1.125rem;
+  .amazon-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .amazon-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cta-card {
+    padding: 2.5rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .hero-headline {
+  .services-hero h1 {
     font-size: 2.25rem;
   }
   
-  .section-title {
-    font-size: 1.75rem;
+  .service-results {
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  .service-card,
-  .process-step,
-  .pricing-card,
-  .tech-category {
-    padding: 1.5rem;
+  .bundle-price .amount {
+    font-size: 2.5rem;
   }
   
-  .cta-card {
-    padding: 2rem 1.5rem;
+  .cta-alternatives {
+    flex-direction: column;
+    gap: 0.5rem;
   }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .service-cta,
+  .bundle-cta,
+  .amazon-cta,
+  .cta-primary {
+    transition: none;
+  }
+}
+
+.btn-primary:focus,
+.btn-secondary:focus,
+.service-cta:focus,
+.bundle-cta:focus,
+.amazon-cta:focus,
+.cta-primary:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
 }
 </style>
