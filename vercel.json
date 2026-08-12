@@ -1,8 +1,26 @@
 {
-  "rewrites": [
+  "redirects": [
+    { "source": "/cv",             "destination": "/resume",       "permanent": true },
+    { "source": "/launch",         "destination": "/launch-sites", "permanent": true },
+    { "source": "/600-websites",   "destination": "/launch-sites", "permanent": true },
+    { "source": "/7-day-websites", "destination": "/launch-sites", "permanent": true },
+    { "source": "/results",        "destination": "/case-studies", "permanent": true },
+    { "source": "/free-audit",     "destination": "/audit",        "permanent": true },
+    { "source": "/website-audit",  "destination": "/audit",        "permanent": true }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        { "key": "X-Content-Type-Options",     "value": "nosniff" },
+        { "key": "X-Frame-Options",            "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy",            "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",         "value": "geolocation=(), microphone=(), camera=()" },
+        { "key": "Strict-Transport-Security",  "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
     }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

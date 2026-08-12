@@ -12,7 +12,7 @@
           fetchpriority="high"
         />
       </router-link>
-      <h1 class="brand">N15 Labs</h1>
+      <span class="brand">N15 Labs</span>
     </div>
 
     <nav class="nav-links desktop-only" aria-label="Main navigation">

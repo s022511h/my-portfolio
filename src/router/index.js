@@ -37,13 +37,13 @@ const VerifyEmail = () => import('@/views/VerifyEmail.vue')
 const ForgotPassword = () => import('@/views/ForgotPassword.vue')
 const AdminDashboard = () => import('@/views/AdminDashboard.vue')
 
-// ===========================================
-// UNCOMMENT THESE WHEN FILES ARE CREATED:
-// ===========================================
-// const Projects = () => import('@/components/Projects.vue')
-// const GoogleAdsService = () => import('@/components/services/GoogleAds.vue')
-// const SEOService = () => import('@/components/services/SEO.vue')
-// const WebDesignService = () => import('@/components/services/WebDesign.vue')
+// Service pages
+const GoogleAdsService = () => import('@/components/services/GoogleAds.vue')
+const SEOService       = () => import('@/components/services/SEO.vue')
+const WebDesignService = () => import('@/components/services/WebDesign.vue')
+
+// 404
+const NotFound = () => import('@/components/NotFound.vue')
 // const AreaStokeOnTrent = () => import('@/components/areas/StokeOnTrent.vue')
 // const AreaNewcastleUnderLyme = () => import('@/components/areas/NewcastleUnderLyme.vue')
 // const AreaStafford = () => import('@/components/areas/Stafford.vue')
@@ -68,11 +68,10 @@ const routes = [
   // { path: '/projects', name: 'Projects', component: Projects },
   
   // Services
-  { path: '/services', name: 'Services', component: Services },
-  // UNCOMMENT WHEN SERVICE PAGES ARE CREATED:
-  // { path: '/services/google-ads', name: 'GoogleAdsService', component: GoogleAdsService },
-  // { path: '/services/seo', name: 'SEOService', component: SEOService },
-  // { path: '/services/web-design', name: 'WebDesignService', component: WebDesignService },
+  { path: '/services',            name: 'Services',         component: Services },
+  { path: '/services/google-ads', name: 'GoogleAdsService', component: GoogleAdsService },
+  { path: '/services/seo',        name: 'SEOService',       component: SEOService },
+  { path: '/services/web-design', name: 'WebDesignService', component: WebDesignService },
   
   // Launch Sites
   { path: '/launch-sites', name: 'LaunchSites', component: LaunchSites },
@@ -110,8 +109,8 @@ const routes = [
   { path: '/profile', name: 'Profile', component: Profile, meta: { requiresAuth: true } },
   { path: '/admin', name: 'AdminDashboard', component: AdminDashboard, meta: { requiresAuth: true, requiresAdmin: true } },
   
-  // Catch-all 404 (optional - uncomment when you have a 404 page)
-  // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
+  // Catch-all 404 — must stay last
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
 const router = createRouter({
@@ -143,43 +142,22 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  // Public routes that don't require authentication
-  const publicRoutes = [
-    'Home', 
-    'About',
-    'Contact',
-    'Blog',
-    'Pricing',
-    'Work',
-    'Results',
-    'Portfolio', 
-    'Services',
-    'LaunchSites',
-    'SiteAudit',
-    'Resume',
-    'Privacy', 
-    'Terms', 
-    'Register', 
-    'Login', 
-    'ForgotPassword',
-    'VerifyEmail'
-  ]
-  
-  if (publicRoutes.includes(to.name)) {
+  // Public by default. Only routes declaring meta.requiresAuth are guarded.
+  if (!to.meta.requiresAuth) {
     next()
     return
   }
-  
-  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+
+  if (!authStore.isAuthenticated) {
     next('/login')
     return
   }
-  
+
   if (to.meta.requiresAdmin && authStore.user?.id !== 1) {
     next('/profile')
     return
   }
-  
+
   next()
 })
 

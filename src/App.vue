@@ -1,17 +1,20 @@
 <template>
   <div id="app">
+    <!--
+      AnimatedIntro is an OVERLAY, not a gate.
+      .intro-overlay is position:fixed / inset:0 / z-index:9999, so it sits on
+      top while the real page renders underneath. Header, router-view and footer
+      are always in the DOM, which is what the prerenderer and crawlers capture.
+    -->
     <AnimatedIntro v-if="showIntro" @enter="handleEnter" />
-    <div v-else>
-      <AppHeader />
-      <main id="main-content">
-        <router-view style="flex: 1;" />
-      </main>
-      <AppFooter @show-cookie-settings="showCookieSettings" />
-    </div>
-    
-    <CookieBanner 
-      ref="cookieBanner" 
-      @consent-updated="handleConsentUpdate" 
+
+    <AppHeader />
+    <router-view style="flex: 1;" />
+    <AppFooter @show-cookie-settings="showCookieSettings" />
+
+    <CookieBanner
+      ref="cookieBanner"
+      @consent-updated="handleConsentUpdate"
     />
   </div>
 </template>
@@ -21,7 +24,6 @@ import AppHeader from './components/Header.vue'
 import AppFooter from './components/Footer.vue'
 import AnimatedIntro from './components/AnimatedIntro.vue'
 import CookieBanner from './components/CookieBanner.vue'
-import { initializeGA } from './utils/analytics.js'
 
 export default {
   name: 'App',
@@ -38,82 +40,89 @@ export default {
   },
   methods: {
     handleEnter() {
+      this.showIntro = false
       try {
         localStorage.setItem('n15labs-visited', 'true')
-        this.showIntro = false
       } catch (e) {
-        console.log('localStorage not available, skipping intro')
-        this.showIntro = false
+        // Private browsing or storage disabled — the intro just shows again
+        // next visit. Not worth blocking anything over.
       }
     },
+
     checkIntroStatus() {
+      // Never show the intro to the prerenderer. It would capture the splash
+      // screen instead of the page, which is exactly what went wrong before.
+      if (window.__PRERENDER_INJECTED) {
+        this.showIntro = false
+        return
+      }
+
       try {
-        const visited = localStorage.getItem('n15labs-visited')
-        this.showIntro = !visited
+        this.showIntro = !localStorage.getItem('n15labs-visited')
       } catch (e) {
-        console.log('localStorage not available, showing intro')
-        this.showIntro = true
+        // Fail open: show the site, not the splash. The original did the
+        // opposite, which trapped private-browsing visitors on the intro.
+        this.showIntro = false
       }
     },
-    
+
     handleConsentUpdate(consents) {
-      console.log('Consent updated:', consents)
-      
       if (!consents.marketing) {
         this.disableMarketingServices()
       } else {
         this.enableMarketingServices()
       }
-      
+
       if (consents.analytics) {
         this.enableAnalytics()
       }
-      
-      this.$root.$emit('consent-updated', consents)
     },
-    
+
     showCookieSettings() {
       if (this.$refs.cookieBanner) {
         this.$refs.cookieBanner.show()
       }
     },
-    
+
     disableMarketingServices() {
       const curatorElements = document.querySelectorAll('#curator-feed-default-feed-layout')
       curatorElements.forEach(el => {
         el.style.display = 'none'
       })
-      
+
       this.blockThirdPartyMarketing()
     },
-    
+
     enableMarketingServices() {
       const curatorElements = document.querySelectorAll('#curator-feed-default-feed-layout')
       curatorElements.forEach(el => {
         el.style.display = 'block'
       })
-      
+
       this.enableThirdPartyMarketing()
     },
-    
+
     enableAnalytics() {
-      console.log('Analytics enabled')
+      // Consent mode is updated by CookieBanner via $updateAnalyticsConsent.
+      // Nothing else needed here.
     },
-    
+
     blockThirdPartyMarketing() {
     },
-    
+
     enableThirdPartyMarketing() {
     }
   },
   mounted() {
     this.checkIntroStatus()
-    
-    initializeGA()
-    
+    // NOTE: initializeGA() is called once in main.js, before consent is
+    // applied. Calling it again here re-pushed gtag('consent','default',
+    // {analytics_storage:'denied'}) AFTER the stored consent had been granted,
+    // which can silently revert analytics consent for returning visitors.
   }
 }
 </script>
+
 <style>
 *,
 *::before,
@@ -130,7 +139,7 @@ html {
 
 body {
   margin: 0;
-  padding-top: 100px; /* Add header spacing here */
+  padding-top: 100px; /* Header spacing */
   min-height: 100vh;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
@@ -171,7 +180,7 @@ body {
   body {
     padding-top: 90px;
   }
-  
+
   html {
     -webkit-text-size-adjust: 100%;
   }

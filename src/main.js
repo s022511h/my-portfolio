@@ -10,6 +10,8 @@ const head = createHead()
 
 authStore.initAuthListener()
 
+// Called ONCE, here only. gtag('consent','default',...) must never be pushed
+// after a consent update, so App.vue no longer calls this in mounted().
 initializeGA()
 
 const existingConsents = getStoredConsents()
@@ -24,7 +26,6 @@ app.config.globalProperties.$updateAnalyticsConsent = (consents) => {
 router.afterEach((to) => {
   const consents = getStoredConsents()
   if (consents && consents.analytics) {
-
     import('./utils/analytics').then(({ trackPageView }) => {
       trackPageView(to.path)
     })
@@ -37,13 +38,13 @@ app.config.errorHandler = (error, instance, info) => {
     info: info,
     timestamp: new Date().toISOString()
   })
-  
+
   const consents = getStoredConsents()
   if (consents && consents.analytics) {
     import('./utils/analytics').then(({ trackEvent }) => {
       trackEvent('app_error', {
         event_category: 'error',
-        event_label: error.message.substring(0, 100), 
+        event_label: error.message.substring(0, 100),
         value: 1
       })
     })
@@ -69,4 +70,12 @@ app.config.globalProperties.$gdprCompliance = {
 
 app.use(router)
 app.use(head)
-app.mount('#app')
+
+// router.isReady() resolves once the initial route's async component has
+// loaded. Mounting after that means the prerenderer's snapshot contains the
+// real page, not an empty shell. The event is what vue.config.js waits for
+// via renderAfterDocumentEvent.
+router.isReady().then(() => {
+  app.mount('#app')
+  document.dispatchEvent(new Event('render-event'))
+})

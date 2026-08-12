@@ -10,13 +10,13 @@
         <div class="orb orb-3"></div>
       </div>
     </div>
-    
+
     <div class="intro-content">
       <div class="logo-container">
         <div class="logo-glow"></div>
         <img
           :src="logo"
-          alt="N15 Labs - Performance-First Web Development"
+          alt="N15 Labs — Google Ads, SEO and web design in Stoke-on-Trent"
           class="intro-logo"
           width="320"
           height="320"
@@ -26,48 +26,48 @@
           <svg viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          Verified Developer
+          BSc Computer Science
         </div>
       </div>
-      
+
       <div class="intro-text">
-        <h1 class="intro-title">
+        <div class="intro-title">
           <span class="title-line-1">N15</span>
           <span class="title-line-2 gradient-text">Labs</span>
-        </h1>
-        
-        <p class="intro-subtitle">Performance-First Web Development</p>
-        
+        </div>
+
+        <p class="intro-subtitle">More customers from Google</p>
+
         <div class="intro-taglines">
-          <div class="tagline" v-for="(tag, index) in taglines" :key="tag" 
-               :style="{ animationDelay: (index * 0.2 + 1) + 's' }">
+          <div class="tagline" v-for="(tag, index) in taglines" :key="tag.text"
+               :style="{ animationDelay: (index * 0.12 + 0.5) + 's' }">
             <span class="tag-icon">{{ tag.icon }}</span>
             <span class="tag-text">{{ tag.text }}</span>
           </div>
         </div>
-        
+
         <div class="intro-stats">
           <div class="stat" v-for="(stat, index) in stats" :key="stat.label"
-               :style="{ animationDelay: (index * 0.1 + 2) + 's' }">
+               :style="{ animationDelay: (index * 0.08 + 0.9) + 's' }">
             <strong>{{ stat.value }}</strong>
             <span>{{ stat.label }}</span>
           </div>
         </div>
       </div>
-      
+
       <div class="intro-actions">
-        <button @click="enterSite" class="enter-btn" aria-label="Enter portfolio">
-          <span class="btn-text">Enter Portfolio</span>
+        <button @click="enterSite" class="enter-btn" aria-label="Enter site">
+          <span class="btn-text">Enter Site</span>
           <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
         </button>
-        
+
         <div class="skip-intro">
           <button @click="enterSite" class="skip-btn" aria-label="Skip intro">Skip Intro</button>
         </div>
       </div>
-      
+
       <div class="intro-footer">
         <div class="location-badge">
           <svg viewBox="0 0 20 20" fill="currentColor">
@@ -76,11 +76,11 @@
           Stoke-on-Trent, UK
         </div>
         <div class="tech-badge">
-          Web Development Specialist
+          Google Ads · SEO · Web Design
         </div>
       </div>
     </div>
-    
+
     <div class="progress-indicator">
       <div class="progress-bar" :style="{ width: progressWidth + '%' }"></div>
     </div>
@@ -94,24 +94,33 @@ export default {
     return {
       show: true,
       progressWidth: 0,
+      introTimer: null,
+      progressInterval: null,
       logo: require('@/assets/webp/logo-n15labs-white_comp.webp'),
       taglines: [
-        { icon: '🚀', text: 'Modern & Fast' },
-        { icon: '⚡', text: 'Performance-First' },
-        { icon: '🎯', text: 'Results-Driven' },
-        { icon: '🛠️', text: 'Custom Built' }
+        { icon: '📈', text: 'More Customers' },
+        { icon: '🎯', text: 'Google Ads & SEO' },
+        { icon: '⚡', text: 'Fast Websites' },
+        { icon: '📍', text: 'Stoke-on-Trent' }
       ],
       stats: [
-        { value: '<4s', label: 'Load Time' },
-        { value : 'Full Stack', label: 'Expertise' },
-        { value: '100%', label: 'Custom Code' }
+        { value: '75%', label: 'Lower cost per lead' },
+        { value: '618+', label: 'Leads generated' },
+        { value: '£60k+', label: 'Ad spend managed' }
       ]
     }
   },
+
   mounted() {
-    this.show = true
     this.startProgress()
+    this.introTimer = setTimeout(() => this.enterSite(), 2500)
   },
+
+  beforeUnmount() {
+    clearTimeout(this.introTimer)
+    clearInterval(this.progressInterval)
+  },
+
   methods: {
     getParticleStyle(n) {
       return {
@@ -121,29 +130,35 @@ export default {
         animationDuration: (4 + Math.random() * 3) + 's'
       }
     },
-    
+
     startProgress() {
       let progress = 0
-      const interval = setInterval(() => {
+      // 100 steps x 25ms = 2500ms, so the bar completes exactly as the
+      // intro dismisses.
+      this.progressInterval = setInterval(() => {
         progress += 1
         this.progressWidth = progress
-        if (progress >= 100) {
-          clearInterval(interval)
-        }
-      }, 50)
+        if (progress >= 100) clearInterval(this.progressInterval)
+      }, 25)
     },
-    
+
     enterSite() {
+      if (!this.show) return          // guard: timer and click can both fire
       this.show = false
-      setTimeout(() => {
-        this.$emit('enter')
-      }, 500)
+      clearInterval(this.progressInterval)
+      setTimeout(() => this.$emit('enter'), 500)
     }
   }
 }
 </script>
 
 <style scoped>
+/* ===========================================================================
+   TIMING BUDGET — the intro auto-dismisses at 2500ms.
+   Every entrance animation must finish by ~1800ms so the composed state is
+   visible for a beat before it fades. Do not add delays beyond ~1.4s.
+   =========================================================================== */
+
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -155,18 +170,14 @@ export default {
   z-index: 9999;
   color: white;
   overflow: hidden;
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 0.4s ease-out;
   min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  min-height: 100dvh;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .intro-background {
@@ -190,19 +201,19 @@ export default {
 }
 
 @keyframes particleFloat {
-  0%, 100% { 
+  0%, 100% {
     transform: translateY(0px) translateX(0px) scale(1);
     opacity: 0.3;
   }
-  25% { 
+  25% {
     transform: translateY(-50px) translateX(30px) scale(1.2);
     opacity: 0.8;
   }
-  50% { 
+  50% {
     transform: translateY(-100px) translateX(-20px) scale(0.8);
     opacity: 1;
   }
-  75% { 
+  75% {
     transform: translateY(-50px) translateX(-40px) scale(1.1);
     opacity: 0.6;
   }
@@ -248,11 +259,11 @@ export default {
 }
 
 @keyframes orbFloat {
-  0%, 100% { 
+  0%, 100% {
     transform: translateY(0px) scale(1);
     opacity: 0.6;
   }
-  50% { 
+  50% {
     transform: translateY(-30px) scale(1.1);
     opacity: 0.8;
   }
@@ -262,11 +273,10 @@ export default {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 90vw;
   width: 100%;
   max-width: 600px;
   padding: clamp(1rem, 4vw, 2rem);
-  animation: slideUp 1.5s ease-out;
+  animation: slideUp 0.6s ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -287,7 +297,7 @@ export default {
 
 .logo-container {
   position: relative;
-  animation: logoReveal 2s ease-out;
+  animation: logoReveal 1s ease-out;
   flex-shrink: 0;
 }
 
@@ -316,12 +326,12 @@ export default {
 }
 
 @keyframes glowPulse {
-  0%, 100% { 
-    opacity: 0.6; 
+  0%, 100% {
+    opacity: 0.6;
     transform: scale(1);
   }
-  50% { 
-    opacity: 1; 
+  50% {
+    opacity: 1;
     transform: scale(1.1);
   }
 }
@@ -355,7 +365,7 @@ export default {
   gap: 0.5rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: badgeSlide 1s ease-out 1.5s both;
+  animation: badgeSlide 0.5s ease-out 0.7s both;
   white-space: nowrap;
 }
 
@@ -389,12 +399,12 @@ export default {
 
 .title-line-1 {
   display: block;
-  animation: titleSlide 1s ease-out 0.5s both;
+  animation: titleSlide 0.5s ease-out 0.2s both;
 }
 
 .title-line-2 {
   display: block;
-  animation: titleSlide 1s ease-out 0.8s both;
+  animation: titleSlide 0.5s ease-out 0.35s both;
 }
 
 .gradient-text {
@@ -408,7 +418,7 @@ export default {
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  50%      { background-position: 100% 50%; }
 }
 
 @keyframes titleSlide {
@@ -427,7 +437,7 @@ export default {
   color: #a1a1aa;
   margin-bottom: clamp(1rem, 3vh, 1.5rem);
   font-weight: 500;
-  animation: subtitleFade 1s ease-out 1.2s both;
+  animation: subtitleFade 0.5s ease-out 0.6s both;
 }
 
 @keyframes subtitleFade {
@@ -459,7 +469,7 @@ export default {
   border-radius: 50px;
   backdrop-filter: blur(10px);
   opacity: 0;
-  animation: taglineSlide 0.8s ease-out both;
+  animation: taglineSlide 0.5s ease-out both;
 }
 
 .tag-icon {
@@ -495,7 +505,7 @@ export default {
 .stat {
   text-align: center;
   opacity: 0;
-  animation: statFade 0.6s ease-out both;
+  animation: statFade 0.45s ease-out both;
 }
 
 .stat strong {
@@ -525,7 +535,7 @@ export default {
 }
 
 .intro-actions {
-  animation: actionsFade 1s ease-out 2.5s both;
+  animation: actionsFade 0.5s ease-out 1.1s both;
   flex-shrink: 0;
 }
 
@@ -602,17 +612,13 @@ export default {
   justify-content: center;
   gap: clamp(1rem, 4vw, 2rem);
   flex-wrap: wrap;
-  animation: footerFade 1s ease-out 3s both;
+  animation: footerFade 0.5s ease-out 1.3s both;
   flex-shrink: 0;
 }
 
 @keyframes footerFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .location-badge,
@@ -648,16 +654,16 @@ export default {
   transition: width 0.1s ease;
 }
 
-/* Mobile-specific optimizations */
+/* ==================== RESPONSIVE ==================== */
 @media (max-height: 700px) {
   .intro-content {
     gap: clamp(0.75rem, 2vh, 1.5rem);
   }
-  
+
   .intro-title {
     font-size: clamp(2rem, 6vw, 4rem);
   }
-  
+
   .intro-logo {
     width: clamp(150px, 20vw, 220px);
     height: clamp(150px, 20vw, 220px);
@@ -665,14 +671,9 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .intro-taglines {
-    gap: 0.5rem;
-  }
-  
-  .intro-stats {
-    gap: 1.5rem;
-  }
-  
+  .intro-taglines { gap: 0.5rem; }
+  .intro-stats    { gap: 1.5rem; }
+
   .intro-footer {
     gap: 1rem;
     flex-direction: column;
@@ -685,14 +686,13 @@ export default {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .intro-stats {
     flex-direction: column;
     gap: 1rem;
   }
 }
 
-/* Landscape mobile orientation */
 @media (max-height: 500px) and (orientation: landscape) {
   .intro-content {
     flex-direction: row;
@@ -702,32 +702,24 @@ export default {
     gap: clamp(1rem, 3vw, 2rem);
     max-width: 95vw;
   }
-  
-  .logo-container {
-    flex-shrink: 0;
-  }
-  
+
+  .logo-container { flex-shrink: 0; }
+
   .intro-logo {
     width: clamp(120px, 15vw, 180px);
     height: clamp(120px, 15vw, 180px);
   }
-  
+
   .intro-text {
     flex: 1;
     min-width: 300px;
   }
-  
-  .intro-actions {
-    width: 100%;
-    order: 3;
-  }
-  
-  .intro-footer {
-    width: 100%;
-    order: 4;
-  }
+
+  .intro-actions { width: 100%; order: 3; }
+  .intro-footer  { width: 100%; order: 4; }
 }
 
+/* ==================== ACCESSIBILITY ==================== */
 @media (prefers-reduced-motion: reduce) {
   .particle,
   .orb,
@@ -738,13 +730,27 @@ export default {
   .title-line-1,
   .title-line-2,
   .intro-subtitle,
+  .logo-badge,
   .tagline,
   .stat,
   .intro-actions,
-  .intro-footer {
+  .intro-footer,
+  .intro-overlay {
     animation: none;
   }
-  
+
+  /* .tagline and .stat have opacity:0 in their base rules and rely on the
+     animation to reveal them. With animation disabled they stayed invisible,
+     so restore opacity explicitly. */
+  .tagline,
+  .stat {
+    opacity: 1;
+  }
+
+  .logo-badge {
+    transform: translateX(-50%);
+  }
+
   .gradient-text {
     background: #3b82f6;
     -webkit-background-clip: unset;
